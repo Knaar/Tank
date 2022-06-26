@@ -14,8 +14,6 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 	ENGINE_API UClass* Z_Construct_UClass_APawn();
 	UPackage* Z_Construct_UPackage__Script_Tank();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
-	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 // End Cross Module References
 	void ATankPawn::StaticRegisterNativesATankPawn()
 	{
@@ -39,14 +37,6 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_TurretMesh_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_TurretMesh;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_SpringArm_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_SpringArm;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Camera_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_Camera;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_MoveSpeed_MetaData[];
 #endif
@@ -91,25 +81,11 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATankPawn_Statics::NewProp_TurretMesh = { "TurretMesh", nullptr, (EPropertyFlags)0x00200800000b000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATankPawn, TurretMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATankPawn_Statics::NewProp_TurretMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATankPawn_Statics::NewProp_TurretMesh_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATankPawn_Statics::NewProp_SpringArm_MetaData[] = {
-		{ "Category", "Components" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TankPawn.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATankPawn_Statics::NewProp_SpringArm = { "SpringArm", nullptr, (EPropertyFlags)0x00200800000b000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATankPawn, SpringArm), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATankPawn_Statics::NewProp_SpringArm_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATankPawn_Statics::NewProp_SpringArm_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATankPawn_Statics::NewProp_Camera_MetaData[] = {
-		{ "Category", "Components" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TankPawn.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATankPawn_Statics::NewProp_Camera = { "Camera", nullptr, (EPropertyFlags)0x00200800000b000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATankPawn, Camera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATankPawn_Statics::NewProp_Camera_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATankPawn_Statics::NewProp_Camera_MetaData)) };
-#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATankPawn_Statics::NewProp_MoveSpeed_MetaData[] = {
 		{ "Category", "Movement" },
+		{ "Comment", "/* ???????? ??? ????????? ??????\n\x09UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = \"Components\")\n\x09""class USpringArmComponent* SpringArm;\n\n\x09UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = \"Components\")\n\x09""class UCameraComponent* Camera;\n*/" },
 		{ "ModuleRelativePath", "TankPawn.h" },
+		{ "ToolTip", "???????? ??? ????????? ??????\n      UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = \"Components\")\n      class USpringArmComponent* SpringArm;\n\n      UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = \"Components\")\n      class UCameraComponent* Camera;" },
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATankPawn_Statics::NewProp_MoveSpeed = { "MoveSpeed", nullptr, (EPropertyFlags)0x0020080000010005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATankPawn, MoveSpeed), METADATA_PARAMS(Z_Construct_UClass_ATankPawn_Statics::NewProp_MoveSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATankPawn_Statics::NewProp_MoveSpeed_MetaData)) };
@@ -130,8 +106,6 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATankPawn_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankPawn_Statics::NewProp_BodyMesh,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankPawn_Statics::NewProp_TurretMesh,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankPawn_Statics::NewProp_SpringArm,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankPawn_Statics::NewProp_Camera,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankPawn_Statics::NewProp_MoveSpeed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankPawn_Statics::NewProp_TargetAxisForwardValue,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankPawn_Statics::NewProp_TargetAxisRightValue,
@@ -172,9 +146,9 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankPawn_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATankPawn, ATankPawn::StaticClass, TEXT("ATankPawn"), &Z_Registration_Info_UClass_ATankPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATankPawn), 2936384579U) },
+		{ Z_Construct_UClass_ATankPawn, ATankPawn::StaticClass, TEXT("ATankPawn"), &Z_Registration_Info_UClass_ATankPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATankPawn), 2036322206U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankPawn_h_4274880775(TEXT("/Script/Tank"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankPawn_h_495859485(TEXT("/Script/Tank"),
 		Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankPawn_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankPawn_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

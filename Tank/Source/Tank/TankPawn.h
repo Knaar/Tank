@@ -25,12 +25,13 @@ protected:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class UStaticMeshComponent* TurretMesh;
 
+	/* Отключил для статичной камеры
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class USpringArmComponent* SpringArm;
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class UCameraComponent* Camera;
-
+*/
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Movement")
 	float MoveSpeed=100.0f;
 
