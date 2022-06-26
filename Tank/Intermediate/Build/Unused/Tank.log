@@ -1,0 +1,36 @@
+﻿  Using bundled DotNet SDK
+  Log file: C:\Users\Bordunos\AppData\Local\UnrealBuildTool\Log.txt
+  Using 'git status' to determine working set for adaptive non-unity build (E:\Unreal_5_Projects\Tank).
+  Building TankEditor...
+  Using Visual Studio 2022 14.32.31332 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  Distributing 9 actions to XGE
+  --------------------Build System Warning---------------------------------------
+  License is invalid:
+      License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
+      This build will run in standalone mode.
+  
+  -------------------------------------------------------------------------------
+  
+  Build ID: {E8F2089F-8482-4743-B71B-B8F36B74E66B}
+  
+  --------------------Project: Default-------------------------------------------
+  [1/9] TankPawn.cpp (0:00.56 at +0:00)
+  [2/9] TankPawn.gen.cpp (0:00.59 at +0:00)
+  [3/9] TankGameModeBase.cpp (0:00.73 at +0:01)
+  [4/9] Tank.cpp (0:00.50 at +0:01)
+  [5/9] Tank.init.gen.cpp (0:00.50 at +0:02)
+  [6/9] TankGameModeBase.gen.cpp (0:00.71 at +0:02)
+  [7/9] UnrealEditor-Tank.dll (0:00.48 at +0:03)
+     Создается библиотека E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.suppressed.lib и объект E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.suppressed.exp
+  [8/9] UnrealEditor-Tank.lib (0:00.06 at +0:04)
+     Создается библиотека E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.lib и объект E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.exp
+  [9/9] TankEditor.target (0:00.17 at +0:04)
+  ---------------------- Done ----------------------
+  
+      Rebuild All: 1 succeeded, 0 failed, 0 skipped
+  
+  1 build system warning(s):
+     - License is invalid
+  
+  Total time in XGE executor: 4,49 seconds
+  Total execution time: 4,89 seconds
