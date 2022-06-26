@@ -23,6 +23,12 @@
     <None Include="..\..\Config\DefaultGame.ini">
       <Filter>Config</Filter>
     </None>
+    <Filter Include="Config\HoloLens">
+      <UniqueIdentifier>{4C8DD267-CDE7-336F-8602-F5F485D22BAB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\HoloLens\HoloLensEngine.ini">
+      <Filter>Config\HoloLens</Filter>
+    </None>
     <Filter Include="Source\Tank">
       <UniqueIdentifier>{5942346E-68C0-3D69-BC23-05280F817D6F}</UniqueIdentifier>
     </Filter>
@@ -33,6 +39,12 @@
       <Filter>Source\Tank</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Tank\Tank.h">
+      <Filter>Source\Tank</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Tank\TankController.cpp">
+      <Filter>Source\Tank</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tank\TankController.h">
       <Filter>Source\Tank</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Tank\TankGameModeBase.cpp">
