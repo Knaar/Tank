@@ -41,5 +41,11 @@
     <ClInclude Include="..\..\Source\Tank\TankGameModeBase.h">
       <Filter>Source\Tank</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Tank\TankPawn.cpp">
+      <Filter>Source\Tank</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tank\TankPawn.h">
+      <Filter>Source\Tank</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
