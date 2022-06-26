@@ -747,3 +747,154 @@ LogConfig: CVar [[QualityLevelMapping:high]] deferred - dummy variable created
 [2022.06.26-11.34.04:131][913]LogLinker: Warning: Failed to load '/Game/CSC/NewFolder/TANK_Base1_Idle': Can't find file.
 [2022.06.26-11.34.04:131][913]LogLinker: Warning: Failed to load '/Game/CSC/NewFolder/TANK_Base1_Idle': Can't find file.
 [2022.06.26-11.34.04:131][913]LogUObjectGlobals: Warning: Failed to find object 'Object /Game/CSC/NewFolder/TANK_Base1_Idle.TANK_Base1_Idle'
+[2022.06.26-11.34.59:541][ 79]LogDerivedDataCache: C:/Users/Bordunos/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:02.210 and deleted 0 file(s) with total size 0 MiB.
+[2022.06.26-11.35.22:350][873]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/BP_TankPawn.BP_TankPawn
+[2022.06.26-11.35.22:350][873]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.06.26-11.35.24:810][ 60]LogSlate: Window 'BP_TankPawn' being destroyed
+[2022.06.26-11.35.26:616][268]LogSlate: Window 'BP_TankPawn' being destroyed
+[2022.06.26-11.35.28:094][441]LogWorld: UWorld::CleanupWorld for World_6, bSessionEnded=true, bCleanupResources=true
+[2022.06.26-11.35.28:094][441]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.06.26-11.35.28:119][441]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/BP_TankPawn.BP_TankPawn
+[2022.06.26-11.35.28:119][441]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.06.26-11.35.28:354][441]LogSlate: Took 0.000664 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-BoldCondensed.ttf' (158K)
+[2022.06.26-11.37.41:514][754]LogViewport: Scene viewport resized to 1080x877, mode Windowed.
+[2022.06.26-11.37.59:750][567]LogMaterial: Display: Missing cached shadermap for M_ACS18 in PCD3D_SM5, Default, SM5 (DDC key hash: D000B95131282FE997168A0464F3EF071A78DA19), compiling. 
+[2022.06.26-11.37.59:788][567]LogTexture: Display: Building textures: /Game/CSC/Textures/T_ACS18_Emissive.T_ACS18_Emissive (TFO_AutoDXT, 2048X2048 X1X1) (Required Memory Estimate: 80.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.37.59:788][567]LogSkeletalMesh: Building Skeletal Mesh SK_CSC_Body1...
+[2022.06.26-11.37.59:788][567]LogSkeletalMesh: Built Skeletal Mesh [0.00s] /Game/CSC/Meshes/SK_CSC_Body1.SK_CSC_Body1
+[2022.06.26-11.37.59:788][567]LogAssetEditorSubsystem: Opening Asset editor for SkeletalMesh /Game/CSC/Meshes/SK_CSC_Body1.SK_CSC_Body1
+[2022.06.26-11.37.59:792][567]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.06.26-11.37.59:801][567]LogActorComponent: RegisterComponentWithWorld: (/Engine/Transient.World_8:PersistentLevel.AnimationEditorPreviewActor_0.DebugSkelMeshComponent_0) Already registered. Aborting.
+[2022.06.26-11.37.59:819][567]LogTexture: Display: Waiting for textures to be ready 0/4 (/Game/CSC/Textures/T_ACS18_Normal) ...
+[2022.06.26-11.38.00:035][567]LogTexture: Display: Building textures: /Game/CSC/Textures/T_ACS18_BaseColor.T_ACS18_BaseColor (TFO_AutoDXT, 2048X2048 X1X1) (Required Memory Estimate: 80.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.38.00:036][567]LogTexture: Display: Building textures: /Game/CSC/Textures/T_ACS18_OcclusionRoughnessMetallic.T_ACS18_OcclusionRoughnessMetallic (TFO_AutoDXT, 2048X2048 X1X1) (Required Memory Estimate: 80.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.38.00:036][567]LogTexture: Display: Building textures: /Game/CSC/Textures/T_ACS18_Normal.T_ACS18_Normal (TFO_BC5, 2048X2048 X1X1) (Required Memory Estimate: 80.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.38.00:185][567]LogViewport: Scene viewport resized to 1141x866, mode Windowed.
+[2022.06.26-11.38.01:187][650]LogShaderCompilers: Display: ================================================
+[2022.06.26-11.38.01:187][650]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2022.06.26-11.38.01:187][650]LogShaderCompilers: Display: Total job queries 73, among them cache hits 0 (0.00%)
+[2022.06.26-11.38.01:187][650]LogShaderCompilers: Display: Tracking 42 distinct input hashes that result in 22 distinct outputs (52.38%)
+[2022.06.26-11.38.01:187][650]LogShaderCompilers: Display: RAM used: 0.06 MB (0.00 GB) of 2457.60 MB (2.40 GB) budget. Usage: 0.00%
+[2022.06.26-11.38.01:187][650]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2022.06.26-11.38.01:187][650]LogShaderCompilers: Display: Shaders Compiled: 73
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display: Jobs assigned 83, completed 50 (60.24%)
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display: Average time worker was idle: 87.51 s
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display: Time job spent in pending queue: average 0.01 s, longest 0.10 s
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display: Job execution time: average 13.55 s, max 28.46 s
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display: Job life time (pending + execution): average 13.57 s, max 28.47
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 29.45 s
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display: Jobs were issued in 26 batches (10 local, 16 distributed), average 3.19 jobs/batch (1.00 jobs/local batch. 4.56 jobs/distributed batch)
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display: Average processing rate: 1.70 jobs/sec
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display: Effective parallelization: 1.13 (times faster than compiling all shaders on one thread). Distributed compilation was used.
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display: Top 5 most expensive shader types by average time:
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display:                                 TBasePassVSFNoLightMapPolicy (compiled    5 times, average 0.79 sec, max 0.93 sec, min 0.67 sec)
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display:  TBasePassPSTDistanceFieldShadowsAndLightMapPolicyHQSkylight (compiled    1 times, average 0.76 sec, max 0.76 sec, min 0.76 sec)
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display:               TBasePassPSFCachedVolumeIndirectLightingPolicy (compiled    2 times, average 0.74 sec, max 0.82 sec, min 0.67 sec)
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display:                                 TBasePassPSTLightMapPolicyLQ (compiled    1 times, average 0.73 sec, max 0.73 sec, min 0.73 sec)
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display:                                                 FLumenCardVS (compiled    3 times, average 0.72 sec, max 0.89 sec, min 0.61 sec)
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display: Top 5 shader types by total compile time:
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display:                                 TBasePassPSFNoLightMapPolicy - 12.74% of total time (compiled    6 times, average 0.70 sec, max 0.83 sec, min 0.54 sec)
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display:                                 TBasePassVSFNoLightMapPolicy - 11.92% of total time (compiled    5 times, average 0.79 sec, max 0.93 sec, min 0.67 sec)
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display:                                                 FLumenCardVS - 6.52% of total time (compiled    3 times, average 0.72 sec, max 0.89 sec, min 0.61 sec)
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display:               TBasePassPSFCachedVolumeIndirectLightingPolicy - 4.47% of total time (compiled    2 times, average 0.74 sec, max 0.82 sec, min 0.67 sec)
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display:                                             FDebugViewModePS - 4.34% of total time (compiled    2 times, average 0.72 sec, max 0.73 sec, min 0.71 sec)
+[2022.06.26-11.38.01:188][650]LogShaderCompilers: Display: ================================================
+[2022.06.26-11.38.06:270][154]LogSlate: Window 'SK_CSC_Body1' being destroyed
+[2022.06.26-11.38.06:274][154]LogWorld: UWorld::CleanupWorld for World_8, bSessionEnded=true, bCleanupResources=true
+[2022.06.26-11.38.06:274][154]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.06.26-11.38.08:993][461]LogMaterial: Display: Missing cached shadermap for M_CSC in PCD3D_SM5, Default, SM5 (DDC key hash: 2B289B0F3EA29FBD80B0C6F64729C2CB9626D02D), compiling. 
+[2022.06.26-11.38.09:032][461]LogSkeletalMesh: Building Skeletal Mesh SK_CSC_Base1...
+[2022.06.26-11.38.09:032][461]LogSkeletalMesh: Built Skeletal Mesh [0.00s] /Game/CSC/Meshes/SK_CSC_Base1.SK_CSC_Base1
+[2022.06.26-11.38.09:037][461]LogAssetEditorSubsystem: Opening Asset editor for SkeletalMesh /Game/CSC/Meshes/SK_CSC_Base1.SK_CSC_Base1
+[2022.06.26-11.38.09:038][461]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.06.26-11.38.09:044][461]LogActorComponent: RegisterComponentWithWorld: (/Engine/Transient.World_9:PersistentLevel.AnimationEditorPreviewActor_0.DebugSkelMeshComponent_0) Already registered. Aborting.
+[2022.06.26-11.38.09:062][461]LogTexture: Display: Waiting for textures to be ready 0/3 (/Game/CSC/Textures/T_ACS17_unreal_Normal) ...
+[2022.06.26-11.38.09:249][461]LogTexture: Display: Building textures: /Game/CSC/Textures/T_ACS17_BaseColor.T_ACS17_BaseColor (TFO_AutoDXT, 2048X2048 X1X1) (Required Memory Estimate: 80.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.38.09:249][461]LogTexture: Display: Building textures: /Game/CSC/Textures/T_ACS17_OcclusionRoughnessMetallic.T_ACS17_OcclusionRoughnessMetallic (TFO_AutoDXT, 2048X2048 X1X1) (Required Memory Estimate: 80.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.38.09:249][461]LogTexture: Display: Building textures: /Game/CSC/Textures/T_ACS17_unreal_Normal.T_ACS17_unreal_Normal (TFO_BC5, 2048X2048 X1X1) (Required Memory Estimate: 80.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.38.09:437][461]LogViewport: Scene viewport resized to 1141x866, mode Windowed.
+[2022.06.26-11.38.14:852][ 15]LogSlate: Window 'SK_CSC_Base1' being destroyed
+[2022.06.26-11.38.14:857][ 15]LogWorld: UWorld::CleanupWorld for World_9, bSessionEnded=true, bCleanupResources=true
+[2022.06.26-11.38.14:857][ 15]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.06.26-11.38.20:777][702]LogMaterial: Display: Missing cached shadermap for M_LGT in PCD3D_SM5, Default, SM5 (DDC key hash: 63787979004214A7E610197CE90013A8F49A5904), compiling. 
+[2022.06.26-11.38.20:816][702]LogTexture: Display: Building textures: /Game/CSC/Textures/T_LGT_Emissive.T_LGT_Emissive (TFO_AutoDXT, 2048X2048 X1X1) (Required Memory Estimate: 80.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.38.20:816][702]LogSkeletalMesh: Building Skeletal Mesh SK_CSC_Gun4...
+[2022.06.26-11.38.20:816][702]LogSkeletalMesh: Built Skeletal Mesh [0.00s] /Game/CSC/Meshes/SK_CSC_Gun4.SK_CSC_Gun4
+[2022.06.26-11.38.20:825][702]LogAssetEditorSubsystem: Opening Asset editor for SkeletalMesh /Game/CSC/Meshes/SK_CSC_Gun4.SK_CSC_Gun4
+[2022.06.26-11.38.20:826][702]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.06.26-11.38.20:838][702]LogActorComponent: RegisterComponentWithWorld: (/Engine/Transient.World_10:PersistentLevel.AnimationEditorPreviewActor_0.DebugSkelMeshComponent_0) Already registered. Aborting.
+[2022.06.26-11.38.20:857][702]LogTexture: Display: Building textures: /Game/CSC/Textures/T_LGT_OcclusionRoughnessMetallic.T_LGT_OcclusionRoughnessMetallic (TFO_AutoDXT, 2048X2048 X1X1) (Required Memory Estimate: 80.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.38.20:857][702]LogTexture: Display: Waiting for textures to be ready 0/4 (/Game/CSC/Textures/T_LGT_Normal) ...
+[2022.06.26-11.38.21:048][702]LogTexture: Display: Building textures: /Game/CSC/Textures/T_LGT_BaseColor.T_LGT_BaseColor (TFO_AutoDXT, 2048X2048 X1X1) (Required Memory Estimate: 80.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.38.21:048][702]LogTexture: Display: Building textures: /Game/CSC/Textures/T_LGT_Normal.T_LGT_Normal (TFO_BC5, 2048X2048 X1X1) (Required Memory Estimate: 80.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.38.21:217][702]LogViewport: Scene viewport resized to 1141x866, mode Windowed.
+[2022.06.26-11.38.27:088][269]LogSlate: Window 'SK_CSC_Gun4' being destroyed
+[2022.06.26-11.38.27:092][269]LogWorld: UWorld::CleanupWorld for World_10, bSessionEnded=true, bCleanupResources=true
+[2022.06.26-11.38.27:092][269]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.06.26-11.38.29:332][525]LogMaterial: Display: Missing cached shadermap for M_RLV in PCD3D_SM5, Default, SM5 (DDC key hash: A700EB4515A6B731CDE6DF8F3C3ED35E2EAA69DA), compiling. 
+[2022.06.26-11.38.29:381][525]LogTexture: Display: Building textures: /Game/CSC/Textures/T_RLV_Emissive.T_RLV_Emissive (TFO_AutoDXT, 2048X2048 X1X1) (Required Memory Estimate: 80.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.38.29:381][525]LogSkeletalMesh: Building Skeletal Mesh SK_CSC_Gun5...
+[2022.06.26-11.38.29:381][525]LogSkeletalMesh: Built Skeletal Mesh [0.00s] /Game/CSC/Meshes/SK_CSC_Gun5.SK_CSC_Gun5
+[2022.06.26-11.38.29:392][525]LogAssetEditorSubsystem: Opening Asset editor for SkeletalMesh /Game/CSC/Meshes/SK_CSC_Gun5.SK_CSC_Gun5
+[2022.06.26-11.38.29:393][525]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.06.26-11.38.29:401][525]LogActorComponent: RegisterComponentWithWorld: (/Engine/Transient.World_11:PersistentLevel.AnimationEditorPreviewActor_0.DebugSkelMeshComponent_0) Already registered. Aborting.
+[2022.06.26-11.38.29:420][525]LogTexture: Display: Waiting for textures to be ready 0/4 (/Game/CSC/Textures/T_RLV_Normal) ...
+[2022.06.26-11.38.29:631][525]LogTexture: Display: Building textures: /Game/CSC/Textures/T_RLV_BaseColor.T_RLV_BaseColor (TFO_AutoDXT, 2048X2048 X1X1) (Required Memory Estimate: 80.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.38.29:631][525]LogTexture: Display: Building textures: /Game/CSC/Textures/T_RLV_Normal.T_RLV_Normal (TFO_BC5, 2048X2048 X1X1) (Required Memory Estimate: 80.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.38.29:631][525]LogTexture: Display: Building textures: /Game/CSC/Textures/T_RLV_OcclusionRoughnessMetallic.T_RLV_OcclusionRoughnessMetallic (TFO_AutoDXT, 2048X2048 X1X1) (Required Memory Estimate: 80.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.38.29:816][525]LogViewport: Scene viewport resized to 1141x866, mode Windowed.
+[2022.06.26-11.38.39:013][509]LogSlate: Window 'SK_CSC_Gun5' being destroyed
+[2022.06.26-11.38.39:018][509]LogWorld: UWorld::CleanupWorld for World_11, bSessionEnded=true, bCleanupResources=true
+[2022.06.26-11.38.39:019][509]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.06.26-11.38.43:012][963]LogMaterial: Display: Missing cached shadermap for M_LGT_Tracks in PCD3D_SM5, Default, SM5 (DDC key hash: C4888EFAF7EA5B10F8ED9DD5C2E6E9C542C033B0), compiling. 
+[2022.06.26-11.38.43:065][963]LogTexture: Display: Building textures: /Game/CSC/Textures/T_LGT_Tracks_BaseColor.T_LGT_Tracks_BaseColor (TFO_AutoDXT, 1024X1024 X1X1) (Required Memory Estimate: 20.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.38.43:065][963]LogTexture: Display: Building textures: /Game/CSC/Textures/T_LGT_Tracks_OcclusionRoughnessMetallic.T_LGT_Tracks_OcclusionRoughnessMetallic (TFO_AutoDXT, 1024X1024 X1X1) (Required Memory Estimate: 20.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.38.43:065][963]LogTexture: Display: Building textures: /Game/CSC/Textures/T_LGT_Tracks_Normal.T_LGT_Tracks_Normal (TFO_BC5, 1024X1024 X1X1) (Required Memory Estimate: 20.000 MB), EncodeSpeed: Fast
+[2022.06.26-11.38.43:065][963]LogSkeletalMesh: Building Skeletal Mesh SK_LGT_Base1...
+[2022.06.26-11.38.43:065][963]LogSkeletalMesh: Built Skeletal Mesh [0.00s] /Game/CSC/Meshes/SK_LGT_Base1.SK_LGT_Base1
+[2022.06.26-11.38.43:071][963]LogAssetEditorSubsystem: Opening Asset editor for SkeletalMesh /Game/CSC/Meshes/SK_LGT_Base1.SK_LGT_Base1
+[2022.06.26-11.38.43:072][963]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.06.26-11.38.43:080][963]LogActorComponent: RegisterComponentWithWorld: (/Engine/Transient.World_12:PersistentLevel.AnimationEditorPreviewActor_0.DebugSkelMeshComponent_0) Already registered. Aborting.
+[2022.06.26-11.38.43:319][963]LogViewport: Scene viewport resized to 1141x866, mode Windowed.
+[2022.06.26-11.38.49:739][593]LogSlate: Window 'SK_LGT_Base1' being destroyed
+[2022.06.26-11.38.49:744][593]LogWorld: UWorld::CleanupWorld for World_12, bSessionEnded=true, bCleanupResources=true
+[2022.06.26-11.38.49:744][593]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.06.26-11.38.51:196][748]LogSkeletalMesh: Display: [AssetLog] E:\Unreal_5_Projects\Tank\Tank\Content\CSC\Meshes\SK_RLV_Base1.uasset: Find and fix some bad tangent! please re-import this skeletal mesh asset to fix the issue. The shading of the skeletal mesh will be bad and faceted.
+[2022.06.26-11.38.51:196][748]LogSkeletalMesh: Building Skeletal Mesh SK_RLV_Base1...
+[2022.06.26-11.38.51:197][748]LogSkeletalMesh: Built Skeletal Mesh [0.00s] /Game/CSC/Meshes/SK_RLV_Base1.SK_RLV_Base1
+[2022.06.26-11.38.51:200][748]LogAssetEditorSubsystem: Opening Asset editor for SkeletalMesh /Game/CSC/Meshes/SK_RLV_Base1.SK_RLV_Base1
+[2022.06.26-11.38.51:201][748]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.06.26-11.38.51:206][748]LogActorComponent: RegisterComponentWithWorld: (/Engine/Transient.World_13:PersistentLevel.AnimationEditorPreviewActor_0.DebugSkelMeshComponent_0) Already registered. Aborting.
+[2022.06.26-11.38.51:434][748]LogViewport: Scene viewport resized to 1141x866, mode Windowed.
+[2022.06.26-11.38.59:121][576]LogSlate: Window 'SK_RLV_Base1' being destroyed
+[2022.06.26-11.38.59:125][576]LogWorld: UWorld::CleanupWorld for World_13, bSessionEnded=true, bCleanupResources=true
+[2022.06.26-11.38.59:125][576]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.06.26-11.39.02:103][915]LogAssetEditorSubsystem: Opening Asset editor for SkeletalMesh /Game/CSC/Meshes/SK_TANK_Base1.SK_TANK_Base1
+[2022.06.26-11.39.02:104][915]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.06.26-11.39.02:108][915]LogActorComponent: RegisterComponentWithWorld: (/Engine/Transient.World_14:PersistentLevel.AnimationEditorPreviewActor_0.DebugSkelMeshComponent_0) Already registered. Aborting.
+[2022.06.26-11.39.02:285][915]LogViewport: Scene viewport resized to 1141x866, mode Windowed.
+[2022.06.26-11.39.05:774][264]LogAssetEditorSubsystem: Opening Asset editor for PhysicsAsset /Game/CSC/Meshes/TANK_Base1_PhysicsAsset.TANK_Base1_PhysicsAsset
+[2022.06.26-11.39.05:812][264]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.06.26-11.39.05:820][264]LogActorComponent: RegisterComponentWithWorld: (/Engine/Transient.World_15:PersistentLevel.AnimationEditorPreviewActor_0.PhysicsAssetEditorSkeletalMeshComponent_0) Already registered. Aborting.
+[2022.06.26-11.39.06:110][264]LogViewport: Scene viewport resized to 1141x866, mode Windowed.
+[2022.06.26-11.39.09:080][586]LogWorld: UWorld::CleanupWorld for World_15, bSessionEnded=true, bCleanupResources=true
+[2022.06.26-11.39.09:080][586]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.06.26-11.39.12:971][986]LogStaticMesh: Display: Building static mesh SM_TANK_Base1...
+[2022.06.26-11.39.12:971][986]LogAssetEditorSubsystem: Opening Asset editor for StaticMesh /Game/CSC/Meshes/SM_TANK_Base1.SM_TANK_Base1
+[2022.06.26-11.39.12:995][986]LogStaticMesh: Built static mesh [0.01s] /Game/CSC/Meshes/SM_TANK_Base1.SM_TANK_Base1
+[2022.06.26-11.39.12:996][986]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.06.26-11.39.13:180][986]LogViewport: Scene viewport resized to 1405x902, mode Windowed.
+[2022.06.26-11.39.21:004][857]LogWorld: UWorld::CleanupWorld for World_16, bSessionEnded=true, bCleanupResources=true
+[2022.06.26-11.39.21:004][857]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.06.26-11.39.21:790][943]LogSlate: Window 'SK_TANK_Base1' being destroyed
+[2022.06.26-11.39.21:796][943]LogWorld: UWorld::CleanupWorld for World_14, bSessionEnded=true, bCleanupResources=true
+[2022.06.26-11.39.21:796][943]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.06.26-11.40.40:187][483]BlueprintLog: New page: Compile BP_TankPawn
+[2022.06.26-11.40.40:284][483]LogUObjectHash: Compacting FUObjectHashTables data took   1.64ms
+[2022.06.26-11.40.44:749][988]LogUObjectHash: Compacting FUObjectHashTables data took   1.19ms
+[2022.06.26-11.40.44:836][988]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/BP_TankPawn" FILE="../../../../Unreal_5_Projects/Tank/Tank/Content/BP_TankPawn.uasset" SILENT=true
+[2022.06.26-11.40.44:840][988]LogPackageLocalizationCache: Processed 30 localized package path(s) for 1 prioritized culture(s) in 0.004299 seconds
+[2022.06.26-11.40.44:843][988]LogSavePackage: Moving output files for package: /Game/BP_TankPawn
+[2022.06.26-11.40.44:843][988]LogSavePackage: Moving '../../../../Unreal_5_Projects/Tank/Tank/Saved/BP_TankPawn48C9E54148EF59BCFE47199B3CC16739.tmp' to '../../../../Unreal_5_Projects/Tank/Tank/Content/BP_TankPawn.uasset'
+[2022.06.26-11.40.44:853][988]AssetCheck: New page: Asset Save: BP_TankPawn
+[2022.06.26-11.40.44:854][988]LogContentValidation: Display: Validating Blueprint /Game/BP_TankPawn.BP_TankPawn
