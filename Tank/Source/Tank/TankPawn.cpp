@@ -21,3 +21,15 @@ ATankPawn::ATankPawn()
 	Camera->SetupAttachment(SpringArm);
 }
 
+void ATankPawn::MoveForward(float Value)
+{
+
+}
+
+void ATankPawn::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+	FVector CurrentLocation = GetActorLocation();
+	FVector forwardVector = GetActorForwardVector();
+}
+

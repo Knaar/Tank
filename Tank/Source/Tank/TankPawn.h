@@ -14,6 +14,9 @@ class TANK_API ATankPawn : public APawn
 public:
 	ATankPawn();
 
+	void MoveForward(float Value);
+	virtual void Tick(float DeltaSeconds)override;
+
 protected:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class UStaticMeshComponent* BodyMesh;
