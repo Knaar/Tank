@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"E:\\Unreal_5_Projects\\Tank\\Tank\\Source\\Tank\\Tank.Build.cs",
+		"E:\\Unreal_5_Projects\\Tank\\Tank\\Source\\Tank.Target.cs",
+		"E:\\Unreal_5_Projects\\Tank\\Tank\\Source\\TankEditor.Target.cs"
+	],
+	"EngineVersion": "5.0.2"
+}
