@@ -15,6 +15,7 @@ public:
 	ATankPawn();
 
 	void MoveForward(float Value);
+	void MoveRight(float Value);
 	virtual void Tick(float DeltaSeconds)override;
 
 protected:
@@ -34,5 +35,8 @@ protected:
 	float MoveSpeed=100.0f;
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Movement")
-	float TargetAxisValue=0.0f;
+	float TargetAxisForwardValue=0.0f;
+
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Movement")
+	float TargetAxisRightValue = 0.0f;
 };
