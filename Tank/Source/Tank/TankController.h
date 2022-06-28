@@ -19,9 +19,13 @@ public:
 	UPROPERTY()
 	class ATankPawn* TankPawn;
 
-	virtual void SetPawn(class APawn* InPawn)override;
+	//virtual void SetPawn(class APawn* InPawn)override;
 protected:
+	virtual void BeginPlay()override;
 	UFUNCTION()
 	void MoveForward(float Value);
+	UFUNCTION()
 	void MoveRight(float Value);
+	UFUNCTION()
+	void RotateRight(float Value);
 };

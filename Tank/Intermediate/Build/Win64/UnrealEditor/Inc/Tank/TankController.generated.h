@@ -16,11 +16,15 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_Tank_Source_Tank_TankController_h_15_SPARSE_DATA
 #define FID_Tank_Source_Tank_TankController_h_15_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execRotateRight); \
+	DECLARE_FUNCTION(execMoveRight); \
 	DECLARE_FUNCTION(execMoveForward);
 
 
 #define FID_Tank_Source_Tank_TankController_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execRotateRight); \
+	DECLARE_FUNCTION(execMoveRight); \
 	DECLARE_FUNCTION(execMoveForward);
 
 

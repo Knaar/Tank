@@ -33,27 +33,37 @@ void ATankPawn::MoveRight(float Value)
 	TargetAxisRightValue = Value;
 }
 
+void ATankPawn::RotateRight(float Value)
+{
+	TargetAxisRotationValue = Value;
+}
+
 void ATankPawn::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
+
+	//Tank movement;
 	FVector CurrentLocation = GetActorLocation();
 	FVector forwardVector = GetActorForwardVector();
 	FVector RightVector = GetActorRightVector();
+	FVector movePosition = CurrentLocation +( forwardVector * MoveSpeed * TargetAxisForwardValue*DeltaSeconds)+(RightVector * MoveSpeed * TargetAxisRightValue*DeltaSeconds);
+	SetActorLocation(movePosition, true);
 
+	//Tank Rotation;
+	float YawRotation = RotationSpeed * TargetAxisRotationValue * DeltaSeconds;
+	FRotator CurrRotation = GetActorRotation();
 
-	
-	if (TargetAxisForwardValue!=0)
-	{
-		FVector movePositionForward = CurrentLocation + forwardVector * MoveSpeed * TargetAxisForwardValue;
-		SetActorLocation(movePositionForward, true);
-	} 
-	else
-	{
-		FVector movePositionRight = CurrentLocation + RightVector * MoveSpeed * TargetAxisRightValue;
-		SetActorLocation(movePositionRight, true);
-	}
-	
+	YawRotation += CurrRotation.Yaw;
+	FRotator newRotation = FRotator(0.0f, YawRotation, 0.0f);
+	SetActorRotation(newRotation);
 
-	
+	//Short Version Tank Rotation
+	//SetActorRotation(FRotator(0.0f, (GetActorRotation().Yaw + (RotationSpeed * TargetAxisRotationValue * DeltaSeconds)), 0.0f));
+}
+
+void ATankPawn::BeginPlay() 
+{
+	Super::BeginPlay();
+	SetActorLocation(FVector(GetActorLocation().X, GetActorLocation().Z, 50.0f));
 }
 
