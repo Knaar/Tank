@@ -2,10 +2,12 @@
 
 
 #include "TankPawn.h"
+#include "Components/StaticMeshComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "TankController.h"
 #include "Kismet/KismetMathLibrary.h"
+
 
 ATankPawn::ATankPawn()
 {
@@ -19,6 +21,11 @@ ATankPawn::ATankPawn()
 	
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
 	SpringArm->SetupAttachment(BodyMesh);
+	SpringArm->bDoCollisionTest = false;
+	SpringArm->bInheritPitch = false;
+	SpringArm->bInheritYaw = false;
+	SpringArm->bInheritRoll = false;
+
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->SetupAttachment(SpringArm);
@@ -76,17 +83,17 @@ void ATankPawn::Tick(float DeltaSeconds)
 	FRotator targetRotation = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), MousePos);
 	FRotator TurretRotation = TurretMesh->GetComponentRotation();
 
-	TurretRotation.Pitch = targetRotation.Pitch;
-	TurretRotation.Roll = targetRotation.Roll;
+	targetRotation.Pitch = TurretRotation.Pitch;
+	targetRotation.Roll = TurretRotation.Roll;
 
-	TurretMesh->SetWorldRotation(TurretRotation);
+	TurretMesh->SetWorldRotation(FMath::Lerp(TurretRotation,targetRotation,RotateInterpolationKey));
 
 }
 
 void ATankPawn::BeginPlay() 
 {
 	Super::BeginPlay();
-	SetActorLocation(FVector(GetActorLocation().X, GetActorLocation().Y, 0.0f));
+	SetActorLocation(FVector(GetActorLocation().X, GetActorLocation().Y, 50.0f));
 
 	TankController = Cast<ATankController>(GetController());
 }

@@ -23,6 +23,9 @@
     <None Include="..\..\Config\DefaultGame.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
     <Filter Include="Config\HoloLens">
       <UniqueIdentifier>{4C8DD267-CDE7-336F-8602-F5F485D22BAB}</UniqueIdentifier>
     </Filter>
@@ -32,6 +35,24 @@
     <Filter Include="Source\Tank">
       <UniqueIdentifier>{5942346E-68C0-3D69-BC23-05280F817D6F}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Tank\Cannon.cpp">
+      <Filter>Source\Tank</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tank\Cannon.h">
+      <Filter>Source\Tank</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Tank\GameStruct.cpp">
+      <Filter>Source\Tank</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tank\GameStruct.h">
+      <Filter>Source\Tank</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Tank\GameStructs.cpp">
+      <Filter>Source\Tank</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tank\GameStructs.h">
+      <Filter>Source\Tank</Filter>
+    </ClInclude>
     <None Include="..\..\Source\Tank\Tank.Build.cs">
       <Filter>Source\Tank</Filter>
     </None>

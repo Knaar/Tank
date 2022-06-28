@@ -9,10 +9,7 @@ ATankController::ATankController()
 	bShowMouseCursor = true;
 }
 
-/*ATankController::ATankController()
-{
-	bShowMouseCursor = true;
-}*/
+
 
 void ATankController::SetupInputComponent()
 {
@@ -34,7 +31,7 @@ void ATankController::Tick(float DeltaSeconds)
 	FVector dir = MousePos - TankPosition;//вектор направления
 	dir.Normalize();
 	MousePos = TankPosition + dir * 1000.0f;
-	DrawDebugLine(GetWorld(), TankPosition, MousePos, FColor::Green, false, 1,1, 5);
+	DrawDebugLine(GetWorld(), TankPosition, MousePos, FColor::Green, false, 0.5f ,1, 5);
 
 	
 }
