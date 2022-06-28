@@ -56,5 +56,6 @@ void ACannon::Fire()
 void ACannon::Reload()
 {
 	bCanFire = true;
+	bulletsInMagasine = 5;
 }
 
