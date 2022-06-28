@@ -43,14 +43,20 @@ void ATankPawn::Tick(float DeltaSeconds)
 	Super::Tick(DeltaSeconds);
 
 	//Tank movement;
+	//Added acceleration via interpolation. I do not know why.
+	CurrentMoveAxisValue = FMath::Lerp(CurrentMoveAxisValue, TargetAxisForwardValue, InterpolationKey);
+
 	FVector CurrentLocation = GetActorLocation();
 	FVector forwardVector = GetActorForwardVector();
 	FVector RightVector = GetActorRightVector();
-	FVector movePosition = CurrentLocation +( forwardVector * MoveSpeed * TargetAxisForwardValue*DeltaSeconds)+(RightVector * MoveSpeed * TargetAxisRightValue*DeltaSeconds);
+
+	FVector movePosition = CurrentLocation +( forwardVector * MoveSpeed * CurrentMoveAxisValue *DeltaSeconds)+(RightVector * MoveSpeed * TargetAxisRightValue*DeltaSeconds);
 	SetActorLocation(movePosition, true);
 
 	//Tank Rotation;
-	float YawRotation = RotationSpeed * TargetAxisRotationValue * DeltaSeconds;
+
+	CurrentRotateAxisValue = FMath::Lerp(CurrentRotateAxisValue, TargetAxisRotationValue, InterpolationKey);
+	float YawRotation = RotationSpeed * CurrentRotateAxisValue * DeltaSeconds;
 	FRotator CurrRotation = GetActorRotation();
 
 	YawRotation += CurrRotation.Yaw;
@@ -59,6 +65,8 @@ void ATankPawn::Tick(float DeltaSeconds)
 
 	//Short Version Tank Rotation
 	//SetActorRotation(FRotator(0.0f, (GetActorRotation().Yaw + (RotationSpeed * TargetAxisRotationValue * DeltaSeconds)), 0.0f));
+
+	UE_LOG(LogTemp, Warning, TEXT("Curr RAV: %f"), CurrentRotateAxisValue);
 }
 
 void ATankPawn::BeginPlay() 

@@ -42,10 +42,16 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Movement")
 	float RotationSpeed=100.0f;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Movement")
+	float InterpolationKey = 0.1f;
+
 
 private:
 	float TargetAxisForwardValue=0.0f;
 	float TargetAxisRightValue = 0.0f;
+
+	float CurrentMoveAxisValue = 0.0f;
+	float CurrentRotateAxisValue = 0.0f;
 
 	float TargetAxisRotationValue = 0.0f;
 };
