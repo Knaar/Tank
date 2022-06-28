@@ -2,6 +2,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "Components/ArrowComponent.h"
 
+
 // Sets default values
 ACannon::ACannon()
 {
@@ -53,9 +54,37 @@ void ACannon::Fire()
 	
 }
 
+void ACannon::FireSpecial()
+{
+	while (bulletsInMagasine>0)
+	{
+		if (CannonType == ECannonType::FireProjectile)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Projectile")));
+			bulletsInMagasine--;
+			GetWorld()->GetTimerManager().SetTimer(ReloadTimer, this, &ACannon::IDontKnowHowToUsePause, ShootTime, false);
+
+		}
+		else
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Trace")));
+			bulletsInMagasine--;
+			GetWorld()->GetTimerManager().SetTimer(ReloadTimer, this, &ACannon::IDontKnowHowToUsePause, ShootTime, false);
+
+		}
+		
+	}
+	GetWorld()->GetTimerManager().SetTimer(ReloadTimer, this, &ACannon::Reload, ReloadTime, false);
+}
+
 void ACannon::Reload()
 {
-	bCanFire = true;
+	//bCanFire = true;
 	bulletsInMagasine = 5;
+}
+
+void ACannon::IDontKnowHowToUsePause()
+{
+
 }
 

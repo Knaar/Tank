@@ -16,6 +16,13 @@ void EmptyLinkFunctionForGeneratedCodeTankController() {}
 	TANK_API UClass* Z_Construct_UClass_ATankPawn_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 // End Cross Module References
+	DEFINE_FUNCTION(ATankController::execFireSpecial)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->FireSpecial();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ATankController::execFire)
 	{
 		P_FINISH;
@@ -52,6 +59,7 @@ void EmptyLinkFunctionForGeneratedCodeTankController() {}
 		UClass* Class = ATankController::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "Fire", &ATankController::execFire },
+			{ "FireSpecial", &ATankController::execFireSpecial },
 			{ "MoveForward", &ATankController::execMoveForward },
 			{ "MoveRight", &ATankController::execMoveRight },
 			{ "RotateRight", &ATankController::execRotateRight },
@@ -77,6 +85,28 @@ void EmptyLinkFunctionForGeneratedCodeTankController() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATankController_Fire_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ATankController_FireSpecial_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATankController_FireSpecial_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "TankController.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATankController_FireSpecial_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATankController, nullptr, "FireSpecial", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ATankController_FireSpecial_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ATankController_FireSpecial_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ATankController_FireSpecial()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATankController_FireSpecial_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -208,6 +238,7 @@ void EmptyLinkFunctionForGeneratedCodeTankController() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ATankController_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ATankController_Fire, "Fire" }, // 609362364
+		{ &Z_Construct_UFunction_ATankController_FireSpecial, "FireSpecial" }, // 2983311765
 		{ &Z_Construct_UFunction_ATankController_MoveForward, "MoveForward" }, // 19057241
 		{ &Z_Construct_UFunction_ATankController_MoveRight, "MoveRight" }, // 3140844957
 		{ &Z_Construct_UFunction_ATankController_RotateRight, "RotateRight" }, // 873518408
@@ -272,9 +303,9 @@ void EmptyLinkFunctionForGeneratedCodeTankController() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATankController, ATankController::StaticClass, TEXT("ATankController"), &Z_Registration_Info_UClass_ATankController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATankController), 2481068333U) },
+		{ Z_Construct_UClass_ATankController, ATankController::StaticClass, TEXT("ATankController"), &Z_Registration_Info_UClass_ATankController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATankController), 3567739096U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankController_h_947155305(TEXT("/Script/Tank"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankController_h_2088557939(TEXT("/Script/Tank"),
 		Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankController_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

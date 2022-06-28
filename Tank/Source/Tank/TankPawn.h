@@ -22,6 +22,7 @@ public:
 	void RotateRight(float Value);
 
 	void Fire();
+	void FireSpecial();
 
 	virtual void Tick(float DeltaSeconds)override;
 	virtual void BeginPlay()override;

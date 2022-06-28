@@ -17,7 +17,10 @@ public:
 	ACannon();
 
 	void Fire();
+	void FireSpecial();
+
 	void Reload();
+	void IDontKnowHowToUsePause();
 protected:
 	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category="Components")
 	class UStaticMeshComponent* CannonMesh;
@@ -30,6 +33,10 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
 	float ReloadTime=1.0f;
+	
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+	float ShootTime = 1.2f;
 
 	FTimerHandle ReloadTimer;
 

@@ -1,10 +1,9 @@
 ﻿  Using bundled DotNet SDK
   Log file: C:\Users\Bordunos\AppData\Local\UnrealBuildTool\Log.txt
   Using 'git status' to determine working set for adaptive non-unity build (E:\Unreal_5_Projects\Tank).
-  Invalidating makefile for TankEditor (working set of source files changed)
   Building TankEditor...
   Using Visual Studio 2022 14.32.31332 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  [Adaptive Build] Excluded from Tank unity file: Cannon.cpp
+  [Adaptive Build] Excluded from Tank unity file: Cannon.cpp, TankController.cpp, TankPawn.cpp
   Distributing 4 actions to XGE
   --------------------Build System Warning---------------------------------------
   License is invalid:
@@ -13,15 +12,15 @@
   
   -------------------------------------------------------------------------------
   
-  Build ID: {D79E902A-6F42-4BD1-BF02-6B2F7BCAB5EB}
+  Build ID: {9D0BA13A-073D-4568-BE06-EBB03820536E}
   
   --------------------Project: Default-------------------------------------------
-  [1/4] Cannon.cpp (0:01.21 at +0:00)
+  [1/4] Cannon.cpp (0:01.25 at +0:00)
   [2/4] UnrealEditor-Tank.dll (0:00.53 at +0:01)
      Создается библиотека E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.suppressed.lib и объект E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.suppressed.exp
-  [3/4] UnrealEditor-Tank.lib (0:00.06 at +0:01)
+  [3/4] UnrealEditor-Tank.lib (0:00.09 at +0:01)
      Создается библиотека E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.lib и объект E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.exp
-  [4/4] TankEditor.target (0:00.20 at +0:01)
+  [4/4] TankEditor.target (0:00.17 at +0:01)
   ---------------------- Done ----------------------
   
       Rebuild All: 1 succeeded, 0 failed, 0 skipped
@@ -29,5 +28,5 @@
   1 build system warning(s):
      - License is invalid
   
-  Total time in XGE executor: 2,17 seconds
-  Total execution time: 3,03 seconds
+  Total time in XGE executor: 2,18 seconds
+  Total execution time: 2,52 seconds

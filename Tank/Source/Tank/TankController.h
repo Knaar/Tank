@@ -38,4 +38,6 @@ protected:
 	void RotateRight(float Value);
 	UFUNCTION()
 	void Fire();
+	UFUNCTION()
+	void FireSpecial();
 };
