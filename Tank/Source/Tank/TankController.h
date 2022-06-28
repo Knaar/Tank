@@ -36,4 +36,6 @@ protected:
 	void MoveRight(float Value);
 	UFUNCTION()
 	void RotateRight(float Value);
+	UFUNCTION()
+	void Fire();
 };

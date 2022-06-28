@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "GameStructs.h"
 #include "Cannon.generated.h"
 
 UCLASS()
@@ -12,15 +13,27 @@ class TANK_API ACannon : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
+	
 	ACannon();
 
+	void Fire();
+	void Reload();
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category="Components")
+	class UStaticMeshComponent* CannonMesh;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
+	class UArrowComponent* ProjectileSpawnPoint;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+	ECannonType CannonType;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+	float ReloadTime=1.0f;
+
+	FTimerHandle ReloadTimer;
+
+private:
+	bool bCanFire = true;
+	int bulletsInMagasine = 5;
 };

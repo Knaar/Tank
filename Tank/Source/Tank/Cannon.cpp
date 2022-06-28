@@ -1,27 +1,60 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "Cannon.h"
+#include "Components/StaticMeshComponent.h"
+#include "Components/ArrowComponent.h"
 
 // Sets default values
 ACannon::ACannon()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+ 	
+	PrimaryActorTick.bCanEverTick = false;
 
+	CannonMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Cannon"));
+	RootComponent = CannonMesh;
+
+	ProjectileSpawnPoint = CreateDefaultSubobject<UArrowComponent>(TEXT("ProjectileSpawnPoint"));
+	ProjectileSpawnPoint->SetupAttachment(CannonMesh);
 }
 
-// Called when the game starts or when spawned
-void ACannon::BeginPlay()
+void ACannon::Fire()
 {
-	Super::BeginPlay();
+	if (bulletsInMagasine>0)
+	{
+		if (CannonType == ECannonType::FireProjectile)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Projectile")));
+			bulletsInMagasine--;
+		}
+		else
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Trace")));
+			bulletsInMagasine--;
+		}
+	}
+	else
+	{
+		GetWorld()->GetTimerManager().SetTimer(ReloadTimer, this, &ACannon::Reload, ReloadTime, false);
+	}
+	/*if (!bCanFire)
+	{
+		return;
+	}
+	bCanFire = false;
+	if (CannonType==ECannonType::FireProjectile)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Projectile")));
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Trace")));
+	}
+	*/
+	
+	
 	
 }
 
-// Called every frame
-void ACannon::Tick(float DeltaTime)
+void ACannon::Reload()
 {
-	Super::Tick(DeltaTime);
-
+	bCanFire = true;
 }
 

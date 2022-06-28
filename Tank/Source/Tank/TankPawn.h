@@ -7,6 +7,8 @@
 #include "TankController.h"
 #include "TankPawn.generated.h"
 
+
+class ACannon;
 UCLASS()
 class TANK_API ATankPawn : public APawn
 {
@@ -19,6 +21,7 @@ public:
 	void MoveRight(float Value);
 	void RotateRight(float Value);
 
+	void Fire();
 
 	virtual void Tick(float DeltaSeconds)override;
 	virtual void BeginPlay()override;
@@ -38,6 +41,12 @@ protected:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class UCameraComponent* Camera;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Turret | Component")
+	TSubclassOf<ACannon> CannonClass;
+
+	UPROPERTY()
+	ACannon* Cannon;
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Movement")
 	float MoveSpeed=700.0f;
 
@@ -53,6 +62,7 @@ protected:
 	UPROPERTY()
 	class ATankController* TankController;
 
+	void SetupCannon();
 private:
 	float TargetAxisForwardValue=0.0f;
 	float TargetAxisRightValue = 0.0f;
