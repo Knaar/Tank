@@ -7,6 +7,8 @@
         "Includes": [
             "e:\\unreal_5_projects\\tank\\tank\\intermediate\\build\\win64\\unrealeditor\\development\\tank\\definitions.tank.h",
             "e:\\unreal_5_projects\\tank\\tank\\source\\tank\\tankpawn.h",
+            "e:\\unreal_5_projects\\tank\\tank\\source\\tank\\tankcontroller.h",
+            "e:\\unreal_5_projects\\tank\\tank\\intermediate\\build\\win64\\unrealeditor\\inc\\tank\\tankcontroller.generated.h",
             "e:\\unreal_5_projects\\tank\\tank\\intermediate\\build\\win64\\unrealeditor\\inc\\tank\\tankpawn.generated.h"
         ],
         "ImportedModules": [],

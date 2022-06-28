@@ -14,6 +14,7 @@ void EmptyLinkFunctionForGeneratedCodeTankController() {}
 	ENGINE_API UClass* Z_Construct_UClass_APlayerController();
 	UPackage* Z_Construct_UPackage__Script_Tank();
 	TANK_API UClass* Z_Construct_UClass_ATankPawn_NoRegister();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 // End Cross Module References
 	DEFINE_FUNCTION(ATankController::execRotateRight)
 	{
@@ -68,7 +69,9 @@ void EmptyLinkFunctionForGeneratedCodeTankController() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATankController_MoveForward_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "//virtual void BeginPlay()override;\n" },
 		{ "ModuleRelativePath", "TankController.h" },
+		{ "ToolTip", "virtual void BeginPlay()override;" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATankController_MoveForward_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATankController, nullptr, "MoveForward", nullptr, nullptr, sizeof(Z_Construct_UFunction_ATankController_MoveForward_Statics::TankController_eventMoveForward_Parms), Z_Construct_UFunction_ATankController_MoveForward_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ATankController_MoveForward_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ATankController_MoveForward_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ATankController_MoveForward_Statics::Function_MetaDataParams)) };
@@ -161,6 +164,10 @@ void EmptyLinkFunctionForGeneratedCodeTankController() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_TankPawn_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_TankPawn;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MousePos_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_MousePos;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -170,7 +177,7 @@ void EmptyLinkFunctionForGeneratedCodeTankController() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Tank,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ATankController_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ATankController_MoveForward, "MoveForward" }, // 2787930026
+		{ &Z_Construct_UFunction_ATankController_MoveForward, "MoveForward" }, // 19057241
 		{ &Z_Construct_UFunction_ATankController_MoveRight, "MoveRight" }, // 3140844957
 		{ &Z_Construct_UFunction_ATankController_RotateRight, "RotateRight" }, // 873518408
 	};
@@ -188,8 +195,15 @@ void EmptyLinkFunctionForGeneratedCodeTankController() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATankController_Statics::NewProp_TankPawn = { "TankPawn", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATankController, TankPawn), Z_Construct_UClass_ATankPawn_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATankController_Statics::NewProp_TankPawn_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATankController_Statics::NewProp_TankPawn_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATankController_Statics::NewProp_MousePos_MetaData[] = {
+		{ "ModuleRelativePath", "TankController.h" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ATankController_Statics::NewProp_MousePos = { "MousePos", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATankController, MousePos), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_ATankController_Statics::NewProp_MousePos_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATankController_Statics::NewProp_MousePos_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATankController_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankController_Statics::NewProp_TankPawn,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankController_Statics::NewProp_MousePos,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ATankController_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ATankController>::IsAbstract,
@@ -227,9 +241,9 @@ void EmptyLinkFunctionForGeneratedCodeTankController() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATankController, ATankController::StaticClass, TEXT("ATankController"), &Z_Registration_Info_UClass_ATankController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATankController), 2108943961U) },
+		{ Z_Construct_UClass_ATankController, ATankController::StaticClass, TEXT("ATankController"), &Z_Registration_Info_UClass_ATankController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATankController), 492179843U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankController_h_4086297857(TEXT("/Script/Tank"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankController_h_571044930(TEXT("/Script/Tank"),
 		Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankController_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

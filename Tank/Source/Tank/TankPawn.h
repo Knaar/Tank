@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "TankController.h"
 #include "TankPawn.generated.h"
 
 UCLASS()
@@ -20,7 +21,7 @@ public:
 
 
 	virtual void Tick(float DeltaSeconds)override;
-	void BeginPlay();
+	virtual void BeginPlay()override;
 
 protected:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
@@ -29,13 +30,13 @@ protected:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class UStaticMeshComponent* TurretMesh;
 
-	/* Отключил для статичной камеры
+	
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class USpringArmComponent* SpringArm;
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class UCameraComponent* Camera;
-*/
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Movement")
 	float MoveSpeed=700.0f;
 
@@ -45,6 +46,8 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Movement")
 	float InterpolationKey = 0.1f;
 
+	UPROPERTY()
+	class ATankController* TankController;
 
 private:
 	float TargetAxisForwardValue=0.0f;

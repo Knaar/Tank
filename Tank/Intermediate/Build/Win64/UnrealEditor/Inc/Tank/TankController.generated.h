@@ -48,7 +48,7 @@ public: \
 
 #define FID_Tank_Source_Tank_TankController_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ATankController(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API ATankController(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ATankController) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ATankController); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ATankController); \
@@ -60,8 +60,6 @@ public:
 
 
 #define FID_Tank_Source_Tank_TankController_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ATankController(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ATankController(ATankController&&); \
@@ -69,7 +67,7 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ATankController); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ATankController); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ATankController)
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ATankController)
 
 
 #define FID_Tank_Source_Tank_TankController_h_12_PROLOG

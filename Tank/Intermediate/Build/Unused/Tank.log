@@ -3,7 +3,7 @@
   Using 'git status' to determine working set for adaptive non-unity build (E:\Unreal_5_Projects\Tank).
   Building TankEditor...
   Using Visual Studio 2022 14.32.31332 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  [Adaptive Build] Excluded from Tank unity file: TankPawn.cpp
+  [Adaptive Build] Excluded from Tank unity file: TankController.cpp, TankPawn.cpp
   Distributing 4 actions to XGE
   --------------------Build System Warning---------------------------------------
   License is invalid:
@@ -12,10 +12,10 @@
   
   -------------------------------------------------------------------------------
   
-  Build ID: {5B1DFD3E-5B30-43CD-AE4C-A32A02C9E8FF}
+  Build ID: {F86A0736-45C8-4D51-AEF7-EE9EF462E200}
   
   --------------------Project: Default-------------------------------------------
-  [1/4] TankPawn.cpp (0:00.89 at +0:00)
+  [1/4] TankController.cpp (0:00.90 at +0:00)
   [2/4] UnrealEditor-Tank.dll (0:00.54 at +0:00)
      Создается библиотека E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.suppressed.lib и объект E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.suppressed.exp
   [3/4] UnrealEditor-Tank.lib (0:00.07 at +0:01)
@@ -28,5 +28,5 @@
   1 build system warning(s):
      - License is invalid
   
-  Total time in XGE executor: 1,88 seconds
-  Total execution time: 2,30 seconds
+  Total time in XGE executor: 1,89 seconds
+  Total execution time: 2,24 seconds

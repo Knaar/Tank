@@ -14,14 +14,22 @@ class TANK_API ATankController : public APlayerController
 {
 	GENERATED_BODY()
 public:
-	virtual void SetupInputComponent()override;
+	ATankController();
+	virtual void SetupInputComponent() override;
 
 	UPROPERTY()
 	class ATankPawn* TankPawn;
 
-	//virtual void SetPawn(class APawn* InPawn)override;
+	UPROPERTY()
+	FVector MousePos;
+
+	FVector GetMousePosition() { return MousePos; };
+
+	virtual void Tick(float DeltaSeconds) override;
+
+	virtual void SetPawn(APawn* InPawn)override;
 protected:
-	virtual void BeginPlay()override;
+	//virtual void BeginPlay()override;
 	UFUNCTION()
 	void MoveForward(float Value);
 	UFUNCTION()
