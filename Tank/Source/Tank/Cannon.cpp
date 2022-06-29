@@ -1,6 +1,9 @@
 #include "Cannon.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/ArrowComponent.h"
+#include "TimerManager.h"
+#include "Engine/Engine.h"
+
 
 
 // Sets default values
@@ -16,7 +19,59 @@ ACannon::ACannon()
 	ProjectileSpawnPoint->SetupAttachment(CannonMesh);
 }
 
+
+
+//Why It doesn't working???
+void ACannon::Tick(float DeltaSeconds)
+{
+	Super::Tick(DeltaSeconds);
+	UE_LOG(LogTemp, Warning, TEXT("Curr RAV: %d"), bulletsInMagasine);
+	//I tried to show how many bullets in DebagLog
+
+}
+
+
+
+
+
 void ACannon::Fire()
+{
+	if (bulletsInMagasine>0) 
+	{
+		if (!bCanFire)
+		{
+			return;
+		}
+		bCanFire = false;
+		if (CannonType == ECannonType::FireProjectile)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Projectile")));
+			bulletsInMagasine--;
+		}
+		else
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Trace")));
+			bulletsInMagasine--;
+		}
+		GetWorld()->GetTimerManager().SetTimer(ReloadTimer, this, &ACannon::Reload, 1 / FireRate, false);
+
+	}
+	
+	
+	
+	
+}
+
+void ACannon::FireSpecial()
+{
+	
+		GetWorld()->GetTimerManager().SetTimer(ReloadTimer, this, &ACannon::ShootRelease, 0.4f, false);
+		
+	
+	
+}
+
+void ACannon::ShootRelease()
 {
 	if (bulletsInMagasine>0)
 	{
@@ -30,61 +85,24 @@ void ACannon::Fire()
 			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Trace")));
 			bulletsInMagasine--;
 		}
-	}
-	else
-	{
-		GetWorld()->GetTimerManager().SetTimer(ReloadTimer, this, &ACannon::Reload, ReloadTime, false);
-	}
-	/*if (!bCanFire)
-	{
-		return;
-	}
-	bCanFire = false;
-	if (CannonType==ECannonType::FireProjectile)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Projectile")));
-	}
-	else
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Trace")));
-	}
-	*/
-	
-	
-	
-}
-
-void ACannon::FireSpecial()
-{
-	while (bulletsInMagasine>0)
-	{
-		if (CannonType == ECannonType::FireProjectile)
+		SomeIterator++;
+		if (SomeIterator < NumOfAutoShoots)
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Projectile")));
-			bulletsInMagasine--;
-			GetWorld()->GetTimerManager().SetTimer(ReloadTimer, this, &ACannon::IDontKnowHowToUsePause, ShootTime, false);
-
+			FireSpecial();
 		}
-		else
-		{
-			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Trace")));
-			bulletsInMagasine--;
-			GetWorld()->GetTimerManager().SetTimer(ReloadTimer, this, &ACannon::IDontKnowHowToUsePause, ShootTime, false);
-
+		else {
+			SomeIterator = 0;
 		}
-		
 	}
-	GetWorld()->GetTimerManager().SetTimer(ReloadTimer, this, &ACannon::Reload, ReloadTime, false);
+	
+	
 }
 
 void ACannon::Reload()
 {
-	//bCanFire = true;
-	bulletsInMagasine = 5;
+	bCanFire = true;
+	
 }
 
-void ACannon::IDontKnowHowToUsePause()
-{
 
-}
 

@@ -15,12 +15,16 @@ class TANK_API ACannon : public AActor
 public:	
 	
 	ACannon();
-
+	virtual void Tick(float DeltaSeconds)override;
+	
 	void Fire();
+	
 	void FireSpecial();
-
+	void ShootRelease();
 	void Reload();
-	void IDontKnowHowToUsePause();
+
+	int bulletsInMagasine = 10;
+	
 protected:
 	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category="Components")
 	class UStaticMeshComponent* CannonMesh;
@@ -33,14 +37,18 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
 	float ReloadTime=1.0f;
-	
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
-	float ShootTime = 1.2f;
+	int FireRate = 1;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+	int NumOfAutoShoots=3;
+
+	int SomeIterator = 0;
 
 	FTimerHandle ReloadTimer;
 
 private:
 	bool bCanFire = true;
-	int bulletsInMagasine = 5;
+	
 };

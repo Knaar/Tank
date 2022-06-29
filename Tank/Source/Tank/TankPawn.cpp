@@ -90,7 +90,7 @@ void ATankPawn::Tick(float DeltaSeconds)
 	//Short Version Tank Rotation
 	//SetActorRotation(FRotator(0.0f, (GetActorRotation().Yaw + (RotationSpeed * TargetAxisRotationValue * DeltaSeconds)), 0.0f));
 
-	UE_LOG(LogTemp, Warning, TEXT("Curr RAV: %f"), CurrentRotateAxisValue);
+	
 
 	//Turret rotation;
 	FVector MousePos = TankController->GetMousePosition();
@@ -103,6 +103,9 @@ void ATankPawn::Tick(float DeltaSeconds)
 
 	TurretMesh->SetWorldRotation(FMath::Lerp(TurretRotation,targetRotation,RotateInterpolationKey));
 
+	//So i can't release DebugMessage in Cannon.cpp. That's why this string here...Sry Lol
+	GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Red, FString::Printf(TEXT("Bullets : %d"), Cannon->bulletsInMagasine));
+	//But it's still doing the job
 }
 
 void ATankPawn::BeginPlay() 
