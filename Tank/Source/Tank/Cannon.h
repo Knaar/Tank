@@ -20,6 +20,7 @@ public:
 	void Fire();
 	
 	void FireSpecial();
+	void ShootCast();
 	void ShootRelease();
 	void Reload();
 
