@@ -35,10 +35,7 @@ ATankPawn::ATankPawn()
 
 void ATankPawn::MoveForward(float Value)
 {
-	
-	TargetAxisForwardValue = Value;
-	
-	
+	TargetAxisForwardValue = Value;	
 }
 
 void ATankPawn::MoveRight(float Value)
@@ -58,11 +55,19 @@ void ATankPawn::Fire()
 	}
 }
 
+
 void ATankPawn::FireSpecial()
 {
 	if (Cannon) {
 		Cannon->FireSpecial();
 	}
+}
+
+
+
+void ATankPawn::SwapWeapon()
+{
+	Cannon->SwapWeapon();
 }
 
 void ATankPawn::Tick(float DeltaSeconds)
@@ -133,5 +138,10 @@ void ATankPawn::SetupCannon(TSubclassOf<ACannon>NewCannonClass)
 
 	Cannon = GetWorld()->SpawnActor<ACannon>(NewCannonClass, params);
 	Cannon->AttachToComponent(TurretMesh, FAttachmentTransformRules::SnapToTargetIncludingScale);
+}
+
+void ATankPawn::SetBullets(int bullets)
+{
+	Cannon->bulletsInMagasine = Cannon->bulletsInMagasine+bullets;
 }
 

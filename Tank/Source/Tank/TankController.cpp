@@ -3,6 +3,7 @@
 
 #include "TankController.h"
 #include "TankPawn.h"
+#include "Cannon.h"
 
 ATankController::ATankController()
 {
@@ -19,6 +20,7 @@ void ATankController::SetupInputComponent()
 	InputComponent->BindAxis("RotateRight", this, &ATankController::RotateRight);
 	InputComponent->BindAction("Fire",EInputEvent::IE_Pressed,this,&ATankController::Fire);
 	InputComponent->BindAction("FireSpecial",EInputEvent::IE_Pressed,this,&ATankController::FireSpecial);
+	InputComponent->BindAction("SwapWeapon", EInputEvent::IE_Pressed, this, &ATankController::SwapWeapon);
 }
 
 void ATankController::Tick(float DeltaSeconds)
@@ -43,6 +45,7 @@ void ATankController::SetPawn(APawn* InPawn)
 {
 	Super::SetPawn(InPawn);
 	TankPawn = Cast<ATankPawn>(InPawn);
+	
 }
 
 /*
@@ -75,4 +78,11 @@ void ATankController::Fire()
 void ATankController::FireSpecial()
 {
 	TankPawn->FireSpecial();
+}
+
+void ATankController::SwapWeapon()
+{
+	
+	TankPawn->SwapWeapon();
+	
 }

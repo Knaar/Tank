@@ -5,7 +5,9 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "GameStructs.h"
+#include "TankPawn.h"
 #include "Cannon.generated.h"
+
 
 UCLASS()
 class TANK_API ACannon : public AActor
@@ -23,8 +25,9 @@ public:
 	void ShootCast();
 	void ShootRelease();
 	void Reload();
+	void SwapWeapon();
 
-	int bulletsInMagasine = 10;
+	int bulletsInMagasine = 100;
 	
 protected:
 	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category="Components")
@@ -40,7 +43,7 @@ protected:
 	float ReloadTime=1.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
-	int FireRate = 1;
+	float FireRate = 1.0f;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
 	int NumOfAutoShoots=3;
@@ -54,6 +57,9 @@ protected:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
 	TSubclassOf <class AProjectile> ProjectileClass;
+
+	UPROPERTY()
+	ATankPawn* TankPawn;
 
 private:
 	bool bCanFire = true;

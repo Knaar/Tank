@@ -57,6 +57,7 @@ void ACannon::Fire()
 			AProjectile* projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass,
 				ProjectileSpawnPoint->GetComponentLocation(),
 				ProjectileSpawnPoint->GetComponentRotation());
+			bulletsInMagasine--;
 			if (projectile)
 			{
 				projectile->Start();
@@ -66,7 +67,7 @@ void ACannon::Fire()
 		else
 		{
 			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Trace")));
-			bulletsInMagasine--;
+			//bulletsInMagasine--;
 			FHitResult hitResult;
 			FCollisionQueryParams traceParams =
 				FCollisionQueryParams(FName(TEXT("FireTrace")), true, this);
@@ -77,31 +78,20 @@ void ACannon::Fire()
 			FVector start = ProjectileSpawnPoint->GetComponentLocation();
 			FVector end = ProjectileSpawnPoint->GetForwardVector() * FireRange + start;
 			if (GetWorld()->LineTraceSingleByChannel(hitResult, start, end,
-				ECollisionChannel::ECC_Visibility, traceParams))
-			{
+				ECollisionChannel::ECC_Visibility, traceParams)){
 
-				DrawDebugLine(GetWorld(), start, hitResult.Location, FColor::Red, false,
-					0.5f, 0, 5);
-				if (hitResult.GetActor())
-				{
+				DrawDebugLine(GetWorld(), start, hitResult.Location, FColor::Red, false,0.5f, 0, 5);
+				if (hitResult.GetActor()){
 					hitResult.GetActor()->Destroy();
 				}
 			}
-			else
-			{
+			else{
 				DrawDebugLine(GetWorld(), start, end, FColor::Purple, false, 0.5f, 0, 5);
 			}
+			bulletsInMagasine--;
 		}
-
-
-		}
-		GetWorld()->GetTimerManager().SetTimer(ReloadTimer, this, &ACannon::Reload, 1 / FireRate, false);
-
-	
-	
-	
-	
-	
+	}
+	GetWorld()->GetTimerManager().SetTimer(ReloadTimer, this, &ACannon::Reload, FireRate, false);
 }
 
 void ACannon::FireSpecial()
@@ -115,7 +105,7 @@ void ACannon::FireSpecial()
 
 void ACannon::ShootCast()
 {
-	GetWorld()->GetTimerManager().SetTimer(ReloadTimer, this, &ACannon::ShootRelease, 0.4f, false);
+	GetWorld()->GetTimerManager().SetTimer(ReloadTimer, this, &ACannon::ShootRelease, FireRate, false);
 }
 
 void ACannon::ShootRelease()
@@ -181,5 +171,19 @@ void ACannon::Reload()
 	
 }
 
+void ACannon::SwapWeapon()
+{
+	if (CannonType == ECannonType::FireProjectile)
+	{
+		GEngine->AddOnScreenDebugMessage(10, 1, FColor::Green, "Swap to trace");
+		CannonType = ECannonType::FireTrace;
+	}
+	else if (CannonType == ECannonType::FireTrace)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Swap to projectile")));
+		CannonType = ECannonType::FireProjectile;
+	}
+
+}
 
 

@@ -23,11 +23,15 @@ public:
 
 	void Fire();
 	void FireSpecial();
+	void SwapWeapon();
+
 
 	virtual void Tick(float DeltaSeconds)override;
 	virtual void BeginPlay()override;
 
 	void SetupCannon(TSubclassOf<ACannon>NewCannonClass);
+	void SetBullets(int bullets);
+
 protected:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class UStaticMeshComponent* BodyMesh;

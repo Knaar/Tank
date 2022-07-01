@@ -40,4 +40,5 @@ protected:
 	void Fire();
 	UFUNCTION()
 	void FireSpecial();
+	void SwapWeapon();
 };

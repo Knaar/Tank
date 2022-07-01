@@ -1,10 +1,8 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "AmmoBox.h"
 #include "TankPawn.h"
 
-// Sets default values
 AAmmoBox::AAmmoBox()
 {
 	USceneComponent* AmmoSceneComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
