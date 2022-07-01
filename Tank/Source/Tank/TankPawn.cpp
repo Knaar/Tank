@@ -35,7 +35,10 @@ ATankPawn::ATankPawn()
 
 void ATankPawn::MoveForward(float Value)
 {
+	
 	TargetAxisForwardValue = Value;
+	
+	
 }
 
 void ATankPawn::MoveRight(float Value)
@@ -103,9 +106,6 @@ void ATankPawn::Tick(float DeltaSeconds)
 
 	TurretMesh->SetWorldRotation(FMath::Lerp(TurretRotation,targetRotation,RotateInterpolationKey));
 
-	//So i can't release DebugMessage in Cannon.cpp. That's why this string here...Sry Lol
-	GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Red, FString::Printf(TEXT("Bullets : %d"), Cannon->bulletsInMagasine));
-	//But it's still doing the job
 }
 
 void ATankPawn::BeginPlay() 

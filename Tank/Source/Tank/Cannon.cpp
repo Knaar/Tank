@@ -3,6 +3,9 @@
 #include "Components/ArrowComponent.h"
 #include "TimerManager.h"
 #include "Engine/Engine.h"
+#include "Projectile.h"
+#include "Components/SceneComponent.h"
+#include "DrawDebugHelpers.h"
 
 
 
@@ -10,23 +13,26 @@
 ACannon::ACannon()
 {
  	
-	PrimaryActorTick.bCanEverTick = false;
+	PrimaryActorTick.bCanEverTick = true;
+
+	USceneComponent* CanonSceneComponent = CreateDefaultSubobject<USceneComponent>(TEXT("CanonRoot"));
+	RootComponent = CanonSceneComponent;
 
 	CannonMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Cannon"));
-	RootComponent = CannonMesh;
+	CannonMesh->SetupAttachment(RootComponent);
 
 	ProjectileSpawnPoint = CreateDefaultSubobject<UArrowComponent>(TEXT("ProjectileSpawnPoint"));
-	ProjectileSpawnPoint->SetupAttachment(CannonMesh);
+	ProjectileSpawnPoint->SetupAttachment(RootComponent);
 }
 
 
 
-//Why It doesn't working???
+
 void ACannon::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
-	UE_LOG(LogTemp, Warning, TEXT("Curr RAV: %d"), bulletsInMagasine);
-	//I tried to show how many bullets in DebagLog
+	GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Red, FString::Printf(TEXT("Bullets : %d"), bulletsInMagasine));
+	
 
 }
 
@@ -47,15 +53,47 @@ void ACannon::Fire()
 		{
 			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Projectile")));
 			bulletsInMagasine--;
+			AProjectile* projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass, ProjectileSpawnPoint->GetComponentLocation(), ProjectileSpawnPoint->GetComponentRotation());
+			if (projectile)
+			{
+				projectile->Start();
+			}
 		}
 		else
 		{
 			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Trace")));
 			bulletsInMagasine--;
+			FHitResult hitResult;
+			FCollisionQueryParams traceParams =
+				FCollisionQueryParams(FName(TEXT("FireTrace")), true, this);
+			traceParams.bTraceComplex = true;
+			traceParams.bReturnPhysicalMaterial = false;
+
+
+			FVector start = ProjectileSpawnPoint->GetComponentLocation();
+			FVector end = ProjectileSpawnPoint->GetForwardVector() * FireRange + start;
+			if (GetWorld()->LineTraceSingleByChannel(hitResult, start, end,
+				ECollisionChannel::ECC_Visibility, traceParams))
+			{
+
+				DrawDebugLine(GetWorld(), start, hitResult.Location, FColor::Red, false,
+					0.5f, 0, 5);
+				if (hitResult.GetActor())
+				{
+					hitResult.GetActor()->Destroy();
+				}
+			}
+			else
+			{
+				DrawDebugLine(GetWorld(), start, end, FColor::Purple, false, 0.5f, 0, 5);
+			}
+		}
+
+
 		}
 		GetWorld()->GetTimerManager().SetTimer(ReloadTimer, this, &ACannon::Reload, 1 / FireRate, false);
 
-	}
+	
 	
 	
 	
@@ -69,7 +107,6 @@ void ACannon::FireSpecial()
 		bulletsInMagasine--;
 		ShootCast();
 	}
-	
 }
 
 void ACannon::ShootCast()

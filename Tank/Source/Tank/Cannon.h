@@ -36,18 +36,24 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
 	ECannonType CannonType;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
 	float ReloadTime=1.0f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
 	int FireRate = 1;
 	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
 	int NumOfAutoShoots=3;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
+	float FireRange = 4000.0f;
 
 	int SomeIterator = 0;
 
 	FTimerHandle ReloadTimer;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+	TSubclassOf <class AProjectile> ProjectileClass;
 
 private:
 	bool bCanFire = true;
