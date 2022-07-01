@@ -114,12 +114,12 @@ void ATankPawn::BeginPlay()
 	SetActorLocation(FVector(GetActorLocation().X, GetActorLocation().Y, 50.0f));
 
 	TankController = Cast<ATankController>(GetController());
-	SetupCannon();
+	SetupCannon(CannonClass);
 }
 
-void ATankPawn::SetupCannon()
+void ATankPawn::SetupCannon(TSubclassOf<ACannon>NewCannonClass)
 {
-	if (!CannonClass)
+	if (!NewCannonClass)
 	{
 		return;
 	}
@@ -131,7 +131,7 @@ void ATankPawn::SetupCannon()
 	params.Instigator = this;
 	params.Owner = this;
 
-	Cannon = GetWorld()->SpawnActor<ACannon>(CannonClass, params);
+	Cannon = GetWorld()->SpawnActor<ACannon>(NewCannonClass, params);
 	Cannon->AttachToComponent(TurretMesh, FAttachmentTransformRules::SnapToTargetIncludingScale);
 }
 

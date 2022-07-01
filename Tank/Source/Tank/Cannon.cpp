@@ -51,14 +51,18 @@ void ACannon::Fire()
 		bCanFire = false;
 		if (CannonType == ECannonType::FireProjectile)
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Projectile")));
-			bulletsInMagasine--;
-			AProjectile* projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass, ProjectileSpawnPoint->GetComponentLocation(), ProjectileSpawnPoint->GetComponentRotation());
+			GEngine->AddOnScreenDebugMessage(10, 1, FColor::Green, "Fire - projectile");
+			FTransform projectileTransform(ProjectileSpawnPoint->GetComponentRotation(),
+				ProjectileSpawnPoint->GetComponentLocation(), FVector(1));
+			AProjectile* projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass,
+				ProjectileSpawnPoint->GetComponentLocation(),
+				ProjectileSpawnPoint->GetComponentRotation());
 			if (projectile)
 			{
 				projectile->Start();
 			}
 		}
+
 		else
 		{
 			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Trace")));
@@ -118,12 +122,48 @@ void ACannon::ShootRelease()
 {
 		if (CannonType == ECannonType::FireProjectile)
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 1.5f, FColor::Red, FString(TEXT("Fire Projectile")));
+			GEngine->AddOnScreenDebugMessage(10, 1, FColor::Green, "Fire - projectile");
+			FTransform projectileTransform(ProjectileSpawnPoint->GetComponentRotation(),
+				ProjectileSpawnPoint->GetComponentLocation(), FVector(1));
+			AProjectile* projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass,
+				ProjectileSpawnPoint->GetComponentLocation(),
+				ProjectileSpawnPoint->GetComponentRotation());
+			if (projectile)
+			{
+				projectile->Start();
+			}
 		}
 		else
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 1.5f, FColor::Red, FString(TEXT("Fire Trace")));
+			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Trace")));
+			bulletsInMagasine--;
+			FHitResult hitResult;
+			FCollisionQueryParams traceParams =
+				FCollisionQueryParams(FName(TEXT("FireTrace")), true, this);
+			traceParams.bTraceComplex = true;
+			traceParams.bReturnPhysicalMaterial = false;
+
+
+			FVector start = ProjectileSpawnPoint->GetComponentLocation();
+			FVector end = ProjectileSpawnPoint->GetForwardVector() * FireRange + start;
+			if (GetWorld()->LineTraceSingleByChannel(hitResult, start, end,
+				ECollisionChannel::ECC_Visibility, traceParams))
+			{
+
+				DrawDebugLine(GetWorld(), start, hitResult.Location, FColor::Red, false,
+					0.5f, 0, 5);
+				if (hitResult.GetActor())
+				{
+					hitResult.GetActor()->Destroy();
+				}
+			}
+			else
+			{
+				DrawDebugLine(GetWorld(), start, end, FColor::Purple, false, 0.5f, 0, 5);
+			}
 		}
+
+		
 		SomeIterator++;
 		if (SomeIterator < NumOfAutoShoots)
 		{

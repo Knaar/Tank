@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\unreal_5_projects\\tank\\tank\\source\\tank\\ammobox.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\unreal_5_projects\\tank\\tank\\intermediate\\build\\win64\\tankeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "e:\\unreal_5_projects\\tank\\tank\\intermediate\\build\\win64\\unrealeditor\\development\\tank\\definitions.tank.h",
+            "e:\\unreal_5_projects\\tank\\tank\\source\\tank\\ammobox.h",
+            "e:\\unreal_5_projects\\tank\\tank\\intermediate\\build\\win64\\unrealeditor\\inc\\tank\\ammobox.generated.h",
+            "e:\\unreal_5_projects\\tank\\tank\\source\\tank\\tankpawn.h",
+            "e:\\unreal_5_projects\\tank\\tank\\source\\tank\\tankcontroller.h",
+            "e:\\unreal_5_projects\\tank\\tank\\intermediate\\build\\win64\\unrealeditor\\inc\\tank\\tankcontroller.generated.h",
+            "e:\\unreal_5_projects\\tank\\tank\\intermediate\\build\\win64\\unrealeditor\\inc\\tank\\tankpawn.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

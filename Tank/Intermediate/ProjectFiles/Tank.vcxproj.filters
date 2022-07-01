@@ -35,6 +35,12 @@
     <Filter Include="Source\Tank">
       <UniqueIdentifier>{5942346E-68C0-3D69-BC23-05280F817D6F}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\Tank\AmmoBox.cpp">
+      <Filter>Source\Tank</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tank\AmmoBox.h">
+      <Filter>Source\Tank</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Tank\Cannon.cpp">
       <Filter>Source\Tank</Filter>
     </ClCompile>
