@@ -25,7 +25,6 @@ public:
 	void ShootCast();
 	void ShootRelease();
 	void Reload();
-	void SwapWeapon();
 
 	int bulletsInMagasine = 100;
 	

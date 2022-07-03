@@ -50,6 +50,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Turret | Component")
 	TSubclassOf<ACannon> CannonClass;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Turret | Component")
+	TSubclassOf<ACannon> SecondaryCannonClass;
+
 	UPROPERTY()
 	ACannon* Cannon;
 
@@ -77,4 +80,5 @@ private:
 	float CurrentRotateAxisValue = 0.0f;
 
 	float TargetAxisRotationValue = 0.0f;
+	bool bMainWeapon = true;
 };

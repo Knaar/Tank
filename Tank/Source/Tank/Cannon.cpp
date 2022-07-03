@@ -171,19 +171,5 @@ void ACannon::Reload()
 	
 }
 
-void ACannon::SwapWeapon()
-{
-	if (CannonType == ECannonType::FireProjectile)
-	{
-		GEngine->AddOnScreenDebugMessage(10, 1, FColor::Green, "Swap to trace");
-		CannonType = ECannonType::FireTrace;
-	}
-	else if (CannonType == ECannonType::FireTrace)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Swap to projectile")));
-		CannonType = ECannonType::FireProjectile;
-	}
-
-}
 
 

@@ -67,7 +67,16 @@ void ATankPawn::FireSpecial()
 
 void ATankPawn::SwapWeapon()
 {
-	Cannon->SwapWeapon();
+	if (bMainWeapon)
+	{
+		SetupCannon(SecondaryCannonClass);
+		bMainWeapon = false;
+	}
+	else {
+		SetupCannon(CannonClass);
+		bMainWeapon = true;
+	}
+	
 }
 
 void ATankPawn::Tick(float DeltaSeconds)
