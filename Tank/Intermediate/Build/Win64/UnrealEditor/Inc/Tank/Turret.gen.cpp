@@ -18,7 +18,7 @@ void EmptyLinkFunctionForGeneratedCodeTurret() {}
 	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	TANK_API UClass* Z_Construct_UClass_ACannon_NoRegister();
-	TANK_API UClass* Z_Construct_UClass_ATankPawn_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_APawn_NoRegister();
 // End Cross Module References
 	void ATurret::StaticRegisterNativesATurret()
 	{
@@ -59,9 +59,9 @@ void EmptyLinkFunctionForGeneratedCodeTurret() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_Cannon;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_TankPawn_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_PlayerPawn_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_TankPawn;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayerPawn;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_TargetInRange_MetaData[];
 #endif
@@ -71,9 +71,9 @@ void EmptyLinkFunctionForGeneratedCodeTurret() {}
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_TargetingSpeed;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_TargetRate_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_TargetingRate_MetaData[];
 #endif
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_TargetRate;
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_TargetingRate;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Accurency_MetaData[];
 #endif
@@ -138,11 +138,11 @@ void EmptyLinkFunctionForGeneratedCodeTurret() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATurret_Statics::NewProp_Cannon = { "Cannon", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATurret, Cannon), Z_Construct_UClass_ACannon_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATurret_Statics::NewProp_Cannon_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATurret_Statics::NewProp_Cannon_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATurret_Statics::NewProp_TankPawn_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATurret_Statics::NewProp_PlayerPawn_MetaData[] = {
 		{ "ModuleRelativePath", "Turret.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATurret_Statics::NewProp_TankPawn = { "TankPawn", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATurret, TankPawn), Z_Construct_UClass_ATankPawn_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATurret_Statics::NewProp_TankPawn_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATurret_Statics::NewProp_TankPawn_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATurret_Statics::NewProp_PlayerPawn = { "PlayerPawn", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATurret, PlayerPawn), Z_Construct_UClass_APawn_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATurret_Statics::NewProp_PlayerPawn_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATurret_Statics::NewProp_PlayerPawn_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATurret_Statics::NewProp_TargetInRange_MetaData[] = {
 		{ "Category", "Targeting" },
@@ -158,12 +158,12 @@ void EmptyLinkFunctionForGeneratedCodeTurret() {}
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATurret_Statics::NewProp_TargetingSpeed = { "TargetingSpeed", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATurret, TargetingSpeed), METADATA_PARAMS(Z_Construct_UClass_ATurret_Statics::NewProp_TargetingSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATurret_Statics::NewProp_TargetingSpeed_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATurret_Statics::NewProp_TargetRate_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATurret_Statics::NewProp_TargetingRate_MetaData[] = {
 		{ "Category", "Targeting" },
 		{ "ModuleRelativePath", "Turret.h" },
 	};
 #endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATurret_Statics::NewProp_TargetRate = { "TargetRate", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATurret, TargetRate), METADATA_PARAMS(Z_Construct_UClass_ATurret_Statics::NewProp_TargetRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATurret_Statics::NewProp_TargetRate_MetaData)) };
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATurret_Statics::NewProp_TargetingRate = { "TargetingRate", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATurret, TargetingRate), METADATA_PARAMS(Z_Construct_UClass_ATurret_Statics::NewProp_TargetingRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATurret_Statics::NewProp_TargetingRate_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATurret_Statics::NewProp_Accurency_MetaData[] = {
 		{ "Category", "Targeting" },
@@ -178,10 +178,10 @@ void EmptyLinkFunctionForGeneratedCodeTurret() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATurret_Statics::NewProp_HitCollider,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATurret_Statics::NewProp_CannonClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATurret_Statics::NewProp_Cannon,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATurret_Statics::NewProp_TankPawn,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATurret_Statics::NewProp_PlayerPawn,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATurret_Statics::NewProp_TargetInRange,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATurret_Statics::NewProp_TargetingSpeed,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATurret_Statics::NewProp_TargetRate,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATurret_Statics::NewProp_TargetingRate,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATurret_Statics::NewProp_Accurency,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ATurret_Statics::StaticCppClassTypeInfo = {
@@ -220,9 +220,9 @@ void EmptyLinkFunctionForGeneratedCodeTurret() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_Turret_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATurret, ATurret::StaticClass, TEXT("ATurret"), &Z_Registration_Info_UClass_ATurret, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATurret), 3635666954U) },
+		{ Z_Construct_UClass_ATurret, ATurret::StaticClass, TEXT("ATurret"), &Z_Registration_Info_UClass_ATurret, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATurret), 1063951156U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_Turret_h_1145450748(TEXT("/Script/Tank"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_Turret_h_3554172808(TEXT("/Script/Tank"),
 		Z_CompiledInDeferFile_FID_Tank_Source_Tank_Turret_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Tank_Source_Tank_Turret_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

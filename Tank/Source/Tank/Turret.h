@@ -3,9 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
 #include "Components/ArrowComponent.h"
 #include "Components/BoxComponent.h"
+#include "GameFramework/Actor.h"
 #include "Cannon.h"
 #include "Turret.generated.h"
 
@@ -36,7 +36,7 @@ public:
 	ACannon *Cannon;
 
 	UPROPERTY()
-	ATankPawn* TankPawn;
+	APawn* PlayerPawn;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Targeting")
 	float TargetInRange=1000;
@@ -45,13 +45,13 @@ public:
 	float TargetingSpeed =0.1f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Targeting")
-	float TargetRate =0.005f;
+	float TargetingRate =0.005f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Targeting")
 	float Accurency=10;
 
 	const FString BodyMeshPath = "StaticMesh'/Game/CSC/Meshes/SM_CSC_Tower1.SM_CSC_Tower1'";
-	const FString TurretMeshPath = "StaticMesh'/Game/CSC/Meshes/SM_CSC_Gun1.SM_CSC_Gun1'";
+	const FString TurretMeshPath = "StaticMesh'/Game/CSC/Meshes/SM_CSC_Gun6.SM_CSC_Gun6'";
 
 public:
 	ATurret();

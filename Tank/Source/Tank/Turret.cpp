@@ -17,10 +17,10 @@ ATurret::ATurret()
 	RootComponent = BodyMesh;
 
 	TurretMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("TurretTurret"));
-	TurretMesh->SetupAttachment(BodyMesh);
+	TurretMesh->AttachToComponent(BodyMesh,FAttachmentTransformRules::KeepRelativeTransform);
 
 	CannonSetupPoint = CreateDefaultSubobject<UArrowComponent>(TEXT("Cannon Setup"));
-	CannonSetupPoint->SetupAttachment(TurretMesh);
+	CannonSetupPoint->AttachToComponent(TurretMesh, FAttachmentTransformRules::KeepRelativeTransform);
 
 	HitCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("HitCollider"));
 	HitCollider->SetupAttachment(TurretMesh);
@@ -41,36 +41,66 @@ ATurret::ATurret()
 void ATurret::BeginPlay()
 {
 	Super::BeginPlay();
+	FActorSpawnParameters params;
+	params.Owner = this;
+
+	Cannon = GetWorld()->SpawnActor<ACannon>(CannonClass, params);
+	Cannon->AttachToComponent(CannonSetupPoint, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+
+	PlayerPawn = GetWorld()->GetFirstPlayerController()->GetPawn();
+
+	FTimerHandle _targetingTimerHandle;
+	GetWorld()->GetTimerManager().SetTimer(_targetingTimerHandle, this, &ATurret::Targeting, TargetingRate, true, TargetingRate);
 }
 
 void ATurret::Destroyed()
 {
-
+	if (Cannon) {
+		Cannon->Destroy();
+	}
 }
 
 void ATurret::Targeting()
 {
-
+	if (IsPlayerINRange()) {
+		RotateToPlayer();
+	}
+	if (CanFire())
+	{
+		Fire();
+	}
 }
 
 void ATurret::RotateToPlayer()
 {
-
+	FRotator targerRotation = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), PlayerPawn->GetActorLocation());
+	FRotator currRotation = TurretMesh->GetComponentRotation();
+	targerRotation.Pitch = currRotation.Pitch;
+	targerRotation.Roll = currRotation.Roll;
+	TurretMesh->SetWorldRotation(FMath::Lerp(currRotation, targerRotation, TargetingSpeed));
 }
 
 bool ATurret::IsPlayerINRange()
 {
-	return true;
+	return FVector::Distance(PlayerPawn->GetActorLocation(),GetActorLocation())<=TargetInRange;
 }
 
 bool ATurret::CanFire()
 {
-	return true;
+	FVector TargetingDir = TurretMesh->GetForwardVector();
+	FVector dirToPlayer = PlayerPawn->GetActorLocation() - GetActorLocation(); 
+
+	dirToPlayer.Normalize();
+	float aimAngle = FMath::RadiansToDegrees(acosf(FVector::DotProduct(TargetingDir, dirToPlayer)));
+	return aimAngle <= Accurency;
 
 }
 
 void ATurret::Fire()
 {
-
+	if (Cannon)
+	{
+		Cannon->Fire();
+	}
 }
 
