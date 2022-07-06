@@ -85,6 +85,13 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 template<> TANK_API UClass* StaticClass<class UGameStructs>();
 
+#define FID_Tank_Source_Tank_GameStructs_h_26_GENERATED_BODY \
+	friend struct Z_Construct_UScriptStruct_FDamageData_Statics; \
+	TANK_API static class UScriptStruct* StaticStruct();
+
+
+template<> TANK_API UScriptStruct* StaticStruct<struct FDamageData>();
+
 #undef CURRENT_FILE_ID
 #define CURRENT_FILE_ID FID_Tank_Source_Tank_GameStructs_h
 

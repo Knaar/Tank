@@ -55,6 +55,7 @@ public:
 
 public:
 	ATurret();
+	void TakeDamage(FDamageData DamageData);
 protected:
 	virtual void BeginPlay()override;
 	virtual void Destroyed()override;

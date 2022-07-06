@@ -53,6 +53,12 @@
     <ClInclude Include="..\..\Source\Tank\Cannon.h">
       <Filter>Source\Tank</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Tank\DamageTaker.cpp">
+      <Filter>Source\Tank</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tank\DamageTaker.h">
+      <Filter>Source\Tank</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Tank\GameStruct.cpp">
       <Filter>Source\Tank</Filter>
     </ClCompile>
