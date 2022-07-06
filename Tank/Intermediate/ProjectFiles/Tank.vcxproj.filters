@@ -65,6 +65,12 @@
     <ClInclude Include="..\..\Source\Tank\GameStructs.h">
       <Filter>Source\Tank</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Tank\ParticlePool.cpp">
+      <Filter>Source\Tank</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tank\ParticlePool.h">
+      <Filter>Source\Tank</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Tank\Projectile.cpp">
       <Filter>Source\Tank</Filter>
     </ClCompile>
@@ -96,6 +102,12 @@
       <Filter>Source\Tank</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Tank\TankPawn.h">
+      <Filter>Source\Tank</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Tank\Turret.cpp">
+      <Filter>Source\Tank</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tank\Turret.h">
       <Filter>Source\Tank</Filter>
     </ClInclude>
   </ItemGroup>
