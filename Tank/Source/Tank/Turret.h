@@ -14,14 +14,14 @@ class TANK_API ATurret : public AActor
 {
 	GENERATED_BODY()
 
-protected:
+public:
 	
-	ATurret();
+	
 	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category="Components")
 	UStaticMeshComponent *BodyMesh;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
-	UStaticMeshComponent* TerretMesh;
+	UStaticMeshComponent* TurretMesh;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
 	UArrowComponent* CannonSetupPoint;
@@ -41,12 +41,27 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Targeting")
 	float TargetInRange=1000;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Targeting")
 	float TargetingSpeed =0.1f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Targeting")
 	float TargetRate =0.005f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Targeting")
 	float Accurency=10;
+
+	const FString BodyMeshPath = "StaticMesh'/Game/CSC/Meshes/SM_CSC_Tower1.SM_CSC_Tower1'";
+	const FString TurretMeshPath = "StaticMesh'/Game/CSC/Meshes/SM_CSC_Gun1.SM_CSC_Gun1'";
+
+public:
+	ATurret();
+protected:
+	virtual void BeginPlay()override;
+	virtual void Destroyed()override;
+
+	void Targeting();
+	void RotateToPlayer();
+	bool IsPlayerINRange();
+	bool CanFire();
+	void Fire();
 };
