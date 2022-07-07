@@ -1,11 +1,12 @@
 #include "Turret.h"
-#include "TankController.h"
-#include "Kismet/KismetMathLibrary.h"
+#include "Components\StaticMeshComponent.h"
+#include "Components\ArrowComponent.h"
+#include "Components\BoxComponent.h"
 #include "Cannon.h"
-#include "TimerManager.h"
-#include "Components/StaticMeshComponent.h"
-#include "Components/ArrowComponent.h"
-#include "Components/BoxComponent.h"
+#include "Kismet\KismetMathLibrary.h"
+#include "UObject\UObjectGlobals.h"
+#include "Engine\StaticMesh.h"
+#include "HealthComponent.h"
 
 
 
@@ -25,6 +26,10 @@ ATurret::ATurret()
 	HitCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("HitCollider"));
 	HitCollider->SetupAttachment(TurretMesh);
 
+	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("Health Component"));
+	HealthComponent->OnDie.AddUObject(this, &ATurret::Die);
+	HealthComponent->OnDamaged.AddUObject(this, &ATurret::DamageTaked);
+
 	UStaticMesh* TurretMeshTemp = LoadObject<UStaticMesh>(this, *TurretMeshPath);
 	if (TurretMeshTemp)
 	{
@@ -40,7 +45,7 @@ ATurret::ATurret()
 
 void ATurret::TakeDamage(FDamageData DamageData)
 {
-	UE_LOG(LogTemp,Warning,TEXT("Turret %s taked damage:%f"),*GetName(),DamageData.DamageValue)
+	HealthComponent->TakeDamage(DamageData);
 }
 
 void ATurret::BeginPlay()
@@ -107,5 +112,15 @@ void ATurret::Fire()
 	{
 		Cannon->Fire();
 	}
+}
+
+void ATurret::Die()
+{
+	Destroy();
+}
+
+void ATurret::DamageTaked(float DamageValue)
+{
+	UE_LOG(LogTemp, Warning, TEXT("Turr %s taked damage: %f Health:%f"), *GetName(), DamageValue, HealthComponent->GetHealth());
 }
 

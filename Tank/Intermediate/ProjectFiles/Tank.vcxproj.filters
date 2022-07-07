@@ -59,16 +59,16 @@
     <ClInclude Include="..\..\Source\Tank\DamageTaker.h">
       <Filter>Source\Tank</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Tank\GameStruct.cpp">
-      <Filter>Source\Tank</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Tank\GameStruct.h">
-      <Filter>Source\Tank</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\Tank\GameStructs.cpp">
       <Filter>Source\Tank</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Tank\GameStructs.h">
+      <Filter>Source\Tank</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Tank\HealthComponent.cpp">
+      <Filter>Source\Tank</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tank\HealthComponent.h">
       <Filter>Source\Tank</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Tank\ParticlePool.cpp">

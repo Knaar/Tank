@@ -1,14 +1,10 @@
 ﻿  Using bundled DotNet SDK
   Log file: C:\Users\Bordunos\AppData\Local\UnrealBuildTool\Log.txt
   Using 'git status' to determine working set for adaptive non-unity build (E:\Unreal_5_Projects\Tank).
-  Invalidating makefile for TankEditor (working set of source files changed)
-  Parsing headers for TankEditor
-    Running UnrealHeaderTool "E:\Unreal_5_Projects\Tank\Tank\Tank.uproject" "E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\TankEditor\Development\TankEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\Bordunos\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
-  Reflection code generated for TankEditor in 0,7583406 seconds
   Building TankEditor...
   Using Visual Studio 2022 14.32.31332 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  [Adaptive Build] Excluded from Tank unity file: DamageTaker.cpp, GameStructs.cpp, Turret.cpp
-  Distributing 8 actions to XGE
+  [Adaptive Build] Excluded from Tank unity file: GameStructs.cpp, HealthComponent.cpp, Projectile.cpp, Turret.cpp
+  Distributing 4 actions to XGE
   --------------------Build System Warning---------------------------------------
   License is invalid:
       License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
@@ -16,27 +12,15 @@
   
   -------------------------------------------------------------------------------
   
-  Build ID: {03A412A0-AA36-4D5E-866D-95D5C070F560}
+  Build ID: {C5C679E0-5F99-4C56-85F7-0BE883BFA50C}
   
   --------------------Project: Default-------------------------------------------
-  [1/8] DamageTaker.gen.cpp (0:01.17 at +0:00)
-  [2/8] DamageTaker.cpp (0:01.12 at +0:01)
-  [3/8] Turret.cpp (0:01.54 at +0:02)
-E:\Unreal_5_Projects\Tank\Tank\Source\Tank\Turret.h(58): warning C4263: void ATurret::TakeDamage(FDamageData): функция-член не переопределяет ни одной виртуальной функции-члена базового класса
-E:\Unreal_5_Projects\Tank\Tank\Source\Tank\Turret.h(68): warning C4264: float AActor::TakeDamage(float,const FDamageEvent &,AController *,AActor *): нет доступного переопределения для виртуальной функции-члена из базового класса "AActor"; функция скрыта
-  E:\UE_5.0\Engine\Source\Runtime\Engine\Classes\GameFramework\Actor.h(3117): note:  см. объявление "AActor::TakeDamage"
-  E:\UE_5.0\Engine\Source\Runtime\Engine\Public\ContentStreaming.h(34): note:  см. объявление "AActor"
-  [4/8] Tank.init.gen.cpp (0:00.56 at +0:03)
-  [5/8] Turret.gen.cpp (0:01.18 at +0:04)
-E:\Unreal_5_Projects\Tank\Tank\Source\Tank\Turret.h(58): warning C4263: void ATurret::TakeDamage(FDamageData): функция-член не переопределяет ни одной виртуальной функции-члена базового класса
-E:\Unreal_5_Projects\Tank\Tank\Source\Tank\Turret.h(68): warning C4264: float AActor::TakeDamage(float,const FDamageEvent &,AController *,AActor *): нет доступного переопределения для виртуальной функции-члена из базового класса "AActor"; функция скрыта
-  E:\UE_5.0\Engine\Source\Runtime\Engine\Classes\GameFramework\Actor.h(3117): note:  см. объявление "AActor::TakeDamage"
-  E:\UE_5.0\Engine\Source\Runtime\Engine\Public\ContentStreaming.h(34): note:  см. объявление "AActor"
-  [6/8] UnrealEditor-Tank.dll (0:00.54 at +0:05)
+  [1/4] Projectile.cpp (0:01.25 at +0:00)
+  [2/4] UnrealEditor-Tank.dll (0:00.56 at +0:01)
      Создается библиотека E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.suppressed.lib и объект E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.suppressed.exp
-  [7/8] UnrealEditor-Tank.lib (0:00.09 at +0:06)
+  [3/4] UnrealEditor-Tank.lib (0:00.09 at +0:01)
      Создается библиотека E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.lib и объект E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.exp
-  [8/8] TankEditor.target (0:00.18 at +0:06)
+  [4/4] TankEditor.target (0:00.20 at +0:01)
   ---------------------- Done ----------------------
   
       Rebuild All: 1 succeeded, 0 failed, 0 skipped
@@ -44,5 +28,5 @@ E:\Unreal_5_Projects\Tank\Tank\Source\Tank\Turret.h(68): warning C4264: float AA
   1 build system warning(s):
      - License is invalid
   
-  Total time in XGE executor: 6,58 seconds
-  Total execution time: 8,39 seconds
+  Total time in XGE executor: 2,29 seconds
+  Total execution time: 2,63 seconds

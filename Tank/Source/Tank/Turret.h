@@ -3,19 +3,23 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Components/ArrowComponent.h"
-#include "Components/BoxComponent.h"
 #include "GameFramework/Actor.h"
-#include "Cannon.h"
+#include "DamageTaker.h"
+#include "GameStructs.h"
 #include "Turret.generated.h"
 
+class UStaticMeshComponent;
+class ACannon;
 UCLASS()
-class TANK_API ATurret : public AActor
+class TANK_API ATurret : public AActor,public IDamageTaker
 {
 	GENERATED_BODY()
 
 public:
-	
+	ATurret();
+
+
+	virtual void TakeDamage(FDamageData DamageData);
 	
 	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category="Components")
 	UStaticMeshComponent *BodyMesh;
@@ -24,10 +28,13 @@ public:
 	UStaticMeshComponent* TurretMesh;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
-	UArrowComponent* CannonSetupPoint;
+	class UArrowComponent* CannonSetupPoint;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
-	UBoxComponent* HitCollider;
+	class UBoxComponent* HitCollider;
+
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
+	class UHealthComponent* HealthComponent;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
 	TSubclassOf<ACannon> CannonClass;
@@ -36,7 +43,7 @@ public:
 	ACannon *Cannon;
 
 	UPROPERTY()
-	APawn* PlayerPawn;
+	class APawn* PlayerPawn;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Targeting")
 	float TargetInRange=1000;
@@ -53,16 +60,22 @@ public:
 	const FString BodyMeshPath = "StaticMesh'/Game/CSC/Meshes/SM_CSC_Tower1.SM_CSC_Tower1'";
 	const FString TurretMeshPath = "StaticMesh'/Game/CSC/Meshes/SM_CSC_Gun6.SM_CSC_Gun6'";
 
-public:
-	ATurret();
-	void TakeDamage(FDamageData DamageData);
+	
 protected:
 	virtual void BeginPlay()override;
-	virtual void Destroyed()override;
+
+	void Destroyed();
 
 	void Targeting();
 	void RotateToPlayer();
 	bool IsPlayerINRange();
 	bool CanFire();
 	void Fire();
+
+public:
+	UFUNCTION()
+	void Die();
+
+	UFUNCTION()
+	void DamageTaked(float DamageValue);
 };
