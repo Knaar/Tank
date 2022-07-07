@@ -8,6 +8,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+struct FDamageData;
 #ifdef TANK_Turret_generated_h
 #error "Turret.generated.h already included, missing '#pragma once' in Turret.h"
 #endif
@@ -17,13 +18,15 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_Tank_Source_Tank_Turret_h_16_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execDamageTaked); \
-	DECLARE_FUNCTION(execDie);
+	DECLARE_FUNCTION(execDie); \
+	DECLARE_FUNCTION(execTakeDamage);
 
 
 #define FID_Tank_Source_Tank_Turret_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execDamageTaked); \
-	DECLARE_FUNCTION(execDie);
+	DECLARE_FUNCTION(execDie); \
+	DECLARE_FUNCTION(execTakeDamage);
 
 
 #define FID_Tank_Source_Tank_Turret_h_16_INCLASS_NO_PURE_DECLS \

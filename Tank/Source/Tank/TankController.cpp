@@ -3,7 +3,6 @@
 
 #include "TankController.h"
 #include "TankPawn.h"
-#include "Cannon.h"
 
 ATankController::ATankController()
 {
@@ -15,6 +14,7 @@ ATankController::ATankController()
 void ATankController::SetupInputComponent()
 {
 	Super::SetupInputComponent();
+
 	InputComponent->BindAxis("MoveForward", this, &ATankController::MoveForward);
 	InputComponent->BindAxis("MoveRight", this, &ATankController::MoveRight);
 	InputComponent->BindAxis("RotateRight", this, &ATankController::RotateRight);
@@ -28,14 +28,17 @@ void ATankController::Tick(float DeltaSeconds)
 	Super::Tick(DeltaSeconds);
 
 	FVector mouseDirection;
-	DeprojectMousePositionToWorld(MousePos, mouseDirection);//с помощью этого метода получаем позицию мыши и её вращение
-	FVector TankPosition = TankPawn->GetActorLocation();
-	MousePos.Z = TankPosition.Z;
+	DeprojectMousePositionToWorld(MousePos, mouseDirection);
+	if (TankPawn)
+	{
+		FVector TankPosition = TankPawn->GetActorLocation();
+		MousePos.Z = TankPosition.Z;
 
-	FVector dir = MousePos - TankPosition;//вектор направления
-	dir.Normalize();
-	MousePos = TankPosition + dir * 1000.0f;
-	//DrawDebugLine(GetWorld(), TankPosition, MousePos, FColor::Green, false, 0.5f ,1, 5);
+		FVector dir = MousePos - TankPosition;
+		dir.Normalize();
+		MousePos = TankPosition + dir * 1000.0f;
+	}
+	
 
 	
 }
@@ -48,41 +51,53 @@ void ATankController::SetPawn(APawn* InPawn)
 	
 }
 
-/*
-void ATankController::BeginPlay()
-{
-	Super::BeginPlay();
-	TankPawn = Cast<ATankPawn>(GetPawn());
-}*/
 
 void ATankController::MoveForward(float Value)
 {
-	TankPawn->MoveForward(Value);
+	if (TankPawn)
+	{
+		TankPawn->MoveForward(Value);
+	}
 }
 
 void ATankController::MoveRight(float Value)
 {
-	TankPawn->MoveRight(Value);
+	if (TankPawn)
+	{
+		TankPawn->MoveRight(Value);
+	}
 }
 
 void ATankController::RotateRight(float Value)
 {
-	TankPawn->RotateRight(Value);
+	if (TankPawn)
+	{
+		TankPawn->RotateRight(Value);
+	}
 }
 
 void ATankController::Fire()
 {
-	TankPawn->Fire();
+	if (TankPawn) 
+	{
+		TankPawn->Fire();
+	}
 }
 
 void ATankController::FireSpecial()
 {
-	TankPawn->FireSpecial();
+	if (TankPawn)
+	{
+		TankPawn->FireSpecial();
+	}
+	
 }
 
 void ATankController::SwapWeapon()
 {
 	
-	TankPawn->SwapWeapon();
-	
+	if (TankPawn)
+	{
+		TankPawn->SwapWeapon();
+	}
 }

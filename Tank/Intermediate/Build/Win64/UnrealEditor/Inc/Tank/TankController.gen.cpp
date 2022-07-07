@@ -129,9 +129,7 @@ void EmptyLinkFunctionForGeneratedCodeTankController() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATankController_MoveForward_Statics::Function_MetaDataParams[] = {
-		{ "Comment", "//virtual void BeginPlay()override;\n" },
 		{ "ModuleRelativePath", "TankController.h" },
-		{ "ToolTip", "virtual void BeginPlay()override;" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATankController_MoveForward_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATankController, nullptr, "MoveForward", nullptr, nullptr, sizeof(Z_Construct_UFunction_ATankController_MoveForward_Statics::TankController_eventMoveForward_Parms), Z_Construct_UFunction_ATankController_MoveForward_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ATankController_MoveForward_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ATankController_MoveForward_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ATankController_MoveForward_Statics::Function_MetaDataParams)) };
@@ -239,7 +237,7 @@ void EmptyLinkFunctionForGeneratedCodeTankController() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_ATankController_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ATankController_Fire, "Fire" }, // 609362364
 		{ &Z_Construct_UFunction_ATankController_FireSpecial, "FireSpecial" }, // 2983311765
-		{ &Z_Construct_UFunction_ATankController_MoveForward, "MoveForward" }, // 19057241
+		{ &Z_Construct_UFunction_ATankController_MoveForward, "MoveForward" }, // 2787930026
 		{ &Z_Construct_UFunction_ATankController_MoveRight, "MoveRight" }, // 3140844957
 		{ &Z_Construct_UFunction_ATankController_RotateRight, "RotateRight" }, // 873518408
 	};
@@ -303,9 +301,9 @@ void EmptyLinkFunctionForGeneratedCodeTankController() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATankController, ATankController::StaticClass, TEXT("ATankController"), &Z_Registration_Info_UClass_ATankController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATankController), 3567739096U) },
+		{ Z_Construct_UClass_ATankController, ATankController::StaticClass, TEXT("ATankController"), &Z_Registration_Info_UClass_ATankController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATankController), 968797465U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankController_h_2088557939(TEXT("/Script/Tank"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankController_h_838506770(TEXT("/Script/Tank"),
 		Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankController_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

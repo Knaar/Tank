@@ -18,7 +18,7 @@ class TANK_API ATurret : public AActor,public IDamageTaker
 public:
 	ATurret();
 
-
+	UFUNCTION()
 	virtual void TakeDamage(FDamageData DamageData);
 	
 	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category="Components")

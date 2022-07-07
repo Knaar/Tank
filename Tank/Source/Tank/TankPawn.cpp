@@ -2,12 +2,15 @@
 
 
 #include "TankPawn.h"
-#include "Components/StaticMeshComponent.h"
-#include "GameFramework/SpringArmComponent.h"
-#include "Camera/CameraComponent.h"
+#include "Components\StaticMeshComponent.h"
+#include "GameFramework\SpringArmComponent.h"
+#include "Camera\CameraComponent.h"
 #include "TankController.h"
-#include "Kismet/KismetMathLibrary.h"
+#include "Kismet\KismetMathLibrary.h"
 #include "Cannon.h"
+#include "Components\ArrowComponent.h"
+#include "HealthComponent.h"
+#include "Components/BoxComponent.h"
 
 
 ATankPawn::ATankPawn()
@@ -30,12 +33,21 @@ ATankPawn::ATankPawn()
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->SetupAttachment(SpringArm);
+
+	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("Health Component"));
+	HealthComponent->OnDie.AddUObject(this, &ATankPawn::Die);
+	HealthComponent->OnDamaged.AddUObject(this, &ATankPawn::DamageTaked);
+
+	HitCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("Hit Collider"));
+	HitCollider->SetupAttachment(BodyMesh);
 	
 }
 
 void ATankPawn::MoveForward(float Value)
 {
-	TargetAxisForwardValue = Value;	
+	
+	TargetAxisForwardValue = Value;
+	
 }
 
 void ATankPawn::MoveRight(float Value)
@@ -104,11 +116,6 @@ void ATankPawn::Tick(float DeltaSeconds)
 	FRotator newRotation = FRotator(0.0f, YawRotation, 0.0f);
 	SetActorRotation(newRotation);
 
-	//Short Version Tank Rotation
-	//SetActorRotation(FRotator(0.0f, (GetActorRotation().Yaw + (RotationSpeed * TargetAxisRotationValue * DeltaSeconds)), 0.0f));
-
-	
-
 	//Turret rotation;
 	FVector MousePos = TankController->GetMousePosition();
 
@@ -154,3 +161,17 @@ void ATankPawn::SetBullets(int bullets)
 	Cannon->bulletsInMagasine = Cannon->bulletsInMagasine+bullets;
 }
 
+void ATankPawn::TakeDamage(FDamageData DamageData)
+{
+	HealthComponent->TakeDamage(DamageData);
+}
+
+void ATankPawn::Die()
+{
+	Destroy();
+}
+
+void ATankPawn::DamageTaked(float DamageValue)
+{
+	UE_LOG(LogTemp, Warning, TEXT("Turr %s taked damage: %f Health:%f"), *GetName(), DamageValue, HealthComponent->GetHealth());
+}
