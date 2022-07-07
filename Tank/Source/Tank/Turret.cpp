@@ -106,14 +106,6 @@ bool ATurret::CanFire()
 
 }
 
-void ATurret::Fire()
-{
-	if (Cannon)
-	{
-		Cannon->Fire();
-	}
-}
-
 
 void ATurret::DamageTaked(float DamageValue)
 {

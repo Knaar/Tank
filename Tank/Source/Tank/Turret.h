@@ -40,8 +40,7 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
 	TSubclassOf<ACannon> CannonClass;
 
-	UPROPERTY()
-	ACannon *Cannon;
+	
 
 	UPROPERTY()
 	class APawn* PlayerPawn;
@@ -71,7 +70,6 @@ protected:
 	void RotateToPlayer();
 	bool IsPlayerINRange();
 	bool CanFire();
-	void Fire();
 
 public:
 	

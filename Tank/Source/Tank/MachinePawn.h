@@ -15,9 +15,14 @@ class TANK_API AMachinePawn : public APawn
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this pawn's properties
 	AMachinePawn();
 
+	UPROPERTY()
+	class ACannon* Cannon;
+
+
+	void Fire();
+	void FireSpecial();
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

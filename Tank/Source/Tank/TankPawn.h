@@ -23,8 +23,7 @@ public:
 	void MoveRight(float Value);
 	void RotateRight(float Value);
 
-	void Fire();
-	void FireSpecial();
+	
 	void SwapWeapon();
 
 
@@ -65,8 +64,7 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Turret | Component")
 	TSubclassOf<ACannon> SecondaryCannonClass;
 
-	UPROPERTY()
-	ACannon* Cannon;
+	
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Movement")
 	float MoveSpeed=700.0f;

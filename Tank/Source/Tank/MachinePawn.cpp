@@ -27,5 +27,18 @@ void AMachinePawn::Die()
 {
 	Destroy();
 }
+void AMachinePawn::Fire()
+{
+	if (Cannon) {
+		Cannon->Fire();
+	}
+}
 
+
+void AMachinePawn::FireSpecial()
+{
+	if (Cannon) {
+		Cannon->FireSpecial();
+	}
+}
 

@@ -60,20 +60,7 @@ void ATankPawn::RotateRight(float Value)
 	TargetAxisRotationValue = Value;
 }
 
-void ATankPawn::Fire()
-{
-	if (Cannon) {
-		Cannon->Fire();
-	}
-}
 
-
-void ATankPawn::FireSpecial()
-{
-	if (Cannon) {
-		Cannon->FireSpecial();
-	}
-}
 
 
 
