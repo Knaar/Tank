@@ -50,6 +50,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
 	float FireRange = 4000.0f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+	float Damage = 10.0f;
+
 	int SomeIterator = 0;
 
 	FTimerHandle ReloadTimer;

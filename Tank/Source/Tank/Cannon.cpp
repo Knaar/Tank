@@ -6,6 +6,7 @@
 #include "Projectile.h"
 #include "Components/SceneComponent.h"
 #include "DrawDebugHelpers.h"
+#include "GameStructs.h"
 
 
 
@@ -77,12 +78,32 @@ void ACannon::Fire()
 
 			FVector start = ProjectileSpawnPoint->GetComponentLocation();
 			FVector end = ProjectileSpawnPoint->GetForwardVector() * FireRange + start;
+			AActor* owner = GetOwner();
+
 			if (GetWorld()->LineTraceSingleByChannel(hitResult, start, end,
 				ECollisionChannel::ECC_Visibility, traceParams)){
 
 				DrawDebugLine(GetWorld(), start, hitResult.Location, FColor::Red, false,0.5f, 0, 5);
 				if (hitResult.GetActor()){
-					hitResult.GetActor()->Destroy();
+
+					IDamageTaker* damageTakerActor = Cast<IDamageTaker>(hitResult.GetActor());
+					if (damageTakerActor)
+					{
+						FDamageData damageData;
+						damageData.DamageValue = Damage;
+						damageData.Instigator = owner;
+						damageData.DamageMaker = this;
+
+						damageTakerActor->TakeDamage(damageData);
+					}
+					else
+					{
+						hitResult.GetActor()->Destroy();
+					}
+					
+
+
+
 				}
 			}
 			else{
