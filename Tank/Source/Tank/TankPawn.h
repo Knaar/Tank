@@ -6,12 +6,13 @@
 #include "GameFramework/Pawn.h"
 #include "GameStructs.h"
 #include "DamageTaker.h"
+#include "MachinePawn.h"
 #include "TankPawn.generated.h"
 
 
 class ACannon;
 UCLASS()
-class TANK_API ATankPawn : public APawn,public IDamageTaker
+class TANK_API ATankPawn : public AMachinePawn,public IDamageTaker
 {
 	GENERATED_BODY()
 
@@ -94,8 +95,7 @@ private:
 	bool bMainWeapon = true;
 
 protected:
-	UFUNCTION()
-		void Die();
+	
 	UFUNCTION()
 		void DamageTaked(float DamageValue);
 	

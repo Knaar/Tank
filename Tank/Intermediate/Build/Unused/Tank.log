@@ -4,11 +4,11 @@
   Invalidating makefile for TankEditor (working set of source files changed)
   Parsing headers for TankEditor
     Running UnrealHeaderTool "E:\Unreal_5_Projects\Tank\Tank\Tank.uproject" "E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\TankEditor\Development\TankEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\Bordunos\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
-  Reflection code generated for TankEditor in 0,7382093 seconds
+  Reflection code generated for TankEditor in 0,6789165 seconds
   Building TankEditor...
   Using Visual Studio 2022 14.32.31332 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  [Adaptive Build] Excluded from Tank unity file: TankController.cpp, TankPawn.cpp, Turret.cpp
-  Distributing 7 actions to XGE
+  [Adaptive Build] Excluded from Tank unity file: MachinePawn.cpp, TankPawn.cpp, Turret.cpp
+  Distributing 5 actions to XGE
   --------------------Build System Warning---------------------------------------
   License is invalid:
       License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
@@ -16,18 +16,16 @@
   
   -------------------------------------------------------------------------------
   
-  Build ID: {F91093EF-1756-4A0F-A60A-8CA099F1C742}
+  Build ID: {1A947B9B-FEB3-4A81-A5F9-532905A23FAE}
   
   --------------------Project: Default-------------------------------------------
-  [1/7] TankPawn.cpp (0:01.51 at +0:00)
-  [2/7] TankController.cpp (0:01.42 at +0:01)
-  [3/7] Tank.init.gen.cpp (0:00.57 at +0:02)
-  [4/7] TankController.gen.cpp (0:00.70 at +0:03)
-  [5/7] UnrealEditor-Tank.dll (0:00.51 at +0:04)
+  [1/5] Turret.gen.cpp (0:01.23 at +0:00)
+  [2/5] Turret.cpp (0:01.59 at +0:01)
+  [3/5] UnrealEditor-Tank.dll (0:00.56 at +0:02)
      Создается библиотека E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.suppressed.lib и объект E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.suppressed.exp
-  [6/7] UnrealEditor-Tank.lib (0:00.09 at +0:04)
+  [4/5] UnrealEditor-Tank.lib (0:00.09 at +0:03)
      Создается библиотека E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.lib и объект E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.exp
-  [7/7] TankEditor.target (0:00.18 at +0:04)
+  [5/5] TankEditor.target (0:00.20 at +0:03)
   ---------------------- Done ----------------------
   
       Rebuild All: 1 succeeded, 0 failed, 0 skipped
@@ -35,5 +33,5 @@
   1 build system warning(s):
      - License is invalid
   
-  Total time in XGE executor: 5,20 seconds
-  Total execution time: 6,86 seconds
+  Total time in XGE executor: 3,90 seconds
+  Total execution time: 5,46 seconds

@@ -6,12 +6,13 @@
 #include "GameFramework/Actor.h"
 #include "DamageTaker.h"
 #include "GameStructs.h"
+#include "MachinePawn.h"
 #include "Turret.generated.h"
 
 class UStaticMeshComponent;
 class ACannon;
 UCLASS()
-class TANK_API ATurret : public AActor,public IDamageTaker
+class TANK_API ATurret : public AMachinePawn,public IDamageTaker
 {
 	GENERATED_BODY()
 
@@ -73,9 +74,7 @@ protected:
 	void Fire();
 
 public:
-	UFUNCTION()
-	void Die();
-
+	
 	UFUNCTION()
 	void DamageTaked(float DamageValue);
 };

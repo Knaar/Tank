@@ -11,7 +11,7 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 // Cross Module References
 	TANK_API UClass* Z_Construct_UClass_ATankPawn_NoRegister();
 	TANK_API UClass* Z_Construct_UClass_ATankPawn();
-	ENGINE_API UClass* Z_Construct_UClass_APawn();
+	TANK_API UClass* Z_Construct_UClass_AMachinePawn();
 	UPackage* Z_Construct_UPackage__Script_Tank();
 	TANK_API UScriptStruct* Z_Construct_UScriptStruct_FDamageData();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
@@ -32,13 +32,6 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 		P_THIS->DamageTaked(Z_Param_DamageValue);
 		P_NATIVE_END;
 	}
-	DEFINE_FUNCTION(ATankPawn::execDie)
-	{
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		P_THIS->Die();
-		P_NATIVE_END;
-	}
 	DEFINE_FUNCTION(ATankPawn::execTakeDamage)
 	{
 		P_GET_STRUCT(FDamageData,Z_Param_DamageData);
@@ -52,7 +45,6 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 		UClass* Class = ATankPawn::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "DamageTaked", &ATankPawn::execDamageTaked },
-			{ "Die", &ATankPawn::execDie },
 			{ "TakeDamage", &ATankPawn::execTakeDamage },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -86,28 +78,6 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATankPawn_DamageTaked_Statics::FuncParams);
-		}
-		return ReturnFunction;
-	}
-	struct Z_Construct_UFunction_ATankPawn_Die_Statics
-	{
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATankPawn_Die_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "TankPawn.h" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATankPawn_Die_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATankPawn, nullptr, "Die", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ATankPawn_Die_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ATankPawn_Die_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_ATankPawn_Die()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATankPawn_Die_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -217,12 +187,11 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
 	UObject* (*const Z_Construct_UClass_ATankPawn_Statics::DependentSingletons[])() = {
-		(UObject* (*)())Z_Construct_UClass_APawn,
+		(UObject* (*)())Z_Construct_UClass_AMachinePawn,
 		(UObject* (*)())Z_Construct_UPackage__Script_Tank,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ATankPawn_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ATankPawn_DamageTaked, "DamageTaked" }, // 1058899869
-		{ &Z_Construct_UFunction_ATankPawn_Die, "Die" }, // 3999384578
 		{ &Z_Construct_UFunction_ATankPawn_TakeDamage, "TakeDamage" }, // 4170355422
 	};
 #if WITH_METADATA
@@ -389,9 +358,9 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankPawn_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATankPawn, ATankPawn::StaticClass, TEXT("ATankPawn"), &Z_Registration_Info_UClass_ATankPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATankPawn), 2800723592U) },
+		{ Z_Construct_UClass_ATankPawn, ATankPawn::StaticClass, TEXT("ATankPawn"), &Z_Registration_Info_UClass_ATankPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATankPawn), 1105228088U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankPawn_h_2570427895(TEXT("/Script/Tank"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankPawn_h_721091791(TEXT("/Script/Tank"),
 		Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankPawn_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankPawn_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

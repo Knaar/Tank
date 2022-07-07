@@ -71,6 +71,12 @@
     <ClInclude Include="..\..\Source\Tank\HealthComponent.h">
       <Filter>Source\Tank</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Tank\MachinePawn.cpp">
+      <Filter>Source\Tank</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tank\MachinePawn.h">
+      <Filter>Source\Tank</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Tank\ParticlePool.cpp">
       <Filter>Source\Tank</Filter>
     </ClCompile>
@@ -86,6 +92,12 @@
     <None Include="..\..\Source\Tank\Tank.Build.cs">
       <Filter>Source\Tank</Filter>
     </None>
+    <ClCompile Include="..\..\Source\Tank\Tank.cpp">
+      <Filter>Source\Tank</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tank\Tank.h">
+      <Filter>Source\Tank</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Tank\TankController.cpp">
       <Filter>Source\Tank</Filter>
     </ClCompile>

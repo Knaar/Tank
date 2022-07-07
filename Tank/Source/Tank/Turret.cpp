@@ -114,10 +114,6 @@ void ATurret::Fire()
 	}
 }
 
-void ATurret::Die()
-{
-	Destroy();
-}
 
 void ATurret::DamageTaked(float DamageValue)
 {

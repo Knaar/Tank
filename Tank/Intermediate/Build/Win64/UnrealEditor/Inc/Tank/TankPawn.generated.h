@@ -14,42 +14,40 @@ struct FDamageData;
 #endif
 #define TANK_TankPawn_generated_h
 
-#define FID_Tank_Source_Tank_TankPawn_h_16_SPARSE_DATA
-#define FID_Tank_Source_Tank_TankPawn_h_16_RPC_WRAPPERS \
+#define FID_Tank_Source_Tank_TankPawn_h_17_SPARSE_DATA
+#define FID_Tank_Source_Tank_TankPawn_h_17_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execDamageTaked); \
-	DECLARE_FUNCTION(execDie); \
 	DECLARE_FUNCTION(execTakeDamage);
 
 
-#define FID_Tank_Source_Tank_TankPawn_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Tank_Source_Tank_TankPawn_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execDamageTaked); \
-	DECLARE_FUNCTION(execDie); \
 	DECLARE_FUNCTION(execTakeDamage);
 
 
-#define FID_Tank_Source_Tank_TankPawn_h_16_INCLASS_NO_PURE_DECLS \
+#define FID_Tank_Source_Tank_TankPawn_h_17_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesATankPawn(); \
 	friend struct Z_Construct_UClass_ATankPawn_Statics; \
 public: \
-	DECLARE_CLASS(ATankPawn, APawn, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Tank"), NO_API) \
+	DECLARE_CLASS(ATankPawn, AMachinePawn, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Tank"), NO_API) \
 	DECLARE_SERIALIZER(ATankPawn) \
 	virtual UObject* _getUObject() const override { return const_cast<ATankPawn*>(this); }
 
 
-#define FID_Tank_Source_Tank_TankPawn_h_16_INCLASS \
+#define FID_Tank_Source_Tank_TankPawn_h_17_INCLASS \
 private: \
 	static void StaticRegisterNativesATankPawn(); \
 	friend struct Z_Construct_UClass_ATankPawn_Statics; \
 public: \
-	DECLARE_CLASS(ATankPawn, APawn, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Tank"), NO_API) \
+	DECLARE_CLASS(ATankPawn, AMachinePawn, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Tank"), NO_API) \
 	DECLARE_SERIALIZER(ATankPawn) \
 	virtual UObject* _getUObject() const override { return const_cast<ATankPawn*>(this); }
 
 
-#define FID_Tank_Source_Tank_TankPawn_h_16_STANDARD_CONSTRUCTORS \
+#define FID_Tank_Source_Tank_TankPawn_h_17_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ATankPawn(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ATankPawn) \
@@ -62,7 +60,7 @@ private: \
 public:
 
 
-#define FID_Tank_Source_Tank_TankPawn_h_16_ENHANCED_CONSTRUCTORS \
+#define FID_Tank_Source_Tank_TankPawn_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ATankPawn(ATankPawn&&); \
@@ -73,25 +71,25 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ATankPawn)
 
 
-#define FID_Tank_Source_Tank_TankPawn_h_13_PROLOG
-#define FID_Tank_Source_Tank_TankPawn_h_16_GENERATED_BODY_LEGACY \
+#define FID_Tank_Source_Tank_TankPawn_h_14_PROLOG
+#define FID_Tank_Source_Tank_TankPawn_h_17_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Tank_Source_Tank_TankPawn_h_16_SPARSE_DATA \
-	FID_Tank_Source_Tank_TankPawn_h_16_RPC_WRAPPERS \
-	FID_Tank_Source_Tank_TankPawn_h_16_INCLASS \
-	FID_Tank_Source_Tank_TankPawn_h_16_STANDARD_CONSTRUCTORS \
+	FID_Tank_Source_Tank_TankPawn_h_17_SPARSE_DATA \
+	FID_Tank_Source_Tank_TankPawn_h_17_RPC_WRAPPERS \
+	FID_Tank_Source_Tank_TankPawn_h_17_INCLASS \
+	FID_Tank_Source_Tank_TankPawn_h_17_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_Tank_Source_Tank_TankPawn_h_16_GENERATED_BODY \
+#define FID_Tank_Source_Tank_TankPawn_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Tank_Source_Tank_TankPawn_h_16_SPARSE_DATA \
-	FID_Tank_Source_Tank_TankPawn_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Tank_Source_Tank_TankPawn_h_16_INCLASS_NO_PURE_DECLS \
-	FID_Tank_Source_Tank_TankPawn_h_16_ENHANCED_CONSTRUCTORS \
+	FID_Tank_Source_Tank_TankPawn_h_17_SPARSE_DATA \
+	FID_Tank_Source_Tank_TankPawn_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Tank_Source_Tank_TankPawn_h_17_INCLASS_NO_PURE_DECLS \
+	FID_Tank_Source_Tank_TankPawn_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

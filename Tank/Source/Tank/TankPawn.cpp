@@ -166,10 +166,7 @@ void ATankPawn::TakeDamage(FDamageData DamageData)
 	HealthComponent->TakeDamage(DamageData);
 }
 
-void ATankPawn::Die()
-{
-	Destroy();
-}
+
 
 void ATankPawn::DamageTaked(float DamageValue)
 {

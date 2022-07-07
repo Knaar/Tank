@@ -11,7 +11,7 @@ void EmptyLinkFunctionForGeneratedCodeTurret() {}
 // Cross Module References
 	TANK_API UClass* Z_Construct_UClass_ATurret_NoRegister();
 	TANK_API UClass* Z_Construct_UClass_ATurret();
-	ENGINE_API UClass* Z_Construct_UClass_AActor();
+	TANK_API UClass* Z_Construct_UClass_AMachinePawn();
 	UPackage* Z_Construct_UPackage__Script_Tank();
 	TANK_API UScriptStruct* Z_Construct_UScriptStruct_FDamageData();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
@@ -31,13 +31,6 @@ void EmptyLinkFunctionForGeneratedCodeTurret() {}
 		P_THIS->DamageTaked(Z_Param_DamageValue);
 		P_NATIVE_END;
 	}
-	DEFINE_FUNCTION(ATurret::execDie)
-	{
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		P_THIS->Die();
-		P_NATIVE_END;
-	}
 	DEFINE_FUNCTION(ATurret::execTakeDamage)
 	{
 		P_GET_STRUCT(FDamageData,Z_Param_DamageData);
@@ -51,7 +44,6 @@ void EmptyLinkFunctionForGeneratedCodeTurret() {}
 		UClass* Class = ATurret::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "DamageTaked", &ATurret::execDamageTaked },
-			{ "Die", &ATurret::execDie },
 			{ "TakeDamage", &ATurret::execTakeDamage },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -85,28 +77,6 @@ void EmptyLinkFunctionForGeneratedCodeTurret() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATurret_DamageTaked_Statics::FuncParams);
-		}
-		return ReturnFunction;
-	}
-	struct Z_Construct_UFunction_ATurret_Die_Statics
-	{
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATurret_Die_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Turret.h" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATurret_Die_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATurret, nullptr, "Die", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ATurret_Die_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ATurret_Die_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_ATurret_Die()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATurret_Die_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -208,16 +178,16 @@ void EmptyLinkFunctionForGeneratedCodeTurret() {}
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
 	UObject* (*const Z_Construct_UClass_ATurret_Statics::DependentSingletons[])() = {
-		(UObject* (*)())Z_Construct_UClass_AActor,
+		(UObject* (*)())Z_Construct_UClass_AMachinePawn,
 		(UObject* (*)())Z_Construct_UPackage__Script_Tank,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ATurret_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ATurret_DamageTaked, "DamageTaked" }, // 4272675241
-		{ &Z_Construct_UFunction_ATurret_Die, "Die" }, // 3531796858
 		{ &Z_Construct_UFunction_ATurret_TakeDamage, "TakeDamage" }, // 3017332946
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATurret_Statics::Class_MetaDataParams[] = {
+		{ "HideCategories", "Navigation" },
 		{ "IncludePath", "Turret.h" },
 		{ "ModuleRelativePath", "Turret.h" },
 	};
@@ -331,7 +301,7 @@ void EmptyLinkFunctionForGeneratedCodeTurret() {}
 	};
 	const UECodeGen_Private::FClassParams Z_Construct_UClass_ATurret_Statics::ClassParams = {
 		&ATurret::StaticClass,
-		"Engine",
+		"Game",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		FuncInfo,
@@ -362,9 +332,9 @@ void EmptyLinkFunctionForGeneratedCodeTurret() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_Turret_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATurret, ATurret::StaticClass, TEXT("ATurret"), &Z_Registration_Info_UClass_ATurret, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATurret), 3974255321U) },
+		{ Z_Construct_UClass_ATurret, ATurret::StaticClass, TEXT("ATurret"), &Z_Registration_Info_UClass_ATurret, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATurret), 1390644134U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_Turret_h_1685283807(TEXT("/Script/Tank"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_Turret_h_3471491127(TEXT("/Script/Tank"),
 		Z_CompiledInDeferFile_FID_Tank_Source_Tank_Turret_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Tank_Source_Tank_Turret_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
