@@ -42,7 +42,7 @@ protected:
 	float ReloadTime=1.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
-	float FireRate = 1.0f;
+	float FireRate = 0.2f;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
 	int NumOfAutoShoots=3;
