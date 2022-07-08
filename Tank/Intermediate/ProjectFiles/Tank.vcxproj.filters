@@ -77,16 +77,16 @@
     <ClInclude Include="..\..\Source\Tank\MachinePawn.h">
       <Filter>Source\Tank</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Tank\ParticlePool.cpp">
-      <Filter>Source\Tank</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Tank\ParticlePool.h">
-      <Filter>Source\Tank</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\Tank\Projectile.cpp">
       <Filter>Source\Tank</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Tank\Projectile.h">
+      <Filter>Source\Tank</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Tank\ProjectilePool.cpp">
+      <Filter>Source\Tank</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tank\ProjectilePool.h">
       <Filter>Source\Tank</Filter>
     </ClInclude>
     <None Include="..\..\Source\Tank\Tank.Build.cs">

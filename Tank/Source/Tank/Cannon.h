@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "GameStructs.h"
 #include "TankPawn.h"
+#include "ProjectilePool.h"
 #include "Cannon.generated.h"
 
 
@@ -17,6 +18,7 @@ class TANK_API ACannon : public AActor
 public:	
 	
 	ACannon();
+	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaSeconds)override;
 	
 	void Fire();
@@ -25,6 +27,7 @@ public:
 	void ShootCast();
 	void ShootRelease();
 	void Reload();
+	void CreateProjectilePool();
 
 	int bulletsInMagasine = 100;
 	
@@ -59,6 +62,12 @@ protected:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
 	TSubclassOf <class AProjectile> ProjectileClass;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+	TSubclassOf<AProjectilePool> ProjectilePoolClass;
+
+	UPROPERTY()
+	AProjectilePool* ProjectilePool;
 
 	UPROPERTY()
 	ATankPawn* TankPawn;

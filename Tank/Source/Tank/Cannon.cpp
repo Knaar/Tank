@@ -29,6 +29,12 @@ ACannon::ACannon()
 
 
 
+void ACannon::BeginPlay()
+{
+	Super::BeginPlay();
+	CreateProjectilePool();
+}
+
 void ACannon::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
@@ -53,16 +59,12 @@ void ACannon::Fire()
 		if (CannonType == ECannonType::FireProjectile)
 		{
 			GEngine->AddOnScreenDebugMessage(10, 1, FColor::Green, "Fire - projectile");
-			FTransform projectileTransform(ProjectileSpawnPoint->GetComponentRotation(),
-				ProjectileSpawnPoint->GetComponentLocation(), FVector(1));
-			AProjectile* projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass,
-				ProjectileSpawnPoint->GetComponentLocation(),
-				ProjectileSpawnPoint->GetComponentRotation());
-			bulletsInMagasine--;
-			if (projectile)
+			if (ProjectilePool)
 			{
-				projectile->Start();
+				ProjectilePool->GetProjectile(ProjectileSpawnPoint->GetComponentLocation(), ProjectileSpawnPoint->GetComponentRotation());
 			}
+
+			
 		}
 
 		else
@@ -134,6 +136,13 @@ void ACannon::ShootRelease()
 		if (CannonType == ECannonType::FireProjectile)
 		{
 			GEngine->AddOnScreenDebugMessage(10, 1, FColor::Green, "Fire - projectile");
+
+			if (ProjectilePool)
+			{
+				ProjectilePool->GetProjectile(ProjectileSpawnPoint->GetComponentLocation(), ProjectileSpawnPoint->GetComponentRotation());
+				GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Get Projectile Pool")));
+			}
+			/*
 			FTransform projectileTransform(ProjectileSpawnPoint->GetComponentRotation(),
 				ProjectileSpawnPoint->GetComponentLocation(), FVector(1));
 			AProjectile* projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass,
@@ -142,7 +151,7 @@ void ACannon::ShootRelease()
 			if (projectile)
 			{
 				projectile->Start();
-			}
+			}*/
 		}
 		else
 		{
@@ -192,5 +201,12 @@ void ACannon::Reload()
 	
 }
 
+void ACannon::CreateProjectilePool()
+{
+	if (ProjectilePoolClass)
+	{
+		ProjectilePool = GetWorld()->SpawnActor<AProjectilePool>(ProjectilePoolClass, ProjectileSpawnPoint->GetComponentLocation(), ProjectileSpawnPoint->GetComponentRotation());
+	}
+}
 
 
