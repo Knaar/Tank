@@ -48,10 +48,7 @@ FVector ATurret::GetEyesPosition()
 	return CannonSetupPoint->GetComponentLocation();
 }
 
-void ATurret::TakeDamage(FDamageData DamageData)
-{
-	HealthComponent->TakeDamage(DamageData);
-}
+
 
 void ATurret::BeginPlay()
 {
@@ -138,8 +135,5 @@ bool ATurret::IsPlayerSeen()
 	return false;
 }
 
-void ATurret::DamageTaked(float DamageValue)
-{
-	UE_LOG(LogTemp, Warning, TEXT("Turr %s taked damage: %f Health:%f"), *GetName(), DamageValue, HealthComponent->GetHealth());
-}
+
 

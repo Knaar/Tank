@@ -12,7 +12,7 @@
 
 class ACannon;
 UCLASS()
-class TANK_API ATankPawn : public AMachinePawn,public IDamageTaker
+class TANK_API ATankPawn : public AMachinePawn
 {
 	GENERATED_BODY()
 
@@ -50,8 +50,7 @@ public:
 protected:
 	virtual void BeginPlay()override;
 
-	UFUNCTION()
-	virtual void TakeDamage(FDamageData DamageData);
+	
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class UStaticMeshComponent* BodyMesh;
@@ -69,8 +68,6 @@ protected:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class UCameraComponent* Camera;
 
-	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
-	class UHealthComponent *HealthComponent;
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class UBoxComponent *HitCollider;
@@ -116,9 +113,5 @@ private:
 	float TargetAxisRotationValue = 0.0f;
 	bool bMainWeapon = true;
 
-protected:
-	
-	UFUNCTION()
-		void DamageTaked(float DamageValue);
-	
+
 };

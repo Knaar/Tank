@@ -8,33 +8,21 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-struct FDamageData;
 #ifdef TANK_Turret_generated_h
 #error "Turret.generated.h already included, missing '#pragma once' in Turret.h"
 #endif
 #define TANK_Turret_generated_h
 
 #define FID_Tank_Source_Tank_Turret_h_17_SPARSE_DATA
-#define FID_Tank_Source_Tank_Turret_h_17_RPC_WRAPPERS \
- \
-	DECLARE_FUNCTION(execDamageTaked); \
-	DECLARE_FUNCTION(execTakeDamage);
-
-
-#define FID_Tank_Source_Tank_Turret_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
- \
-	DECLARE_FUNCTION(execDamageTaked); \
-	DECLARE_FUNCTION(execTakeDamage);
-
-
+#define FID_Tank_Source_Tank_Turret_h_17_RPC_WRAPPERS
+#define FID_Tank_Source_Tank_Turret_h_17_RPC_WRAPPERS_NO_PURE_DECLS
 #define FID_Tank_Source_Tank_Turret_h_17_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesATurret(); \
 	friend struct Z_Construct_UClass_ATurret_Statics; \
 public: \
 	DECLARE_CLASS(ATurret, AMachinePawn, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Tank"), NO_API) \
-	DECLARE_SERIALIZER(ATurret) \
-	virtual UObject* _getUObject() const override { return const_cast<ATurret*>(this); }
+	DECLARE_SERIALIZER(ATurret)
 
 
 #define FID_Tank_Source_Tank_Turret_h_17_INCLASS \
@@ -43,8 +31,7 @@ private: \
 	friend struct Z_Construct_UClass_ATurret_Statics; \
 public: \
 	DECLARE_CLASS(ATurret, AMachinePawn, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/Tank"), NO_API) \
-	DECLARE_SERIALIZER(ATurret) \
-	virtual UObject* _getUObject() const override { return const_cast<ATurret*>(this); }
+	DECLARE_SERIALIZER(ATurret)
 
 
 #define FID_Tank_Source_Tank_Turret_h_17_STANDARD_CONSTRUCTORS \

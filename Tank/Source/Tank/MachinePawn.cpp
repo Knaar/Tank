@@ -52,3 +52,14 @@ void AMachinePawn::FireSpecial()
 	}
 }
 
+void AMachinePawn::TakeDamage(FDamageData DamageData)
+{
+	HealthComponent->TakeDamage(DamageData);
+	AudioEffectDamaged->Play();
+}
+
+void AMachinePawn::DamageTaked(float DamageValue)
+{
+	//UE_LOG(LogTemp, Warning, TEXT("Turr %s taked damage: %f Health:%f"), *GetName(), DamageValue, HealthComponent->GetHealth());
+}
+

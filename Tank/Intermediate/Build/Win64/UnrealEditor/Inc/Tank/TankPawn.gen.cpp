@@ -14,34 +14,15 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 	TANK_API UClass* Z_Construct_UClass_AMachinePawn();
 	UPackage* Z_Construct_UPackage__Script_Tank();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
-	TANK_API UScriptStruct* Z_Construct_UScriptStruct_FDamageData();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UArrowComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
-	TANK_API UClass* Z_Construct_UClass_UHealthComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	TANK_API UClass* Z_Construct_UClass_ACannon_NoRegister();
 	TANK_API UClass* Z_Construct_UClass_ATankController_NoRegister();
-	TANK_API UClass* Z_Construct_UClass_UDamageTaker_NoRegister();
 // End Cross Module References
-	DEFINE_FUNCTION(ATankPawn::execDamageTaked)
-	{
-		P_GET_PROPERTY(FFloatProperty,Z_Param_DamageValue);
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		P_THIS->DamageTaked(Z_Param_DamageValue);
-		P_NATIVE_END;
-	}
-	DEFINE_FUNCTION(ATankPawn::execTakeDamage)
-	{
-		P_GET_STRUCT(FDamageData,Z_Param_DamageData);
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		P_THIS->TakeDamage(Z_Param_DamageData);
-		P_NATIVE_END;
-	}
 	DEFINE_FUNCTION(ATankPawn::execRotateTurretTo)
 	{
 		P_GET_STRUCT(FVector,Z_Param_TargetPosution);
@@ -75,46 +56,12 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 	{
 		UClass* Class = ATankPawn::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
-			{ "DamageTaked", &ATankPawn::execDamageTaked },
 			{ "GetAccurency", &ATankPawn::execGetAccurency },
 			{ "GetPatrolligPoints", &ATankPawn::execGetPatrolligPoints },
 			{ "GetTurretForwardVector", &ATankPawn::execGetTurretForwardVector },
 			{ "RotateTurretTo", &ATankPawn::execRotateTurretTo },
-			{ "TakeDamage", &ATankPawn::execTakeDamage },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
-	}
-	struct Z_Construct_UFunction_ATankPawn_DamageTaked_Statics
-	{
-		struct TankPawn_eventDamageTaked_Parms
-		{
-			float DamageValue;
-		};
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_DamageValue;
-		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ATankPawn_DamageTaked_Statics::NewProp_DamageValue = { "DamageValue", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(TankPawn_eventDamageTaked_Parms, DamageValue), METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ATankPawn_DamageTaked_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ATankPawn_DamageTaked_Statics::NewProp_DamageValue,
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATankPawn_DamageTaked_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "TankPawn.h" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATankPawn_DamageTaked_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATankPawn, nullptr, "DamageTaked", nullptr, nullptr, sizeof(Z_Construct_UFunction_ATankPawn_DamageTaked_Statics::TankPawn_eventDamageTaked_Parms), Z_Construct_UFunction_ATankPawn_DamageTaked_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ATankPawn_DamageTaked_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ATankPawn_DamageTaked_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ATankPawn_DamageTaked_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_ATankPawn_DamageTaked()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATankPawn_DamageTaked_Statics::FuncParams);
-		}
-		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_ATankPawn_GetAccurency_Statics
 	{
@@ -247,38 +194,6 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 		}
 		return ReturnFunction;
 	}
-	struct Z_Construct_UFunction_ATankPawn_TakeDamage_Statics
-	{
-		struct TankPawn_eventTakeDamage_Parms
-		{
-			FDamageData DamageData;
-		};
-		static const UECodeGen_Private::FStructPropertyParams NewProp_DamageData;
-		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ATankPawn_TakeDamage_Statics::NewProp_DamageData = { "DamageData", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(TankPawn_eventTakeDamage_Parms, DamageData), Z_Construct_UScriptStruct_FDamageData, METADATA_PARAMS(nullptr, 0) }; // 1518367983
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ATankPawn_TakeDamage_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ATankPawn_TakeDamage_Statics::NewProp_DamageData,
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ATankPawn_TakeDamage_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "TankPawn.h" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ATankPawn_TakeDamage_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ATankPawn, nullptr, "TakeDamage", nullptr, nullptr, sizeof(Z_Construct_UFunction_ATankPawn_TakeDamage_Statics::TankPawn_eventTakeDamage_Parms), Z_Construct_UFunction_ATankPawn_TakeDamage_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ATankPawn_TakeDamage_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ATankPawn_TakeDamage_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ATankPawn_TakeDamage_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_ATankPawn_TakeDamage()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ATankPawn_TakeDamage_Statics::FuncParams);
-		}
-		return ReturnFunction;
-	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(ATankPawn);
 	UClass* Z_Construct_UClass_ATankPawn_NoRegister()
 	{
@@ -311,10 +226,6 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Camera_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_Camera;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_HealthComponent_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_HealthComponent;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_HitCollider_MetaData[];
 #endif
@@ -357,7 +268,6 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_MovementAccurency;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-		static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
@@ -366,12 +276,10 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Tank,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ATankPawn_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ATankPawn_DamageTaked, "DamageTaked" }, // 1058899869
 		{ &Z_Construct_UFunction_ATankPawn_GetAccurency, "GetAccurency" }, // 3480951168
 		{ &Z_Construct_UFunction_ATankPawn_GetPatrolligPoints, "GetPatrolligPoints" }, // 1077459628
 		{ &Z_Construct_UFunction_ATankPawn_GetTurretForwardVector, "GetTurretForwardVector" }, // 3734870038
 		{ &Z_Construct_UFunction_ATankPawn_RotateTurretTo, "RotateTurretTo" }, // 2266867928
-		{ &Z_Construct_UFunction_ATankPawn_TakeDamage, "TakeDamage" }, // 4170355422
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATankPawn_Statics::Class_MetaDataParams[] = {
@@ -420,14 +328,6 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATankPawn_Statics::NewProp_Camera = { "Camera", nullptr, (EPropertyFlags)0x00200800000b000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATankPawn, Camera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATankPawn_Statics::NewProp_Camera_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATankPawn_Statics::NewProp_Camera_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATankPawn_Statics::NewProp_HealthComponent_MetaData[] = {
-		{ "Category", "Components" },
-		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "TankPawn.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATankPawn_Statics::NewProp_HealthComponent = { "HealthComponent", nullptr, (EPropertyFlags)0x00200800000b000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATankPawn, HealthComponent), Z_Construct_UClass_UHealthComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATankPawn_Statics::NewProp_HealthComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATankPawn_Statics::NewProp_HealthComponent_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATankPawn_Statics::NewProp_HitCollider_MetaData[] = {
 		{ "Category", "Components" },
@@ -508,7 +408,6 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankPawn_Statics::NewProp_CannonSetupPoint,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankPawn_Statics::NewProp_SpringArm,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankPawn_Statics::NewProp_Camera,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankPawn_Statics::NewProp_HealthComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankPawn_Statics::NewProp_HitCollider,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankPawn_Statics::NewProp_CannonClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankPawn_Statics::NewProp_SecondaryCannonClass,
@@ -521,9 +420,6 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankPawn_Statics::NewProp_PatrollingPoints,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankPawn_Statics::NewProp_MovementAccurency,
 	};
-		const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ATankPawn_Statics::InterfaceParams[] = {
-			{ Z_Construct_UClass_UDamageTaker_NoRegister, (int32)VTABLE_OFFSET(ATankPawn, IDamageTaker), false },  // 4191389099
-		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ATankPawn_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ATankPawn>::IsAbstract,
 	};
@@ -534,11 +430,11 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 		DependentSingletons,
 		FuncInfo,
 		Z_Construct_UClass_ATankPawn_Statics::PropPointers,
-		InterfaceParams,
+		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_ATankPawn_Statics::PropPointers),
-		UE_ARRAY_COUNT(InterfaceParams),
+		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ATankPawn_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ATankPawn_Statics::Class_MetaDataParams))
 	};
@@ -560,9 +456,9 @@ void EmptyLinkFunctionForGeneratedCodeTankPawn() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankPawn_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATankPawn, ATankPawn::StaticClass, TEXT("ATankPawn"), &Z_Registration_Info_UClass_ATankPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATankPawn), 1191399656U) },
+		{ Z_Construct_UClass_ATankPawn, ATankPawn::StaticClass, TEXT("ATankPawn"), &Z_Registration_Info_UClass_ATankPawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATankPawn), 3577193346U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankPawn_h_674143322(TEXT("/Script/Tank"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankPawn_h_218214625(TEXT("/Script/Tank"),
 		Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankPawn_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankPawn_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

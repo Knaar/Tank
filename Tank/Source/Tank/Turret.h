@@ -12,7 +12,7 @@
 class UStaticMeshComponent;
 class ACannon;
 UCLASS()
-class TANK_API ATurret : public AMachinePawn,public IDamageTaker
+class TANK_API ATurret : public AMachinePawn
 {
 	GENERATED_BODY()
 
@@ -21,8 +21,7 @@ public:
 
 	FVector GetEyesPosition();
 
-	UFUNCTION()
-	virtual void TakeDamage(FDamageData DamageData);
+	
 	
 	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,Category="Components")
 	UStaticMeshComponent *BodyMesh;
@@ -36,8 +35,6 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
 	class UBoxComponent* HitCollider;
 
-	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
-	class UHealthComponent* HealthComponent;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ammo")
 	TSubclassOf<ACannon> CannonClass;
@@ -75,8 +72,6 @@ protected:
 
 	bool IsPlayerSeen();
 
-public:
+
 	
-	UFUNCTION()
-	void DamageTaked(float DamageValue);
 };

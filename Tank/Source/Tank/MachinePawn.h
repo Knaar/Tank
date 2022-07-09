@@ -8,10 +8,11 @@
 #include "DamageTaker.h"
 #include "GameFramework/Pawn.h"
 #include "Components/AudioComponent.h"
+#include "HealthComponent.h"
 #include "MachinePawn.generated.h"
 
 UCLASS()
-class TANK_API AMachinePawn : public APawn
+class TANK_API AMachinePawn : public APawn, public IDamageTaker
 {
 	GENERATED_BODY()
 
@@ -24,9 +25,15 @@ public:
 
 	void Fire();
 	void FireSpecial();
+
+	UFUNCTION()
+	virtual void TakeDamage(FDamageData DamageData);
+
+	UFUNCTION()
+	void DamageTaked(float DamageValue);
 protected:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
-	UParticleSystemComponent* BlowEffect;
+	class UHealthComponent* HealthComponent;
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	UAudioComponent* AudioEffect;

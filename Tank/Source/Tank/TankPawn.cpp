@@ -169,14 +169,5 @@ FVector ATankPawn::GetEyesPosition()
 	return CannonSetupPoint->GetComponentLocation();
 }
 
-void ATankPawn::TakeDamage(FDamageData DamageData)
-{
-	HealthComponent->TakeDamage(DamageData);
-}
 
 
-
-void ATankPawn::DamageTaked(float DamageValue)
-{
-	UE_LOG(LogTemp, Warning, TEXT("Turr %s taked damage: %f Health:%f"), *GetName(), DamageValue, HealthComponent->GetHealth());
-}
