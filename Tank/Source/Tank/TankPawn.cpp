@@ -104,15 +104,19 @@ void ATankPawn::Tick(float DeltaSeconds)
 	SetActorRotation(newRotation);
 
 	//Turret rotation;
-	FVector MousePos = TankController->GetMousePosition();
+	if (TankController)
+	{
+		FVector MousePos = TankController->GetMousePosition();
 
-	FRotator targetRotation = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), MousePos);
-	FRotator TurretRotation = TurretMesh->GetComponentRotation();
+		FRotator targetRotation = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), MousePos);
+		FRotator TurretRotation = TurretMesh->GetComponentRotation();
 
-	targetRotation.Pitch = TurretRotation.Pitch;
-	targetRotation.Roll = TurretRotation.Roll;
+		targetRotation.Pitch = TurretRotation.Pitch;
+		targetRotation.Roll = TurretRotation.Roll;
 
-	TurretMesh->SetWorldRotation(FMath::Lerp(TurretRotation,targetRotation,RotateInterpolationKey));
+		TurretMesh->SetWorldRotation(FMath::Lerp(TurretRotation, targetRotation, RotateInterpolationKey));
+	}
+	
 
 }
 

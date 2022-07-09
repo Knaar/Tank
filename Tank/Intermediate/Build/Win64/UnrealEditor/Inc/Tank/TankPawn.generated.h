@@ -18,13 +18,17 @@ struct FDamageData;
 #define FID_Tank_Source_Tank_TankPawn_h_17_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execDamageTaked); \
-	DECLARE_FUNCTION(execTakeDamage);
+	DECLARE_FUNCTION(execTakeDamage); \
+	DECLARE_FUNCTION(execGetAccurency); \
+	DECLARE_FUNCTION(execGetPatrolligPoints);
 
 
 #define FID_Tank_Source_Tank_TankPawn_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execDamageTaked); \
-	DECLARE_FUNCTION(execTakeDamage);
+	DECLARE_FUNCTION(execTakeDamage); \
+	DECLARE_FUNCTION(execGetAccurency); \
+	DECLARE_FUNCTION(execGetPatrolligPoints);
 
 
 #define FID_Tank_Source_Tank_TankPawn_h_17_INCLASS_NO_PURE_DECLS \

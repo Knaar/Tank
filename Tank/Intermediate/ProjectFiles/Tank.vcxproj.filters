@@ -98,6 +98,12 @@
     <ClInclude Include="..\..\Source\Tank\Tank.h">
       <Filter>Source\Tank</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Tank\TankAIController.cpp">
+      <Filter>Source\Tank</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tank\TankAIController.h">
+      <Filter>Source\Tank</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Tank\TankController.cpp">
       <Filter>Source\Tank</Filter>
     </ClCompile>

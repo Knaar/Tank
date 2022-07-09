@@ -28,12 +28,19 @@ public:
 
 
 	virtual void Tick(float DeltaSeconds)override;
-	virtual void BeginPlay()override;
+	
 
 	void SetupCannon(TSubclassOf<ACannon>NewCannonClass);
 	void SetBullets(int bullets);
 
+	UFUNCTION()
+	TArray<FVector> GetPatrolligPoints(){return PatrollingPoints;}
+
+	UFUNCTION()
+	float GetAccurency(){return MovementAccurency;}
+
 protected:
+	virtual void BeginPlay()override;
 
 	UFUNCTION()
 	virtual void TakeDamage(FDamageData DamageData);
@@ -81,7 +88,14 @@ protected:
 	UPROPERTY()
 	class ATankController* TankController;
 
-	
+
+	//AI components
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI | Components",Meta = (MakeEditWidget=true))
+	TArray<FVector> PatrollingPoints;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI | Components")
+	float MovementAccurency =30.0f;
+
 private:
 	float TargetAxisForwardValue=0.0f;
 	float TargetAxisRightValue = 0.0f;
