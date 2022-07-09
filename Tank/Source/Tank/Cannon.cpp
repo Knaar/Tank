@@ -24,10 +24,13 @@ ACannon::ACannon()
 
 	ProjectileSpawnPoint = CreateDefaultSubobject<UArrowComponent>(TEXT("ProjectileSpawnPoint"));
 	ProjectileSpawnPoint->SetupAttachment(RootComponent);
+
+	ShootEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("ParticleObject"));
+	ShootEffect->SetupAttachment(ProjectileSpawnPoint);
+
+	AudioEffect = CreateDefaultSubobject<UAudioComponent>(TEXT("AudoiEffect"));
+	AudioEffect->SetupAttachment(ProjectileSpawnPoint);
 }
-
-
-
 
 void ACannon::BeginPlay()
 {
@@ -62,6 +65,8 @@ void ACannon::Fire()
 			if (ProjectilePool)
 			{
 				ProjectilePool->GetProjectile(ProjectileSpawnPoint->GetComponentLocation(), ProjectileSpawnPoint->GetComponentRotation());
+				ShootEffect->ActivateSystem();
+				AudioEffect->Play();
 			}
 
 			
@@ -70,7 +75,6 @@ void ACannon::Fire()
 		else
 		{
 			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Trace")));
-			//bulletsInMagasine--;
 			FHitResult hitResult;
 			FCollisionQueryParams traceParams =
 				FCollisionQueryParams(FName(TEXT("FireTrace")), true, this);
@@ -102,10 +106,6 @@ void ACannon::Fire()
 					{
 						hitResult.GetActor()->Destroy();
 					}
-					
-
-
-
 				}
 			}
 			else{

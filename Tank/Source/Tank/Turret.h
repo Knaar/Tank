@@ -19,6 +19,8 @@ class TANK_API ATurret : public AMachinePawn,public IDamageTaker
 public:
 	ATurret();
 
+	FVector GetEyesPosition();
+
 	UFUNCTION()
 	virtual void TakeDamage(FDamageData DamageData);
 	
@@ -70,6 +72,8 @@ protected:
 	void RotateToPlayer();
 	bool IsPlayerINRange();
 	bool CanFire();
+
+	bool IsPlayerSeen();
 
 public:
 	

@@ -7,6 +7,8 @@
 #include "GameStructs.h"
 #include "TankPawn.h"
 #include "ProjectilePool.h"
+#include "Particles/ParticleSystemComponent.h"
+#include "Components/AudioComponent.h"
 #include "Cannon.generated.h"
 
 
@@ -71,6 +73,13 @@ protected:
 
 	UPROPERTY()
 	ATankPawn* TankPawn;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+	class UParticleSystemComponent* ShootEffect;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+	class UAudioComponent* AudioEffect;
+
 
 private:
 	bool bCanFire = true;
