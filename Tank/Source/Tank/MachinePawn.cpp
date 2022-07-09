@@ -15,6 +15,14 @@ AMachinePawn::AMachinePawn()
 {
 	PrimaryActorTick.bCanEverTick = true;
 
+	
+	AudioEffect = CreateDefaultSubobject<UAudioComponent>(TEXT("AudoiEffect"));
+	RootComponent = AudioEffect;
+
+	AudioEffectDamaged = CreateDefaultSubobject<UAudioComponent>(TEXT("AudoiEffectDamaged"));
+	RootComponent = AudioEffect;
+
+
 }
 
 void AMachinePawn::BeginPlay()
@@ -26,6 +34,8 @@ void AMachinePawn::BeginPlay()
 void AMachinePawn::Die()
 {
 	Destroy();
+	AudioEffect->Play();
+	
 }
 void AMachinePawn::Fire()
 {
