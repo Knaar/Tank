@@ -22,7 +22,9 @@ ATankPawn::ATankPawn()
 	TurretMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("TurretMesh"));
 	TurretMesh->SetupAttachment(BodyMesh); 
 
-	
+	CannonSetupPoint = CreateDefaultSubobject<UArrowComponent>(TEXT("Cannon Setup"));
+	CannonSetupPoint->AttachToComponent(TurretMesh, FAttachmentTransformRules::KeepRelativeTransform);
+
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
 	SpringArm->SetupAttachment(BodyMesh);
 	SpringArm->bDoCollisionTest = false;
@@ -108,13 +110,7 @@ void ATankPawn::Tick(float DeltaSeconds)
 	{
 		FVector MousePos = TankController->GetMousePosition();
 
-		FRotator targetRotation = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), MousePos);
-		FRotator TurretRotation = TurretMesh->GetComponentRotation();
-
-		targetRotation.Pitch = TurretRotation.Pitch;
-		targetRotation.Roll = TurretRotation.Roll;
-
-		TurretMesh->SetWorldRotation(FMath::Lerp(TurretRotation, targetRotation, RotateInterpolationKey));
+		RotateTurretTo(MousePos);
 	}
 	
 
@@ -150,6 +146,27 @@ void ATankPawn::SetupCannon(TSubclassOf<ACannon>NewCannonClass)
 void ATankPawn::SetBullets(int bullets)
 {
 	Cannon->bulletsInMagasine = Cannon->bulletsInMagasine+bullets;
+}
+
+FVector ATankPawn::GetTurretForwardVector()
+{
+	return TurretMesh->GetForwardVector();
+}
+
+void ATankPawn::RotateTurretTo(FVector TargetPosition)
+{
+	FRotator targetRotation = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(), TargetPosition);
+	FRotator TurretRotation = TurretMesh->GetComponentRotation();
+
+	targetRotation.Pitch = TurretRotation.Pitch;
+	targetRotation.Roll = TurretRotation.Roll;
+
+	TurretMesh->SetWorldRotation(FMath::Lerp(TurretRotation, targetRotation, RotateInterpolationKey));
+}
+
+FVector ATankPawn::GetEyesPosition()
+{
+	return CannonSetupPoint->GetComponentLocation();
 }
 
 void ATankPawn::TakeDamage(FDamageData DamageData)

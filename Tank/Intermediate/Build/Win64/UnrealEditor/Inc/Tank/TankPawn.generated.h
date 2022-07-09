@@ -19,6 +19,8 @@ struct FDamageData;
  \
 	DECLARE_FUNCTION(execDamageTaked); \
 	DECLARE_FUNCTION(execTakeDamage); \
+	DECLARE_FUNCTION(execRotateTurretTo); \
+	DECLARE_FUNCTION(execGetTurretForwardVector); \
 	DECLARE_FUNCTION(execGetAccurency); \
 	DECLARE_FUNCTION(execGetPatrolligPoints);
 
@@ -27,6 +29,8 @@ struct FDamageData;
  \
 	DECLARE_FUNCTION(execDamageTaked); \
 	DECLARE_FUNCTION(execTakeDamage); \
+	DECLARE_FUNCTION(execRotateTurretTo); \
+	DECLARE_FUNCTION(execGetTurretForwardVector); \
 	DECLARE_FUNCTION(execGetAccurency); \
 	DECLARE_FUNCTION(execGetPatrolligPoints);
 

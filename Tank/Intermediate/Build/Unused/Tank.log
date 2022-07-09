@@ -12,11 +12,11 @@
   
   -------------------------------------------------------------------------------
   
-  Build ID: {E05B607A-644E-4B54-9418-789BB4FF950F}
+  Build ID: {68BEE0E0-0100-4B47-B57D-BE45D296B909}
   
   --------------------Project: Default-------------------------------------------
-  [1/4] TankPawn.cpp (0:01.56 at +0:00)
-  [2/4] UnrealEditor-Tank.dll (0:00.54 at +0:01)
+  [1/4] TankAIController.cpp (0:02.00 at +0:00)
+  [2/4] UnrealEditor-Tank.dll (0:00.56 at +0:02)
      Создается библиотека E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.suppressed.lib и объект E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.suppressed.exp
   [3/4] UnrealEditor-Tank.lib (0:00.09 at +0:02)
      Создается библиотека E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.lib и объект E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.exp
@@ -28,5 +28,5 @@
   1 build system warning(s):
      - License is invalid
   
-  Total time in XGE executor: 2,48 seconds
-  Total execution time: 2,82 seconds
+  Total time in XGE executor: 2,97 seconds
+  Total execution time: 3,30 seconds

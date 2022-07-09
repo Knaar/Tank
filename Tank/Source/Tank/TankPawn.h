@@ -39,6 +39,14 @@ public:
 	UFUNCTION()
 	float GetAccurency(){return MovementAccurency;}
 
+	UFUNCTION()
+	FVector GetTurretForwardVector();
+
+	UFUNCTION()
+	void RotateTurretTo(FVector TargetPosution);
+
+	FVector GetEyesPosition();
+
 protected:
 	virtual void BeginPlay()override;
 
@@ -51,6 +59,8 @@ protected:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class UStaticMeshComponent* TurretMesh;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
+	class UArrowComponent* CannonSetupPoint;
 	
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class USpringArmComponent* SpringArm;
