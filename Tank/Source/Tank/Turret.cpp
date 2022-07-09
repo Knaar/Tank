@@ -75,7 +75,7 @@ void ATurret::Targeting()
 	if (IsPlayerINRange()) {
 		RotateToPlayer();
 	}
-	if (CanFire())
+	if (CanFire()&&IsPlayerINRange())
 	{
 		Fire();
 	}
