@@ -9,7 +9,7 @@
 #include "MachinePawn.h"
 #include "TankPawn.generated.h"
 
-
+class UStaticMeshComponent;
 class ACannon;
 class ATargetPoint;
 UCLASS()

@@ -31,12 +31,6 @@ void AMachinePawn::BeginPlay()
 	
 }
 
-void AMachinePawn::Tick(float DeltaSeconds)
-{
-	Super::Tick(DeltaSeconds);
-	GEngine->AddOnScreenDebugMessage(-1, 0.0f, FColor::Green, FString::Printf(TEXT("Score: %f"), Score));
-}
-
 void AMachinePawn::Die()
 {
 	if (Cannon)

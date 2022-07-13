@@ -43,7 +43,7 @@ void ATankFactory::SpawnTank()
 {
 	FTransform SpawnPlace(TankSpawnPoint->GetComponentRotation(), TankSpawnPoint->GetComponentLocation(), FVector(1));
 	ATankPawn* newTank = GetWorld()->SpawnActorDeferred<ATankPawn>(SpawnTankClass, SpawnPlace, this, nullptr, ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
-	
+
 	newTank->SetPatrollingPoints(TankWayPoints);
 
 	UGameplayStatics::FinishSpawningActor(newTank, SpawnPlace);
@@ -61,6 +61,6 @@ void ATankFactory::Die()
 
 void ATankFactory::DamageTaked(float DamageValue)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Factory %s take Damage: %f,  Health: %f"), *GetName(), DamageValue, HealthComponent->GetHealth());
+	//UE_LOG(LogTemp, Warning, TEXT("Factory %s take Damage: %f,  Health: %f"), *GetName(), DamageValue, HealthComponent->GetHealth());
 }
 

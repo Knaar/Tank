@@ -48,9 +48,7 @@ ATankPawn::ATankPawn()
 
 void ATankPawn::MoveForward(float Value)
 {
-	
 	TargetAxisForwardValue = Value;
-	
 }
 
 void ATankPawn::MoveRight(float Value)
@@ -62,9 +60,6 @@ void ATankPawn::RotateRight(float Value)
 {
 	TargetAxisRotationValue = Value;
 }
-
-
-
 
 
 void ATankPawn::SwapWeapon()
@@ -86,7 +81,7 @@ void ATankPawn::Tick(float DeltaSeconds)
 	Super::Tick(DeltaSeconds);
 
 	//Tank movement;
-	//Added acceleration via interpolation. I do not know why.
+	
 	CurrentMoveAxisValue = FMath::Lerp(CurrentMoveAxisValue, TargetAxisForwardValue, InterpolationKey);
 
 	FVector CurrentLocation = GetActorLocation();

@@ -21,9 +21,10 @@ protected:
 	UPROPERTY()
 	class APawn* PlayerPawn;
 
+	
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="AI | Movement")
-	TArray<FVector> PatrollingPath;
+	TArray<FVector> PatrollingPoints;
 
 	int32 CurrentPatrollingIndex = 0;
 

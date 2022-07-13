@@ -20,11 +20,10 @@ class TANK_API AMachinePawn : public APawn, public IDamageTaker, public IScorabl
 public:
 	AMachinePawn();
 
-	UPROPERTY()
-	class ACannon* Cannon;
-
+	virtual void TakeDamage(FDamageData DamageData)override;
 
 	void Fire();
+
 	void FireSpecial();
 
 	//Score
@@ -38,24 +37,28 @@ public:
 
 	float Score = 0.0f;
 
-	
-	virtual void TakeDamage(FDamageData DamageData)override;
-
 	UFUNCTION()
 	void DamageTaked(float DamageValue);
+
+
 protected:
+
+	virtual void BeginPlay() override;
+
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class UHealthComponent* HealthComponent;
 
+	UPROPERTY()
+	class ACannon* Cannon;
+
+	//Sounds
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	UAudioComponent* AudioEffect;
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	UAudioComponent* AudioEffectDamaged;
 
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-	virtual void Tick(float DeltaSeconds)override;
+	
 	UFUNCTION()
 	void Die();
 

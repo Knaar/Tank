@@ -13,8 +13,8 @@ void EmptyLinkFunctionForGeneratedCodeMachinePawn() {}
 	TANK_API UClass* Z_Construct_UClass_AMachinePawn();
 	ENGINE_API UClass* Z_Construct_UClass_APawn();
 	UPackage* Z_Construct_UPackage__Script_Tank();
-	TANK_API UClass* Z_Construct_UClass_ACannon_NoRegister();
 	TANK_API UClass* Z_Construct_UClass_UHealthComponent_NoRegister();
+	TANK_API UClass* Z_Construct_UClass_ACannon_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UAudioComponent_NoRegister();
 	TANK_API UClass* Z_Construct_UClass_UDamageTaker_NoRegister();
 	TANK_API UClass* Z_Construct_UClass_UScorable_NoRegister();
@@ -151,10 +151,6 @@ void EmptyLinkFunctionForGeneratedCodeMachinePawn() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Cannon_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_Cannon;
-#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_ScoreValue_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_ScoreValue;
@@ -162,6 +158,10 @@ void EmptyLinkFunctionForGeneratedCodeMachinePawn() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_HealthComponent_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_HealthComponent;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Cannon_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Cannon;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_AudioEffect_MetaData[];
 #endif
@@ -192,12 +192,6 @@ void EmptyLinkFunctionForGeneratedCodeMachinePawn() {}
 	};
 #endif
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMachinePawn_Statics::NewProp_Cannon_MetaData[] = {
-		{ "ModuleRelativePath", "MachinePawn.h" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMachinePawn_Statics::NewProp_Cannon = { "Cannon", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMachinePawn, Cannon), Z_Construct_UClass_ACannon_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMachinePawn_Statics::NewProp_Cannon_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMachinePawn_Statics::NewProp_Cannon_MetaData)) };
-#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMachinePawn_Statics::NewProp_ScoreValue_MetaData[] = {
 		{ "Category", "Score" },
 		{ "ModuleRelativePath", "MachinePawn.h" },
@@ -213,10 +207,18 @@ void EmptyLinkFunctionForGeneratedCodeMachinePawn() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMachinePawn_Statics::NewProp_HealthComponent = { "HealthComponent", nullptr, (EPropertyFlags)0x00200800000b000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMachinePawn, HealthComponent), Z_Construct_UClass_UHealthComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMachinePawn_Statics::NewProp_HealthComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMachinePawn_Statics::NewProp_HealthComponent_MetaData)) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMachinePawn_Statics::NewProp_Cannon_MetaData[] = {
+		{ "ModuleRelativePath", "MachinePawn.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMachinePawn_Statics::NewProp_Cannon = { "Cannon", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMachinePawn, Cannon), Z_Construct_UClass_ACannon_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMachinePawn_Statics::NewProp_Cannon_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMachinePawn_Statics::NewProp_Cannon_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMachinePawn_Statics::NewProp_AudioEffect_MetaData[] = {
 		{ "Category", "Components" },
+		{ "Comment", "//Sounds\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "MachinePawn.h" },
+		{ "ToolTip", "Sounds" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMachinePawn_Statics::NewProp_AudioEffect = { "AudioEffect", nullptr, (EPropertyFlags)0x00200800000b000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMachinePawn, AudioEffect), Z_Construct_UClass_UAudioComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMachinePawn_Statics::NewProp_AudioEffect_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMachinePawn_Statics::NewProp_AudioEffect_MetaData)) };
@@ -229,9 +231,9 @@ void EmptyLinkFunctionForGeneratedCodeMachinePawn() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMachinePawn_Statics::NewProp_AudioEffectDamaged = { "AudioEffectDamaged", nullptr, (EPropertyFlags)0x00200800000b000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMachinePawn, AudioEffectDamaged), Z_Construct_UClass_UAudioComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMachinePawn_Statics::NewProp_AudioEffectDamaged_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMachinePawn_Statics::NewProp_AudioEffectDamaged_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMachinePawn_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMachinePawn_Statics::NewProp_Cannon,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMachinePawn_Statics::NewProp_ScoreValue,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMachinePawn_Statics::NewProp_HealthComponent,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMachinePawn_Statics::NewProp_Cannon,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMachinePawn_Statics::NewProp_AudioEffect,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMachinePawn_Statics::NewProp_AudioEffectDamaged,
 	};
@@ -275,9 +277,9 @@ void EmptyLinkFunctionForGeneratedCodeMachinePawn() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_MachinePawn_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMachinePawn, AMachinePawn::StaticClass, TEXT("AMachinePawn"), &Z_Registration_Info_UClass_AMachinePawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMachinePawn), 70598359U) },
+		{ Z_Construct_UClass_AMachinePawn, AMachinePawn::StaticClass, TEXT("AMachinePawn"), &Z_Registration_Info_UClass_AMachinePawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMachinePawn), 4100777146U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_MachinePawn_h_2046947506(TEXT("/Script/Tank"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_MachinePawn_h_1484627482(TEXT("/Script/Tank"),
 		Z_CompiledInDeferFile_FID_Tank_Source_Tank_MachinePawn_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Tank_Source_Tank_MachinePawn_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
