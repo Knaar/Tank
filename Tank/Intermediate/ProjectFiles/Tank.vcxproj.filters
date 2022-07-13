@@ -116,6 +116,12 @@
     <ClInclude Include="..\..\Source\Tank\TankController.h">
       <Filter>Source\Tank</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Tank\TankFactory.cpp">
+      <Filter>Source\Tank</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tank\TankFactory.h">
+      <Filter>Source\Tank</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Tank\TankGameModeBase.cpp">
       <Filter>Source\Tank</Filter>
     </ClCompile>

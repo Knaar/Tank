@@ -11,6 +11,7 @@
 #include "Components\ArrowComponent.h"
 #include "HealthComponent.h"
 #include "Components/BoxComponent.h"
+#include "Engine/TargetPoint.h"
 
 
 ATankPawn::ATankPawn()
@@ -146,6 +147,21 @@ void ATankPawn::SetupCannon(TSubclassOf<ACannon>NewCannonClass)
 void ATankPawn::SetBullets(int bullets)
 {
 	Cannon->bulletsInMagasine = Cannon->bulletsInMagasine+bullets;
+}
+
+void ATankPawn::SetPatrollingPoints(TArray<ATargetPoint*> NewPatrollingPoint)
+{
+	PatrollingPoints = NewPatrollingPoint;
+}
+
+TArray<FVector> ATankPawn::GetPatrolligPoints()
+{
+	TArray<FVector> SomePoints;
+	for (ATargetPoint * Points:PatrollingPoints)
+	{
+		SomePoints.Add(Points->GetActorLocation());
+	}
+	return SomePoints;
 }
 
 FVector ATankPawn::GetTurretForwardVector()

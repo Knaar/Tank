@@ -8,29 +8,32 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class ATargetPoint;
 #ifdef TANK_TankPawn_generated_h
 #error "TankPawn.generated.h already included, missing '#pragma once' in TankPawn.h"
 #endif
 #define TANK_TankPawn_generated_h
 
-#define FID_Tank_Source_Tank_TankPawn_h_17_SPARSE_DATA
-#define FID_Tank_Source_Tank_TankPawn_h_17_RPC_WRAPPERS \
+#define FID_Tank_Source_Tank_TankPawn_h_18_SPARSE_DATA
+#define FID_Tank_Source_Tank_TankPawn_h_18_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execRotateTurretTo); \
 	DECLARE_FUNCTION(execGetTurretForwardVector); \
 	DECLARE_FUNCTION(execGetAccurency); \
-	DECLARE_FUNCTION(execGetPatrolligPoints);
+	DECLARE_FUNCTION(execGetPatrolligPoints); \
+	DECLARE_FUNCTION(execSetPatrollingPoints);
 
 
-#define FID_Tank_Source_Tank_TankPawn_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Tank_Source_Tank_TankPawn_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execRotateTurretTo); \
 	DECLARE_FUNCTION(execGetTurretForwardVector); \
 	DECLARE_FUNCTION(execGetAccurency); \
-	DECLARE_FUNCTION(execGetPatrolligPoints);
+	DECLARE_FUNCTION(execGetPatrolligPoints); \
+	DECLARE_FUNCTION(execSetPatrollingPoints);
 
 
-#define FID_Tank_Source_Tank_TankPawn_h_17_INCLASS_NO_PURE_DECLS \
+#define FID_Tank_Source_Tank_TankPawn_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesATankPawn(); \
 	friend struct Z_Construct_UClass_ATankPawn_Statics; \
@@ -39,7 +42,7 @@ public: \
 	DECLARE_SERIALIZER(ATankPawn)
 
 
-#define FID_Tank_Source_Tank_TankPawn_h_17_INCLASS \
+#define FID_Tank_Source_Tank_TankPawn_h_18_INCLASS \
 private: \
 	static void StaticRegisterNativesATankPawn(); \
 	friend struct Z_Construct_UClass_ATankPawn_Statics; \
@@ -48,7 +51,7 @@ public: \
 	DECLARE_SERIALIZER(ATankPawn)
 
 
-#define FID_Tank_Source_Tank_TankPawn_h_17_STANDARD_CONSTRUCTORS \
+#define FID_Tank_Source_Tank_TankPawn_h_18_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ATankPawn(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ATankPawn) \
@@ -61,7 +64,7 @@ private: \
 public:
 
 
-#define FID_Tank_Source_Tank_TankPawn_h_17_ENHANCED_CONSTRUCTORS \
+#define FID_Tank_Source_Tank_TankPawn_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ATankPawn(ATankPawn&&); \
@@ -72,25 +75,25 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ATankPawn)
 
 
-#define FID_Tank_Source_Tank_TankPawn_h_14_PROLOG
-#define FID_Tank_Source_Tank_TankPawn_h_17_GENERATED_BODY_LEGACY \
+#define FID_Tank_Source_Tank_TankPawn_h_15_PROLOG
+#define FID_Tank_Source_Tank_TankPawn_h_18_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Tank_Source_Tank_TankPawn_h_17_SPARSE_DATA \
-	FID_Tank_Source_Tank_TankPawn_h_17_RPC_WRAPPERS \
-	FID_Tank_Source_Tank_TankPawn_h_17_INCLASS \
-	FID_Tank_Source_Tank_TankPawn_h_17_STANDARD_CONSTRUCTORS \
+	FID_Tank_Source_Tank_TankPawn_h_18_SPARSE_DATA \
+	FID_Tank_Source_Tank_TankPawn_h_18_RPC_WRAPPERS \
+	FID_Tank_Source_Tank_TankPawn_h_18_INCLASS \
+	FID_Tank_Source_Tank_TankPawn_h_18_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_Tank_Source_Tank_TankPawn_h_17_GENERATED_BODY \
+#define FID_Tank_Source_Tank_TankPawn_h_18_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Tank_Source_Tank_TankPawn_h_17_SPARSE_DATA \
-	FID_Tank_Source_Tank_TankPawn_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Tank_Source_Tank_TankPawn_h_17_INCLASS_NO_PURE_DECLS \
-	FID_Tank_Source_Tank_TankPawn_h_17_ENHANCED_CONSTRUCTORS \
+	FID_Tank_Source_Tank_TankPawn_h_18_SPARSE_DATA \
+	FID_Tank_Source_Tank_TankPawn_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Tank_Source_Tank_TankPawn_h_18_INCLASS_NO_PURE_DECLS \
+	FID_Tank_Source_Tank_TankPawn_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

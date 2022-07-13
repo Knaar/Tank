@@ -50,4 +50,6 @@ protected:
 	void Fire();
 
 	bool IsPlayerSeen();
+
+	void Initialise();
 };

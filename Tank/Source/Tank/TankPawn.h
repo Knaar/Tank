@@ -11,6 +11,7 @@
 
 
 class ACannon;
+class ATargetPoint;
 UCLASS()
 class TANK_API ATankPawn : public AMachinePawn
 {
@@ -34,7 +35,10 @@ public:
 	void SetBullets(int bullets);
 
 	UFUNCTION()
-	TArray<FVector> GetPatrolligPoints(){return PatrollingPoints;}
+	void SetPatrollingPoints(TArray<ATargetPoint*> NewPatrollingPoint);
+
+	UFUNCTION()
+	TArray<FVector> GetPatrolligPoints();
 
 	UFUNCTION()
 	float GetAccurency(){return MovementAccurency;}
@@ -98,7 +102,7 @@ protected:
 
 	//AI components
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI | Components",Meta = (MakeEditWidget=true))
-	TArray<FVector> PatrollingPoints;
+	TArray<ATargetPoint*> PatrollingPoints;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI | Components")
 	float MovementAccurency =30.0f;

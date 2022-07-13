@@ -50,7 +50,7 @@ void AProjectile::OnMeshOverlapBegin(class UPrimitiveComponent* OverlappedComp, 
 		IDamageTaker* damageTakerActor = Cast<IDamageTaker>(OtherActor);
 		IScorable* ScorableActor = Cast<IScorable>(OtherActor);
 
-		float ScoreValue = 0;
+		float ScoreValue = 0.0f;
 
 		if (ScorableActor) {
 			ScoreValue = ScorableActor->GetPoints();
@@ -64,7 +64,8 @@ void AProjectile::OnMeshOverlapBegin(class UPrimitiveComponent* OverlappedComp, 
 			damageData.DamageMaker = this;
 
 			damageTakerActor->TakeDamage(damageData);
-			if (OtherActor->IsActorBeingDestroyed()&&ScoreValue!=0.0f)
+
+			if (OtherActor->IsActorBeingDestroyed() && ScoreValue != 0.0f)
 			{
 				if (OnKilled.IsBound()) {
 					OnKilled.Broadcast(ScoreValue);
