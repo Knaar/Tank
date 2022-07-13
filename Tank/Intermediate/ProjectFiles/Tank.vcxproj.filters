@@ -89,6 +89,12 @@
     <ClInclude Include="..\..\Source\Tank\ProjectilePool.h">
       <Filter>Source\Tank</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Tank\Scorable.cpp">
+      <Filter>Source\Tank</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Tank\Scorable.h">
+      <Filter>Source\Tank</Filter>
+    </ClInclude>
     <None Include="..\..\Source\Tank\Tank.Build.cs">
       <Filter>Source\Tank</Filter>
     </None>
