@@ -58,20 +58,30 @@ void ACannon::Fire()
 		{
 			return;
 		}
+
 		bCanFire = false;
+		ShootEffect->ActivateSystem();
+		AudioEffect->Play();
+		bulletsInMagasine--;
+
 		if (CannonType == ECannonType::FireProjectile)
 		{
+			
 			GEngine->AddOnScreenDebugMessage(10, 1, FColor::Green, "Fire - projectile");
 			if (ProjectilePool)
 			{
-				ProjectilePool->GetProjectile(ProjectileSpawnPoint->GetComponentLocation(), ProjectileSpawnPoint->GetComponentRotation());
-				ShootEffect->ActivateSystem();
-				AudioEffect->Play();
+				ProjectilePool->GetProjectile(ProjectileSpawnPoint->GetComponentLocation(), ProjectileSpawnPoint->GetComponentRotation());				
 			}
-
-			
+			else {
+				AProjectile* projectile_ptr = GetWorld()->SpawnActor<AProjectile>(ProjectileClass, ProjectileSpawnPoint->GetComponentLocation(), ProjectileSpawnPoint->GetComponentRotation());
+				if (projectile_ptr)
+				{
+					projectile_ptr->OnKilled.AddUObject(this, &ACannon::AddScore);
+					projectile_ptr->SetOwner(this);
+					projectile_ptr->Start();
+				}
+			}
 		}
-
 		else
 		{
 			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Trace")));
@@ -111,7 +121,6 @@ void ACannon::Fire()
 			else{
 				DrawDebugLine(GetWorld(), start, end, FColor::Purple, false, 0.5f, 0, 5);
 			}
-			bulletsInMagasine--;
 		}
 	}
 	GetWorld()->GetTimerManager().SetTimer(ReloadTimer, this, &ACannon::Reload, FireRate, false);
@@ -209,4 +218,11 @@ void ACannon::CreateProjectilePool()
 	}
 }
 
+void ACannon::AddScore(float ScoreValue)
+{
+	if (ScoreChanged.IsBound())
+	{
+		ScoreChanged.Broadcast(ScoreValue);
+	}
+}
 

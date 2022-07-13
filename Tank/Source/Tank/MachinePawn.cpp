@@ -33,6 +33,10 @@ void AMachinePawn::BeginPlay()
 
 void AMachinePawn::Die()
 {
+	if (Cannon)
+	{
+		Cannon->Destroy();
+	}
 	Destroy();
 	AudioEffect->Play();
 	
@@ -52,6 +56,17 @@ void AMachinePawn::FireSpecial()
 	}
 }
 
+float AMachinePawn::GetPoints()
+{
+	return ScoreValue;
+}
+
+void AMachinePawn::ShowScore(float Value)
+{
+	Score += Value;
+	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, FString::Printf(TEXT("Score: %f"), Score));
+}
+
 void AMachinePawn::TakeDamage(FDamageData DamageData)
 {
 	HealthComponent->TakeDamage(DamageData);
@@ -60,6 +75,6 @@ void AMachinePawn::TakeDamage(FDamageData DamageData)
 
 void AMachinePawn::DamageTaked(float DamageValue)
 {
-	//UE_LOG(LogTemp, Warning, TEXT("Turr %s taked damage: %f Health:%f"), *GetName(), DamageValue, HealthComponent->GetHealth());
+	UE_LOG(LogTemp, Warning, TEXT("Turr %s taked damage: %f Health:%f"), *GetName(), DamageValue, HealthComponent->GetHealth());
 }
 

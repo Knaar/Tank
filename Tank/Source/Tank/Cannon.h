@@ -16,6 +16,8 @@ UCLASS()
 class TANK_API ACannon : public AActor
 {
 	GENERATED_BODY()
+
+	DECLARE_EVENT_OneParam(ACannon, FChangeScore, float);
 	
 public:	
 	
@@ -30,6 +32,15 @@ public:
 	void ShootRelease();
 	void Reload();
 	void CreateProjectilePool();
+
+	//Score
+
+	float Score=0.0f;
+
+	UFUNCTION()
+	void AddScore(float ScoreValue);
+
+	FChangeScore ScoreChanged;
 
 	int bulletsInMagasine = 100;
 	

@@ -3,6 +3,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "DamageTaker.h"
 #include "GameStructs.h"
+#include "Scorable.h"
 
 AProjectile::AProjectile()
 {
@@ -47,7 +48,14 @@ void AProjectile::OnMeshOverlapBegin(class UPrimitiveComponent* OverlappedComp, 
 	if (OtherActor != owner && OtherActor != ownerByOwner)
 	{
 		IDamageTaker* damageTakerActor = Cast<IDamageTaker>(OtherActor);
-		//IScorable* ScorableActor = Cast<ISorable>(OtherActor);
+		IScorable* ScorableActor = Cast<IScorable>(OtherActor);
+
+		float ScoreValue = 0;
+
+		if (ScorableActor) {
+			ScoreValue = ScorableActor->GetPoints();
+		}
+
 		if (damageTakerActor)
 		{
 			FDamageData damageData;
@@ -56,6 +64,12 @@ void AProjectile::OnMeshOverlapBegin(class UPrimitiveComponent* OverlappedComp, 
 			damageData.DamageMaker = this;
 
 			damageTakerActor->TakeDamage(damageData);
+			if (OtherActor->IsActorBeingDestroyed()&&ScoreValue!=0.0f)
+			{
+				if (OnKilled.IsBound()) {
+					OnKilled.Broadcast(ScoreValue);
+				}
+			}
 		}
 		else
 		{

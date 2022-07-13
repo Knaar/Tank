@@ -9,10 +9,11 @@
 #include "GameFramework/Pawn.h"
 #include "Components/AudioComponent.h"
 #include "HealthComponent.h"
+#include "Scorable.h"
 #include "MachinePawn.generated.h"
 
 UCLASS()
-class TANK_API AMachinePawn : public APawn, public IDamageTaker
+class TANK_API AMachinePawn : public APawn, public IDamageTaker, public IScorable
 {
 	GENERATED_BODY()
 
@@ -26,8 +27,19 @@ public:
 	void Fire();
 	void FireSpecial();
 
+	//Score
+	virtual float GetPoints() override;
+
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Score")
+	float ScoreValue=100.0f;
+
 	UFUNCTION()
-	virtual void TakeDamage(FDamageData DamageData);
+	void ShowScore(float Value);
+
+	float Score = 0.0f;
+
+	
+	virtual void TakeDamage(FDamageData DamageData)override;
 
 	UFUNCTION()
 	void DamageTaked(float DamageValue);

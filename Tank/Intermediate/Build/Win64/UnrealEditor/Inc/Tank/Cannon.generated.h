@@ -14,8 +14,16 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define TANK_Cannon_generated_h
 
 #define FID_Tank_Source_Tank_Cannon_h_18_SPARSE_DATA
-#define FID_Tank_Source_Tank_Cannon_h_18_RPC_WRAPPERS
-#define FID_Tank_Source_Tank_Cannon_h_18_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_Tank_Source_Tank_Cannon_h_18_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execAddScore);
+
+
+#define FID_Tank_Source_Tank_Cannon_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execAddScore);
+
+
 #define FID_Tank_Source_Tank_Cannon_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesACannon(); \
