@@ -10,6 +10,8 @@ UCLASS()
 class TANK_API AProjectile : public AActor
 {
 	GENERATED_BODY()
+
+	DECLARE_EVENT_OneParam(AProjectile,FOnKill,float)
 	
 public:	
 	
@@ -18,6 +20,8 @@ public:
 	void Start();
 	void Deactivate();
 	void Move();
+
+	FOnKill OnKilled;
 
 	UFUNCTION()
 	void OnMeshOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor,
@@ -30,7 +34,7 @@ protected:
 	class UStaticMeshComponent* ProjectileMesh;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
-	float moveSpeed =100.0f;
+	float moveSpeed =200.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
 	float moveRate = 0.1f;

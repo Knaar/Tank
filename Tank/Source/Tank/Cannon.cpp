@@ -26,10 +26,10 @@ ACannon::ACannon()
 	ProjectileSpawnPoint->SetupAttachment(RootComponent);
 
 	ShootEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("ParticleObject"));
-	ShootEffect->SetupAttachment(ProjectileSpawnPoint);
+	//ShootEffect->SetupAttachment(ProjectileSpawnPoint);
 
 	AudioEffect = CreateDefaultSubobject<UAudioComponent>(TEXT("AudoiEffect"));
-	AudioEffect->SetupAttachment(ProjectileSpawnPoint);
+	//AudioEffect->SetupAttachment(ProjectileSpawnPoint);
 }
 
 void ACannon::BeginPlay()

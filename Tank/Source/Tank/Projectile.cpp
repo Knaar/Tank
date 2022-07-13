@@ -47,6 +47,7 @@ void AProjectile::OnMeshOverlapBegin(class UPrimitiveComponent* OverlappedComp, 
 	if (OtherActor != owner && OtherActor != ownerByOwner)
 	{
 		IDamageTaker* damageTakerActor = Cast<IDamageTaker>(OtherActor);
+		//IScorable* ScorableActor = Cast<ISorable>(OtherActor);
 		if (damageTakerActor)
 		{
 			FDamageData damageData;
