@@ -17,9 +17,11 @@ AMachinePawn::AMachinePawn()
 
 	
 	AudioEffect = CreateDefaultSubobject<UAudioComponent>(TEXT("AudoiEffect"));
+	AudioEffect->SetAutoActivate(false);
 	//RootComponent = AudioEffect;
 
 	AudioEffectDamaged = CreateDefaultSubobject<UAudioComponent>(TEXT("AudoiEffectDamaged"));
+	AudioEffectDamaged->SetAutoActivate(false);
 	//RootComponent = AudioEffect;
 
 

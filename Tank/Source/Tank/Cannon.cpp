@@ -29,6 +29,7 @@ ACannon::ACannon()
 	ShootEffect->SetupAttachment(ProjectileSpawnPoint);
 
 	AudioEffect = CreateDefaultSubobject<UAudioComponent>(TEXT("AudoiEffect"));
+	AudioEffect->SetAutoActivate(false);
 	
 }
 
