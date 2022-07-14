@@ -29,7 +29,7 @@ ACannon::ACannon()
 	ShootEffect->SetupAttachment(ProjectileSpawnPoint);
 
 	AudioEffect = CreateDefaultSubobject<UAudioComponent>(TEXT("AudoiEffect"));
-	//AudioEffect->SetupAttachment(ProjectileSpawnPoint);
+	
 }
 
 void ACannon::BeginPlay()
@@ -99,7 +99,7 @@ void ACannon::Fire()
 			if (GetWorld()->LineTraceSingleByChannel(hitResult, start, end,
 				ECollisionChannel::ECC_Visibility, traceParams)){
 
-				DrawDebugLine(GetWorld(), start, hitResult.Location, FColor::Red, false,0.5f, 0, 5);
+				DrawDebugLine(GetWorld(), start, hitResult.Location, FColor::Red, false,0.2f, 0, 10);
 				if (hitResult.GetActor()){
 
 					IDamageTaker* damageTakerActor = Cast<IDamageTaker>(hitResult.GetActor());
@@ -119,7 +119,7 @@ void ACannon::Fire()
 				}
 			}
 			else{
-				DrawDebugLine(GetWorld(), start, end, FColor::Purple, false, 0.5f, 0, 5);
+				DrawDebugLine(GetWorld(), start, end, FColor::Purple, false, 0.2f, 0, 10);
 			}
 		}
 	}
@@ -142,6 +142,8 @@ void ACannon::ShootCast()
 
 void ACannon::ShootRelease()
 {
+	ShootEffect->ActivateSystem();
+	AudioEffect->Play();
 		if (CannonType == ECannonType::FireProjectile)
 		{
 			GEngine->AddOnScreenDebugMessage(10, 1, FColor::Green, "Fire - projectile");
@@ -151,36 +153,21 @@ void ACannon::ShootRelease()
 				ProjectilePool->GetProjectile(ProjectileSpawnPoint->GetComponentLocation(), ProjectileSpawnPoint->GetComponentRotation());
 				GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Get Projectile Pool")));
 			}
-			/*
-			FTransform projectileTransform(ProjectileSpawnPoint->GetComponentRotation(),
-				ProjectileSpawnPoint->GetComponentLocation(), FVector(1));
-			AProjectile* projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass,
-				ProjectileSpawnPoint->GetComponentLocation(),
-				ProjectileSpawnPoint->GetComponentRotation());
-			if (projectile)
-			{
-				projectile->Start();
-			}*/
+			
 		}
 		else
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 0.5f, FColor::Red, FString(TEXT("Fire Trace")));
-			bulletsInMagasine--;
 			FHitResult hitResult;
-			FCollisionQueryParams traceParams =
-				FCollisionQueryParams(FName(TEXT("FireTrace")), true, this);
+			FCollisionQueryParams traceParams =FCollisionQueryParams(FName(TEXT("FireTrace")), true, this);
 			traceParams.bTraceComplex = true;
 			traceParams.bReturnPhysicalMaterial = false;
-
 
 			FVector start = ProjectileSpawnPoint->GetComponentLocation();
 			FVector end = ProjectileSpawnPoint->GetForwardVector() * FireRange + start;
 			if (GetWorld()->LineTraceSingleByChannel(hitResult, start, end,
 				ECollisionChannel::ECC_Visibility, traceParams))
 			{
-
-				DrawDebugLine(GetWorld(), start, hitResult.Location, FColor::Red, false,
-					0.5f, 0, 5);
+				DrawDebugLine(GetWorld(), start, hitResult.Location, FColor::Red, false,0.2f, 0, 10);
 				if (hitResult.GetActor())
 				{
 					hitResult.GetActor()->Destroy();
@@ -188,7 +175,7 @@ void ACannon::ShootRelease()
 			}
 			else
 			{
-				DrawDebugLine(GetWorld(), start, end, FColor::Purple, false, 0.5f, 0, 5);
+				DrawDebugLine(GetWorld(), start, end, FColor::Purple, false, 0.2f, 0, 10);
 			}
 		}
 

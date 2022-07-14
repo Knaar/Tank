@@ -3,7 +3,7 @@
   Using 'git status' to determine working set for adaptive non-unity build (E:\Unreal_5_Projects\Tank).
   Building TankEditor...
   Using Visual Studio 2022 14.32.31332 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  [Adaptive Build] Excluded from Tank unity file: MachinePawn.cpp, TankAIController.cpp, TankFactory.cpp, TankPawn.cpp
+  [Adaptive Build] Excluded from Tank unity file: Cannon.cpp
   Distributing 4 actions to XGE
   --------------------Build System Warning---------------------------------------
   License is invalid:
@@ -12,15 +12,15 @@
   
   -------------------------------------------------------------------------------
   
-  Build ID: {0A6B4AB6-2BF1-453C-B8F0-5E9C74D7768C}
+  Build ID: {B56E71BF-4082-451F-BE87-EA0E3252CC92}
   
   --------------------Project: Default-------------------------------------------
-  [1/4] TankFactory.cpp (0:01.76 at +0:00)
+  [1/4] Cannon.cpp (0:01.85 at +0:00)
   [2/4] UnrealEditor-Tank.dll (0:00.57 at +0:01)
      Создается библиотека E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.suppressed.lib и объект E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.suppressed.exp
-  [3/4] UnrealEditor-Tank.lib (0:00.09 at +0:02)
+  [3/4] UnrealEditor-Tank.lib (0:00.11 at +0:02)
      Создается библиотека E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.lib и объект E:\Unreal_5_Projects\Tank\Tank\Intermediate\Build\Win64\UnrealEditor\Development\Tank\UnrealEditor-Tank.exp
-  [4/4] TankEditor.target (0:00.21 at +0:02)
+  [4/4] TankEditor.target (0:00.20 at +0:02)
   ---------------------- Done ----------------------
   
       Rebuild All: 1 succeeded, 0 failed, 0 skipped
@@ -28,5 +28,5 @@
   1 build system warning(s):
      - License is invalid
   
-  Total time in XGE executor: 2,77 seconds
-  Total execution time: 3,11 seconds
+  Total time in XGE executor: 2,90 seconds
+  Total execution time: 3,37 seconds
