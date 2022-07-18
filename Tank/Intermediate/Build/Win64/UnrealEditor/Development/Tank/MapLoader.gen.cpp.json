@@ -1,0 +1,27 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\unreal_5_projects\\tank\\tank\\intermediate\\build\\win64\\unrealeditor\\inc\\tank\\maploader.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\unreal_5_projects\\tank\\tank\\intermediate\\build\\win64\\tankeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "e:\\unreal_5_projects\\tank\\tank\\intermediate\\build\\win64\\unrealeditor\\development\\tank\\definitions.tank.h",
+            "e:\\unreal_5_projects\\tank\\tank\\source\\tank\\maploader.h",
+            "e:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\pointlightcomponent.h",
+            "e:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\locallightcomponent.h",
+            "e:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\lightcomponent.h",
+            "e:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\lightcomponentbase.h",
+            "e:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\lightcomponentbase.generated.h",
+            "e:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\lightcomponent.generated.h",
+            "e:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\locallightcomponent.generated.h",
+            "e:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\pointlightcomponent.generated.h",
+            "e:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\boxcomponent.h",
+            "e:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "e:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\shapecomponent.generated.h",
+            "e:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\boxcomponent.generated.h",
+            "e:\\unreal_5_projects\\tank\\tank\\intermediate\\build\\win64\\unrealeditor\\inc\\tank\\maploader.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

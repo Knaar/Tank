@@ -1,7 +1,7 @@
 #include "MapLoader.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/PointLightComponent.h"
-#include "../../../../../UE_5.0/Engine/Source/Runtime/Engine/Classes/Kismet/GameplayStatics.h"
+#include "Kismet/GameplayStatics.h"
 
 AMapLoader::AMapLoader()
 {

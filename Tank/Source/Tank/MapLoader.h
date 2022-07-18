@@ -16,7 +16,15 @@ class TANK_API AMapLoader : public AActor
 public:	
 	AMapLoader();
 
-protected:
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "LevelLoadParams")
+	FName LoadLevelName;
+
+	void SetIsActivated(bool NewIsActivated);
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "LevelLoadParams")
+	bool IsActivated = false;
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class UStaticMeshComponent* MeshComponent;
 
@@ -29,13 +37,11 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class UPointLightComponent* DeactivatedLight;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "LevelLoadParams")
-	FName LoadLevelName;
+	
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "LevelLoadParams")
-	bool IsActivated=false;
+	
 
-	void SetIsActivated(bool NewIsActivated);
+	
 
 	virtual void BeginPlay()override;
 

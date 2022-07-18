@@ -6,6 +6,8 @@
 #include "GameFramework/Actor.h"
 #include "Engine/TargetPoint.h"
 #include "DamageTaker.h"
+#include "Components/AudioComponent.h"
+#include "MapLoader.h"
 #include "TankFactory.generated.h"
 
 UCLASS()
@@ -32,7 +34,10 @@ protected:
 	void DamageTaked(float DamageValue);
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Components")
-	class UStaticMeshComponent* BuildingMesh;
+	class UStaticMeshComponent* BuildingMeshAlive;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Components")
+	class UStaticMeshComponent* BuildingMeshDestroyed;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class UBoxComponent* BoxCollider;
@@ -44,6 +49,12 @@ protected:
 	class UArrowComponent* TankSpawnPoint;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Components")
+	class UAudioComponent* AudioTankSpawnComonent;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Components")
+	class UAudioComponent* AudioFactoryDeathComonent;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	TSubclassOf<class ATankPawn> SpawnTankClass;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Components")
@@ -51,6 +62,11 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
 	TArray<ATargetPoint*> TankWayPoints;
+
+	bool bFactoryAlive = true;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components")
+	class AMapLoader* MapLoader;
 
 
 

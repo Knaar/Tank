@@ -72,6 +72,10 @@ float ATankAIController::GetRotationValue()
 
 void ATankAIController::Targeting()
 {
+	if (!PlayerPawn)
+	{
+		return;
+	}
 	if (IsPlayerInRange()) {
 		RotateToPlayer();
 	}
@@ -149,8 +153,8 @@ void ATankAIController::Initialise()
 		FVector PawnLocation = TankPawn->GetActorLocation();
 		MovementAccurency = TankPawn->GetAccurency();
 		TArray<FVector> points = TankPawn->GetPatrolligPoints();
-		for (FVector SomePoint : points) {
-			PatrollingPoints.Add(SomePoint + PawnLocation);
+		for (FVector Point : points) {
+			PatrollingPoints.Add(Point + PawnLocation);
 		}
 		CurrentPatrollingIndex = 0;
 	}

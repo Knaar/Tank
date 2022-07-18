@@ -1,0 +1,36 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\unreal_5_projects\\tank\\tank\\source\\tank\\maploader.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\unreal_5_projects\\tank\\tank\\intermediate\\build\\win64\\tankeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "e:\\unreal_5_projects\\tank\\tank\\intermediate\\build\\win64\\unrealeditor\\development\\tank\\definitions.tank.h",
+            "e:\\unreal_5_projects\\tank\\tank\\source\\tank\\maploader.h",
+            "e:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\pointlightcomponent.h",
+            "e:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\locallightcomponent.h",
+            "e:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\lightcomponent.h",
+            "e:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\lightcomponentbase.h",
+            "e:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\lightcomponentbase.generated.h",
+            "e:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\lightcomponent.generated.h",
+            "e:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\locallightcomponent.generated.h",
+            "e:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\pointlightcomponent.generated.h",
+            "e:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\boxcomponent.h",
+            "e:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "e:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\shapecomponent.generated.h",
+            "e:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\boxcomponent.generated.h",
+            "e:\\unreal_5_projects\\tank\\tank\\intermediate\\build\\win64\\unrealeditor\\inc\\tank\\maploader.generated.h",
+            "e:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystatics.h",
+            "e:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetsystemlibrary.h",
+            "e:\\ue_5.0\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "e:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\kismetsystemlibrary.generated.h",
+            "e:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\sound\\dialoguetypes.h",
+            "e:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\dialoguetypes.generated.h",
+            "e:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystaticstypes.h",
+            "e:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\gameplaystaticstypes.generated.h",
+            "e:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\gameplaystatics.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

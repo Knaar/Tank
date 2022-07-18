@@ -18,9 +18,11 @@ void EmptyLinkFunctionForGeneratedCodeTankFactory() {}
 	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 	TANK_API UClass* Z_Construct_UClass_UHealthComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UArrowComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UAudioComponent_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	TANK_API UClass* Z_Construct_UClass_ATankPawn_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_ATargetPoint_NoRegister();
+	TANK_API UClass* Z_Construct_UClass_AMapLoader_NoRegister();
 	TANK_API UClass* Z_Construct_UClass_UDamageTaker_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(ATankFactory::execDamageTaked)
@@ -155,9 +157,13 @@ void EmptyLinkFunctionForGeneratedCodeTankFactory() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_BuildingMesh_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_BuildingMeshAlive_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_BuildingMesh;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_BuildingMeshAlive;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_BuildingMeshDestroyed_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_BuildingMeshDestroyed;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_BoxCollider_MetaData[];
 #endif
@@ -171,6 +177,14 @@ void EmptyLinkFunctionForGeneratedCodeTankFactory() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_TankSpawnPoint;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_AudioTankSpawnComonent_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_AudioTankSpawnComonent;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_AudioFactoryDeathComonent_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_AudioFactoryDeathComonent;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_SpawnTankClass_MetaData[];
 #endif
 		static const UECodeGen_Private::FClassPropertyParams NewProp_SpawnTankClass;
@@ -183,6 +197,10 @@ void EmptyLinkFunctionForGeneratedCodeTankFactory() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_TankWayPoints_MetaData[];
 #endif
 		static const UECodeGen_Private::FArrayPropertyParams NewProp_TankWayPoints;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MapLoader_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_MapLoader;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
@@ -204,13 +222,21 @@ void EmptyLinkFunctionForGeneratedCodeTankFactory() {}
 	};
 #endif
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATankFactory_Statics::NewProp_BuildingMesh_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATankFactory_Statics::NewProp_BuildingMeshAlive_MetaData[] = {
 		{ "Category", "Components" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "TankFactory.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATankFactory_Statics::NewProp_BuildingMesh = { "BuildingMesh", nullptr, (EPropertyFlags)0x002008000009000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATankFactory, BuildingMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATankFactory_Statics::NewProp_BuildingMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATankFactory_Statics::NewProp_BuildingMesh_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATankFactory_Statics::NewProp_BuildingMeshAlive = { "BuildingMeshAlive", nullptr, (EPropertyFlags)0x002008000009000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATankFactory, BuildingMeshAlive), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATankFactory_Statics::NewProp_BuildingMeshAlive_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATankFactory_Statics::NewProp_BuildingMeshAlive_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATankFactory_Statics::NewProp_BuildingMeshDestroyed_MetaData[] = {
+		{ "Category", "Components" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "TankFactory.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATankFactory_Statics::NewProp_BuildingMeshDestroyed = { "BuildingMeshDestroyed", nullptr, (EPropertyFlags)0x002008000009000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATankFactory, BuildingMeshDestroyed), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATankFactory_Statics::NewProp_BuildingMeshDestroyed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATankFactory_Statics::NewProp_BuildingMeshDestroyed_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATankFactory_Statics::NewProp_BoxCollider_MetaData[] = {
 		{ "Category", "Components" },
@@ -236,6 +262,22 @@ void EmptyLinkFunctionForGeneratedCodeTankFactory() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATankFactory_Statics::NewProp_TankSpawnPoint = { "TankSpawnPoint", nullptr, (EPropertyFlags)0x002008000009000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATankFactory, TankSpawnPoint), Z_Construct_UClass_UArrowComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATankFactory_Statics::NewProp_TankSpawnPoint_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATankFactory_Statics::NewProp_TankSpawnPoint_MetaData)) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATankFactory_Statics::NewProp_AudioTankSpawnComonent_MetaData[] = {
+		{ "Category", "Components" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "TankFactory.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATankFactory_Statics::NewProp_AudioTankSpawnComonent = { "AudioTankSpawnComonent", nullptr, (EPropertyFlags)0x002008000009000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATankFactory, AudioTankSpawnComonent), Z_Construct_UClass_UAudioComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATankFactory_Statics::NewProp_AudioTankSpawnComonent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATankFactory_Statics::NewProp_AudioTankSpawnComonent_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATankFactory_Statics::NewProp_AudioFactoryDeathComonent_MetaData[] = {
+		{ "Category", "Components" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "TankFactory.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATankFactory_Statics::NewProp_AudioFactoryDeathComonent = { "AudioFactoryDeathComonent", nullptr, (EPropertyFlags)0x002008000009000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATankFactory, AudioFactoryDeathComonent), Z_Construct_UClass_UAudioComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATankFactory_Statics::NewProp_AudioFactoryDeathComonent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATankFactory_Statics::NewProp_AudioFactoryDeathComonent_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATankFactory_Statics::NewProp_SpawnTankClass_MetaData[] = {
 		{ "Category", "Components" },
 		{ "ModuleRelativePath", "TankFactory.h" },
@@ -257,15 +299,26 @@ void EmptyLinkFunctionForGeneratedCodeTankFactory() {}
 	};
 #endif
 	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ATankFactory_Statics::NewProp_TankWayPoints = { "TankWayPoints", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATankFactory, TankWayPoints), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ATankFactory_Statics::NewProp_TankWayPoints_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATankFactory_Statics::NewProp_TankWayPoints_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATankFactory_Statics::NewProp_MapLoader_MetaData[] = {
+		{ "Category", "Components" },
+		{ "ModuleRelativePath", "TankFactory.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATankFactory_Statics::NewProp_MapLoader = { "MapLoader", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATankFactory, MapLoader), Z_Construct_UClass_AMapLoader_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATankFactory_Statics::NewProp_MapLoader_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATankFactory_Statics::NewProp_MapLoader_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATankFactory_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankFactory_Statics::NewProp_BuildingMesh,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankFactory_Statics::NewProp_BuildingMeshAlive,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankFactory_Statics::NewProp_BuildingMeshDestroyed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankFactory_Statics::NewProp_BoxCollider,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankFactory_Statics::NewProp_HealthComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankFactory_Statics::NewProp_TankSpawnPoint,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankFactory_Statics::NewProp_AudioTankSpawnComonent,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankFactory_Statics::NewProp_AudioFactoryDeathComonent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankFactory_Statics::NewProp_SpawnTankClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankFactory_Statics::NewProp_SpawnTankRate,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankFactory_Statics::NewProp_TankWayPoints_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankFactory_Statics::NewProp_TankWayPoints,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATankFactory_Statics::NewProp_MapLoader,
 	};
 		const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ATankFactory_Statics::InterfaceParams[] = {
 			{ Z_Construct_UClass_UDamageTaker_NoRegister, (int32)VTABLE_OFFSET(ATankFactory, IDamageTaker), false },  // 4191389099
@@ -306,9 +359,9 @@ void EmptyLinkFunctionForGeneratedCodeTankFactory() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankFactory_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATankFactory, ATankFactory::StaticClass, TEXT("ATankFactory"), &Z_Registration_Info_UClass_ATankFactory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATankFactory), 2354561758U) },
+		{ Z_Construct_UClass_ATankFactory, ATankFactory::StaticClass, TEXT("ATankFactory"), &Z_Registration_Info_UClass_ATankFactory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATankFactory), 4034442580U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankFactory_h_3173318358(TEXT("/Script/Tank"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankFactory_h_1013975759(TEXT("/Script/Tank"),
 		Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankFactory_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Tank_Source_Tank_TankFactory_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -18,35 +18,54 @@ ATankFactory::ATankFactory()
 	USceneComponent* SceneComp = CreateDefaultSubobject<USceneComponent>(TEXT("SceneComponent"));
 	RootComponent = SceneComp;
 
-	BuildingMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BuildingMesh"));
-	BuildingMesh->SetupAttachment(SceneComp);
+	BuildingMeshAlive = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BuildingMeshAlive"));
+	BuildingMeshAlive->SetupAttachment(SceneComp);
+	BuildingMeshAlive->SetVisibility(true);
+	
+	BuildingMeshDestroyed = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BuildingMeshDestroyed"));
+	BuildingMeshDestroyed->SetupAttachment(SceneComp);
+	BuildingMeshDestroyed->SetVisibility(false);
 
 	BoxCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxCollider"));
-	BoxCollider->SetupAttachment(BuildingMesh);
+	BoxCollider->SetupAttachment(SceneComp);
 
 	TankSpawnPoint = CreateDefaultSubobject<UArrowComponent>(TEXT("TankSpawnPoint"));
-	TankSpawnPoint->SetupAttachment(BuildingMesh);
+	TankSpawnPoint->SetupAttachment(SceneComp);
 
 	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));
 	HealthComponent->OnDamaged.AddUObject(this, &ATankFactory::DamageTaked);
 	HealthComponent->OnDie.AddUObject(this, &ATankFactory::Die);
+
+	AudioTankSpawnComonent = CreateDefaultSubobject<UAudioComponent>(TEXT("AudioSpawnComponent"));
+	AudioTankSpawnComonent->SetAutoActivate(false);
+	AudioTankSpawnComonent->SetupAttachment(SceneComp);
+
+	AudioFactoryDeathComonent = CreateDefaultSubobject<UAudioComponent>(TEXT("AudioDeathComponent"));
+	AudioFactoryDeathComonent->SetAutoActivate(false);
+	AudioFactoryDeathComonent->SetupAttachment(SceneComp);
 }
 
 void ATankFactory::BeginPlay()
 {
 	Super::BeginPlay();
 	FTimerHandle SpawnTimer;
-	GetWorld()->GetTimerManager().SetTimer(SpawnTimer, this, &ATankFactory::SpawnTank, SpawnTankRate, true, SpawnTankRate);
+	
+	GetWorld()->GetTimerManager().SetTimer(SpawnTimer, this, &ATankFactory::SpawnTank, SpawnTankRate, true, 0);
 }
 
 void ATankFactory::SpawnTank()
 {
-	FTransform SpawnPlace(TankSpawnPoint->GetComponentRotation(), TankSpawnPoint->GetComponentLocation(), FVector(1));
-	ATankPawn* newTank = GetWorld()->SpawnActorDeferred<ATankPawn>(SpawnTankClass, SpawnPlace, this, nullptr, ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
+	if (bFactoryAlive)
+	{
+		AudioTankSpawnComonent->Play();
+		FTransform SpawnPlace(TankSpawnPoint->GetComponentRotation(), TankSpawnPoint->GetComponentLocation(), FVector(1));
+		ATankPawn* newTank = GetWorld()->SpawnActorDeferred<ATankPawn>(SpawnTankClass, SpawnPlace, this, nullptr, ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
 
-	newTank->SetPatrollingPoints(TankWayPoints);
+		newTank->SetPatrollingPoints(TankWayPoints);
 
-	UGameplayStatics::FinishSpawningActor(newTank, SpawnPlace);
+		UGameplayStatics::FinishSpawningActor(newTank, SpawnPlace);
+	}
+	
 }
 
 void ATankFactory::TakeDamage(FDamageData DamageData)
@@ -56,7 +75,20 @@ void ATankFactory::TakeDamage(FDamageData DamageData)
 
 void ATankFactory::Die()
 {
-	Destroy();
+	if (bFactoryAlive)
+	{
+		AudioFactoryDeathComonent->Play();
+		BuildingMeshAlive->SetVisibility(false);
+		BuildingMeshDestroyed->SetVisibility(true);
+
+		bFactoryAlive = false;
+		if (MapLoader) {
+			MapLoader->SetIsActivated(true);
+		}
+	}
+	
+
+	
 }
 
 void ATankFactory::DamageTaked(float DamageValue)

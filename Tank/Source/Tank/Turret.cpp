@@ -76,6 +76,10 @@ void ATurret::Destroyed()
 
 void ATurret::Targeting()
 {
+	if (!PlayerPawn)
+	{
+		return;
+	}
 	if (IsPlayerINRange()) {
 		RotateToPlayer();
 	}

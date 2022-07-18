@@ -14,22 +14,22 @@ struct FDamageData;
 #endif
 #define TANK_TankFactory_generated_h
 
-#define FID_Tank_Source_Tank_TankFactory_h_14_SPARSE_DATA
-#define FID_Tank_Source_Tank_TankFactory_h_14_RPC_WRAPPERS \
+#define FID_Tank_Source_Tank_TankFactory_h_16_SPARSE_DATA
+#define FID_Tank_Source_Tank_TankFactory_h_16_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execDamageTaked); \
 	DECLARE_FUNCTION(execDie); \
 	DECLARE_FUNCTION(execTakeDamage);
 
 
-#define FID_Tank_Source_Tank_TankFactory_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Tank_Source_Tank_TankFactory_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execDamageTaked); \
 	DECLARE_FUNCTION(execDie); \
 	DECLARE_FUNCTION(execTakeDamage);
 
 
-#define FID_Tank_Source_Tank_TankFactory_h_14_INCLASS_NO_PURE_DECLS \
+#define FID_Tank_Source_Tank_TankFactory_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesATankFactory(); \
 	friend struct Z_Construct_UClass_ATankFactory_Statics; \
@@ -39,7 +39,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<ATankFactory*>(this); }
 
 
-#define FID_Tank_Source_Tank_TankFactory_h_14_INCLASS \
+#define FID_Tank_Source_Tank_TankFactory_h_16_INCLASS \
 private: \
 	static void StaticRegisterNativesATankFactory(); \
 	friend struct Z_Construct_UClass_ATankFactory_Statics; \
@@ -49,7 +49,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<ATankFactory*>(this); }
 
 
-#define FID_Tank_Source_Tank_TankFactory_h_14_STANDARD_CONSTRUCTORS \
+#define FID_Tank_Source_Tank_TankFactory_h_16_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ATankFactory(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ATankFactory) \
@@ -62,7 +62,7 @@ private: \
 public:
 
 
-#define FID_Tank_Source_Tank_TankFactory_h_14_ENHANCED_CONSTRUCTORS \
+#define FID_Tank_Source_Tank_TankFactory_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ATankFactory(ATankFactory&&); \
@@ -73,25 +73,25 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ATankFactory)
 
 
-#define FID_Tank_Source_Tank_TankFactory_h_11_PROLOG
-#define FID_Tank_Source_Tank_TankFactory_h_14_GENERATED_BODY_LEGACY \
+#define FID_Tank_Source_Tank_TankFactory_h_13_PROLOG
+#define FID_Tank_Source_Tank_TankFactory_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Tank_Source_Tank_TankFactory_h_14_SPARSE_DATA \
-	FID_Tank_Source_Tank_TankFactory_h_14_RPC_WRAPPERS \
-	FID_Tank_Source_Tank_TankFactory_h_14_INCLASS \
-	FID_Tank_Source_Tank_TankFactory_h_14_STANDARD_CONSTRUCTORS \
+	FID_Tank_Source_Tank_TankFactory_h_16_SPARSE_DATA \
+	FID_Tank_Source_Tank_TankFactory_h_16_RPC_WRAPPERS \
+	FID_Tank_Source_Tank_TankFactory_h_16_INCLASS \
+	FID_Tank_Source_Tank_TankFactory_h_16_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_Tank_Source_Tank_TankFactory_h_14_GENERATED_BODY \
+#define FID_Tank_Source_Tank_TankFactory_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Tank_Source_Tank_TankFactory_h_14_SPARSE_DATA \
-	FID_Tank_Source_Tank_TankFactory_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Tank_Source_Tank_TankFactory_h_14_INCLASS_NO_PURE_DECLS \
-	FID_Tank_Source_Tank_TankFactory_h_14_ENHANCED_CONSTRUCTORS \
+	FID_Tank_Source_Tank_TankFactory_h_16_SPARSE_DATA \
+	FID_Tank_Source_Tank_TankFactory_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Tank_Source_Tank_TankFactory_h_16_INCLASS_NO_PURE_DECLS \
+	FID_Tank_Source_Tank_TankFactory_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
