@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "Components/PointLightComponent.h"
 #include "Components/BoxComponent.h"
+#include "../../../../../UE_5.0/Engine/Source/Runtime/Engine/Classes/Components/AudioComponent.h"
 #include "MapLoader.generated.h"
 
 UCLASS()
@@ -37,6 +38,9 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Components")
 	class UPointLightComponent* DeactivatedLight;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Components")
+	class UAudioComponent* AudioComponent;
+
 	
 
 	
@@ -48,5 +52,7 @@ public:
 	void SetActiveLights();
 
 	UFUNCTION()
-		void OnTriggerOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor*	OtherActor,	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	void OnTriggerOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor*	OtherActor,	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	void Teleport();
 };

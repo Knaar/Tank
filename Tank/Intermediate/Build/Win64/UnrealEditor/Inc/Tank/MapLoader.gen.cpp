@@ -19,6 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeMapLoader() {}
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UPointLightComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UAudioComponent_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(AMapLoader::execOnTriggerOverlapBegin)
 	{
@@ -159,6 +160,10 @@ void EmptyLinkFunctionForGeneratedCodeMapLoader() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_DeactivatedLight_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_DeactivatedLight;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_AudioComponent_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_AudioComponent;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -226,6 +231,14 @@ void EmptyLinkFunctionForGeneratedCodeMapLoader() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapLoader_Statics::NewProp_DeactivatedLight = { "DeactivatedLight", nullptr, (EPropertyFlags)0x001000000009000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMapLoader, DeactivatedLight), Z_Construct_UClass_UPointLightComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMapLoader_Statics::NewProp_DeactivatedLight_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMapLoader_Statics::NewProp_DeactivatedLight_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMapLoader_Statics::NewProp_AudioComponent_MetaData[] = {
+		{ "Category", "Components" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "MapLoader.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMapLoader_Statics::NewProp_AudioComponent = { "AudioComponent", nullptr, (EPropertyFlags)0x001000000009000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMapLoader, AudioComponent), Z_Construct_UClass_UAudioComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMapLoader_Statics::NewProp_AudioComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMapLoader_Statics::NewProp_AudioComponent_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMapLoader_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapLoader_Statics::NewProp_LoadLevelName,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapLoader_Statics::NewProp_IsActivated,
@@ -233,6 +246,7 @@ void EmptyLinkFunctionForGeneratedCodeMapLoader() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapLoader_Statics::NewProp_TriggerCollider,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapLoader_Statics::NewProp_ActivatedLight,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapLoader_Statics::NewProp_DeactivatedLight,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMapLoader_Statics::NewProp_AudioComponent,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AMapLoader_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AMapLoader>::IsAbstract,
@@ -270,9 +284,9 @@ void EmptyLinkFunctionForGeneratedCodeMapLoader() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_MapLoader_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMapLoader, AMapLoader::StaticClass, TEXT("AMapLoader"), &Z_Registration_Info_UClass_AMapLoader, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapLoader), 3410069161U) },
+		{ Z_Construct_UClass_AMapLoader, AMapLoader::StaticClass, TEXT("AMapLoader"), &Z_Registration_Info_UClass_AMapLoader, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMapLoader), 3351345220U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_MapLoader_h_161354839(TEXT("/Script/Tank"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Tank_Source_Tank_MapLoader_h_924616084(TEXT("/Script/Tank"),
 		Z_CompiledInDeferFile_FID_Tank_Source_Tank_MapLoader_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Tank_Source_Tank_MapLoader_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

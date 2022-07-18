@@ -2,6 +2,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "Components/PointLightComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "Components/AudioComponent.h"
 
 AMapLoader::AMapLoader()
 {
@@ -21,6 +22,10 @@ AMapLoader::AMapLoader()
 
 	DeactivatedLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("DeactivatedLight"));
 	DeactivatedLight->SetupAttachment(SceneComponent);
+
+	AudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("AudioComponent"));
+	//AudioComponent->SetAutoActivate(false);
+	AudioComponent->SetupAttachment(MeshComponent);
 
 	SetActiveLights();
 }
@@ -51,8 +56,19 @@ void AMapLoader::OnTriggerOverlapBegin(UPrimitiveComponent* OverlappedComp, AAct
 	} 
 	APawn* PlayerPawn = GetWorld()->GetFirstPlayerController()->GetPawn();
 	if (OtherActor == PlayerPawn) {
-		UGameplayStatics::OpenLevel(GetWorld(), LoadLevelName);
+		FTimerHandle SomeTimer;
+		AudioComponent->Play();
+		
+		GetWorld()->GetTimerManager().SetTimer(SomeTimer,this, &AMapLoader::Teleport, 1, false, 0.5f);
+		
 	}
 	
+}
+
+void AMapLoader::Teleport()
+{
+	AudioComponent->Play();
+
+	UGameplayStatics::OpenLevel(GetWorld(), LoadLevelName);
 }
 
